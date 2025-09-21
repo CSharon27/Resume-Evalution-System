@@ -171,11 +171,12 @@ def view_evaluations():
 
 # ------------------ Main App ------------------ #
 def main():
-    if 'page' not in st.session_state: st.session_state.page = "Dashboard"
+    if 'page' not in st.session_state:
+        st.session_state.page = "Dashboard"
 
     st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
 
-    # Sidebar
+    # ---------------- Sidebar ---------------- #
     with st.sidebar:
         nav_options = {
             "🏠 Dashboard": "Dashboard",
@@ -189,18 +190,18 @@ def main():
         for display, page in nav_options.items():
             if st.button(display, key=f"nav_{page}"):
                 st.session_state.page = page
-                st.rerun()
+                st.experimental_rerun()  # ensures page updates immediately
 
         # Sidebar Quick Stats
         st.markdown("### 📊 Quick Stats")
-        resumes = make_api_request("/resumes/")
-        job_descriptions = make_api_request("/job-descriptions/")
-        evaluations = make_api_request("/evaluations/")
+        resumes_resp = make_api_request("/resumes/")
+        jobs_resp = make_api_request("/job-descriptions/")
+        evaluations_resp = make_api_request("/evaluations/")
 
         resumes = resumes_resp.get("resumes", []) if resumes_resp else []
         job_descriptions = jobs_resp.get("job_descriptions", []) if jobs_resp else []
         evaluations = evaluations_resp.get("evaluations", []) if evaluations_resp else []
-        
+
         st.metric("Resumes", len(resumes))
         st.metric("Job Descriptions", len(job_descriptions))
         st.metric("Evaluations", len(evaluations))
@@ -209,19 +210,31 @@ def main():
             avg_score = sum(e.get('relevance_score', 0) for e in evaluations) / len(evaluations)
             st.metric("Avg Score", f"{avg_score:.1f}")
 
-    # Main content
+    # ---------------- Main Content ---------------- #
     if st.session_state.page == "Dashboard":
         st.markdown("### 📊 Dashboard Overview")
         st.info("Welcome to the Resume Evaluation System! Navigate from the sidebar to start.")
+
+    elif st.session_state.page == "Upload Resume":
+        st.markdown("### 📄 Upload Resume")
+        st.info("Upload a candidate resume to evaluate.")
+
+    elif st.session_state.page == "Upload Job Description":
+        st.markdown("### 💼 Upload Job Description")
+        st.info("Upload a job description to match resumes against.")
+
     elif st.session_state.page == "Evaluate Resume":
         st.markdown("### 🔍 Evaluate Resume")
+        st.info("Select a resume and job description to perform evaluation.")
+
     elif st.session_state.page == "View Evaluations":
-        view_evaluations()
+        st.markdown("### 📋 View Evaluations")
+        view_evaluations()  # call the function to render table and charts
+
     elif st.session_state.page == "Batch Processing":
         st.markdown("### 📦 Batch Processing")
+        st.info("Process multiple resumes at once.")
+
     elif st.session_state.page == "Manage Data":
         st.markdown("### 🗂️ Manage Data")
-
-if __name__ == "__main__":
-    main()
-
+        st.info("Manage uploaded resumes and job descriptions.")
