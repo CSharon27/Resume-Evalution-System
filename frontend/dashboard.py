@@ -817,7 +817,7 @@ def upload_resume():
         
         # Recent uploads
         st.markdown("### 📋 Recent Uploads")
-        resumes = make_api_request("/resumes")
+        resumes = make_api_request("/resumes/")
         if resumes:
             for resume in resumes[-3:]:  # Show last 3
                 st.markdown(f"• **{resume['student_name']}** - {resume['filename']}")
@@ -981,7 +981,7 @@ def upload_job_description():
                         progress_bar.progress(25)
                         status_text.text("📤 Uploading job description...")
                         
-                        result = make_api_request("/job-description", "POST", data)
+                        result = make_api_request("/job-description/", "POST", data)
                         
                         progress_bar.progress(75)
                         status_text.text("🔍 Processing requirements...")
@@ -1040,7 +1040,7 @@ def upload_job_description():
         
         # Recent job descriptions
         st.markdown("### 📋 Recent Job Descriptions")
-        job_descriptions = make_api_request("/job-descriptions")
+        job_descriptions = make_api_request("/job-descriptions/")
         if job_descriptions:
             for jd in job_descriptions[-3:]:  # Show last 3
                 st.markdown(f"• **{jd['title']}** at {jd['company']}")
@@ -1052,8 +1052,8 @@ def evaluate_resume():
     st.markdown("### 🔍 Evaluate Resume")
     
     # Get resumes and job descriptions
-    resumes = make_api_request("/resumes")
-    job_descriptions = make_api_request("/job-descriptions")
+    resumes = make_api_request("/resumes/")
+    job_descriptions = make_api_request("/job-descriptions/")
     
     if not resumes or not job_descriptions:
         st.markdown("""
@@ -1167,7 +1167,7 @@ def evaluate_resume():
                         progress_bar.progress(90)
                         status_text.text("📝 Generating feedback...")
                         
-                        result = make_api_request("/evaluate", "POST", data)
+                        result = make_api_request("/evaluate/", "POST", data)
                         
                         progress_bar.progress(100)
                         status_text.text("✅ Evaluation complete!")
@@ -1225,7 +1225,7 @@ def evaluate_resume():
         
         # Recent evaluations
         st.markdown("#### 🔍 Recent Evaluations")
-        evaluations = make_api_request("/evaluations")
+        evaluations = make_api_request("/evaluations/")
         if evaluations:
             for eval in evaluations[-3:]:  # Show last 3
                 verdict_icon = get_verdict_icon(eval['verdict'])
@@ -1467,7 +1467,7 @@ def view_evaluations():
     st.markdown("### 📋 All Evaluations")
     
     # Get evaluations
-    evaluations = make_api_request("/evaluations")
+    evaluations = make_api_request("/evaluations/")
     
     if not evaluations:
         st.markdown("""
@@ -1639,9 +1639,9 @@ def manage_data():
         else:
             st.info("No resumes found")
     
-    with tab2:
+    with tab2:/
         st.write("**Job Descriptions**")
-        job_descriptions = make_api_request("/job-descriptions")
+        job_descriptions = make_api_request("/job-descriptions/")
         
         if job_descriptions:
             for jd in job_descriptions:
@@ -2066,9 +2066,9 @@ def main():
         # Quick stats in sidebar
         st.markdown("### 📊 Quick Stats")
         
-        resumes = make_api_request("/resumes")
-        job_descriptions = make_api_request("/job-descriptions")
-        evaluations = make_api_request("/evaluations")
+        resumes = make_api_request("/resumes/")
+        job_descriptions = make_api_request("/job-descriptions/")
+        evaluations = make_api_request("/evaluations/")
         
         st.metric("Resumes", len(resumes) if resumes else 0)
         st.metric("Job Descriptions", len(job_descriptions) if job_descriptions else 0)
@@ -2222,4 +2222,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
