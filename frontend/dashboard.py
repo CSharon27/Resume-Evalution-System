@@ -41,7 +41,66 @@ st.markdown("""
         background: rgba(59, 130, 246, 0.2);
         color: #fff !important;
     }
-
+    /* Sidebar container */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%) !important;
+        padding-top: 30px;
+    }
+    
+    /* Sidebar title */
+    [data-testid="stSidebar"] h1, 
+    [data-testid="stSidebar"] h2, 
+    [data-testid="stSidebar"] h3 {
+        color: #f8fafc !important;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Navigation buttons */
+    [role="radiogroup"] > label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+        margin: 6px 0;
+        border-radius: 14px;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #cbd5e1 !important;
+        background: rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    /* Hover effect */
+    [role="radiogroup"] > label:hover {
+        background: rgba(59, 130, 246, 0.25);
+        transform: translateX(5px);
+        color: #ffffff !important;
+    }
+    
+    /* Active/selected nav item */
+    [role="radiogroup"] > label[data-checked="true"] {
+        background: linear-gradient(90deg, #2563eb, #3b82f6);
+        color: white !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+        transform: translateX(8px);
+    }
+    
+    /* Add a glow animation */
+    [role="radiogroup"] > label[data-checked="true"]::after {
+        content: '';
+        position: absolute;
+        left: -8px;
+        width: 6px;
+        height: 100%;
+        border-radius: 3px;
+        background: #3b82f6;
+        box-shadow: 0 0 10px #3b82f6;
+    }
+    
     /* Active Highlight */
     div[role='radiogroup'] label[data-checked="true"] {
         background: linear-gradient(90deg, #2563eb, #3b82f6);
@@ -240,3 +299,4 @@ elif page == "📊 Manage Data":
             st.markdown(f"<div class='data-card'>✅ {ev}</div>", unsafe_allow_html=True)
     else:
         st.info("No evaluations available.")
+
