@@ -5,9 +5,9 @@ import plotly.graph_objects as go
 import requests
 from datetime import datetime
 
-API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your backend URL
+API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Backend URL
 
-# ------------------ Utility Functions ------------------ #
+# ---------------- Utility Functions ---------------- #
 def make_api_request(endpoint, method="GET", data=None):
     url = f"{API_BASE_URL}{endpoint}"
     try:
@@ -20,13 +20,12 @@ def make_api_request(endpoint, method="GET", data=None):
         if response.status_code in [200, 201]:
             return response.json()
         return None
-    except Exception as e:
-        print(f"API Request Failed: {e}")
+    except Exception:
         return None
 
 def create_metric_card(title, value, icon, color):
     return f"""
-    <div style="background: {color}; padding: 1rem; border-radius: 0.5rem; color: white; text-align: center; margin-bottom:10px;">
+    <div style="background: {color}; padding: 1rem; border-radius: 0.5rem; color: white; text-align: center; margin-bottom: 10px;">
         <div style="font-size: 1.5rem;">{icon}</div>
         <div style="font-size: 1.2rem; font-weight: bold;">{value}</div>
         <div>{title}</div>
@@ -36,7 +35,7 @@ def create_metric_card(title, value, icon, color):
 def get_verdict_icon(verdict):
     return {"High": "🟢", "Medium": "🟡", "Low": "🔴"}.get(verdict, "⚪")
 
-# ------------------ Visualization Functions ------------------ #
+# ---------------- Visualization Functions ---------------- #
 def create_resume_quality_score(evaluation):
     st.markdown("#### 📋 Resume Quality Analysis")
     resume_data = evaluation.get('resume_data', {})
@@ -50,7 +49,7 @@ def create_resume_quality_score(evaluation):
     matched_skills = evaluation.get('matched_skills', [])
     total_skills = len(resume_data.get('skills', []))
     relevance_score = (len(matched_skills) / max(total_skills, 1)) * 100
-    experience_score = min(len(resume_data.get('experience', [])) * 20, 100)
+    experience_score = min(len(resume_data.get('experience', [])) * 2 * 10, 100)
     quality_score = (completeness_score + relevance_score + experience_score) / 3
 
     df = pd.DataFrame({
@@ -66,11 +65,13 @@ def create_resume_quality_score(evaluation):
     st.plotly_chart(fig, use_container_width=True)
 
     st.markdown("##### 💡 Quality Improvement Tips")
-    for rec in (["Add more detailed sections (projects, certifications)"] if completeness_score < 80 else []) + \
-               (["Focus on skills relevant to target positions"] if relevance_score < 70 else []) + \
-               (["Include more detailed work experience"] if experience_score < 60 else []):
-        st.markdown(f"• {rec}")
-    if completeness_score >= 80 and relevance_score >= 70 and experience_score >= 60:
+    tips = []
+    if completeness_score < 80: tips.append("Add more detailed sections (projects, certifications)")
+    if relevance_score < 70: tips.append("Focus on skills relevant to target positions")
+    if experience_score < 60: tips.append("Include more detailed work experience")
+    for tip in tips:
+        st.markdown(f"• {tip}")
+    if not tips:
         st.success("✅ Resume quality is excellent!")
 
 def create_skill_gap_analysis(evaluation):
@@ -78,6 +79,10 @@ def create_skill_gap_analysis(evaluation):
     missing_skills = evaluation.get('missing_skills', [])
     matched_skills = evaluation.get('matched_skills', [])
     all_skills = missing_skills + matched_skills
+
+    if not all_skills:
+        st.info("No skills data available for this resume.")
+        return
 
     categories = {'Technical Skills': [], 'Soft Skills': [], 'Tools & Technologies': []}
     for skill in all_skills:
@@ -106,22 +111,22 @@ def create_ai_optimization_suggestions(evaluation):
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("##### 🎯 Immediate Improvements")
-        immediate_tips = []
-        if missing_skills: immediate_tips.append(f"**Learn these skills:** {', '.join(missing_skills[:3])}")
-        if 'Limited project portfolio' in weaknesses: immediate_tips.append("**Add 2-3 detailed projects**")
-        if 'No relevant certifications' in weaknesses: immediate_tips.append("**Get certified** in key technologies")
-        if not immediate_tips: immediate_tips.append("**Resume looks good!** Focus on interview preparation")
-        for tip in immediate_tips: st.markdown(f"• {tip}")
+        tips = []
+        if missing_skills: tips.append(f"**Learn these skills:** {', '.join(missing_skills[:3])}")
+        if 'Limited project portfolio' in weaknesses: tips.append("**Add 2-3 detailed projects**")
+        if 'No relevant certifications' in weaknesses: tips.append("**Get certified** in key technologies")
+        if not tips: tips.append("**Resume looks good!** Focus on interview preparation")
+        for tip in tips: st.markdown(f"• {tip}")
 
     with col2:
         st.markdown("##### 🚀 Advanced Optimizations")
-        for tip in ["**Quantify achievements**", "**Use action verbs**", "**Tailor keywords** to job descriptions", "**Add a professional summary**"]: 
+        for tip in ["**Quantify achievements**", "**Use action verbs**", "**Tailor keywords** to job descriptions", "**Add a professional summary**"]:
             st.markdown(f"• {tip}")
 
     optimization_score = max(100 - len(missing_skills) * 10, 0)
     st.markdown(f"##### 📊 Optimization Score: {optimization_score}/100")
     progress_color = "#4ecdc4" if optimization_score >= 70 else "#ff6b6b" if optimization_score >= 40 else "#ffa726"
-    st.markdown(f"<div style='background:#e0e0e0;border-radius:5px;'><div style='width:{optimization_score}%;background:{progress_color};padding:5px;border-radius:5px;text-align:center;color:white;'>{optimization_score}%</div></div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='progress-container'><div class='progress-bar' style='width: {optimization_score}%; background: {progress_color};'>{optimization_score}%</div></div>", unsafe_allow_html=True)
 
 def display_evaluation_results(evaluation):
     st.markdown("---")
@@ -132,11 +137,10 @@ def display_evaluation_results(evaluation):
     create_ai_optimization_suggestions(evaluation)
     st.markdown("---")
 
-# ------------------ Pages ------------------ #
+# ---------------- Main Pages ---------------- #
 def view_evaluations():
     st.markdown("### 📋 All Evaluations")
-    evaluations_resp = make_api_request("/evaluations/") or {}
-    evaluations = evaluations_resp.get("evaluations", [])
+    evaluations = make_api_request("/evaluations/") or []
 
     if not evaluations:
         st.info("ℹ️ No evaluations found. Please evaluate some resumes first.")
@@ -148,11 +152,12 @@ def view_evaluations():
     st.markdown("#### 📊 Summary Statistics")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.markdown(create_metric_card("Average Score", f"{df['relevance_score'].mean():.1f}", "📊", "#1f77b4"), unsafe_allow_html=True)
+        avg = df['relevance_score'].mean() if 'relevance_score' in df.columns else 0
+        st.markdown(create_metric_card("Average Score", f"{avg:.1f}", "📊", "#1f77b4"), unsafe_allow_html=True)
     with col2:
-        st.markdown(create_metric_card("High Suitability", str(len(df[df['verdict'] == 'High'])), "🟢", "#28a745"), unsafe_allow_html=True)
+        st.markdown(create_metric_card("High Suitability", str(len(df[df.get('verdict') == 'High'])), "🟢", "#28a745"), unsafe_allow_html=True)
     with col3:
-        st.markdown(create_metric_card("Medium Suitability", str(len(df[df['verdict'] == 'Medium'])), "🟡", "#ffc107"), unsafe_allow_html=True)
+        st.markdown(create_metric_card("Medium Suitability", str(len(df[df.get('verdict') == 'Medium'])), "🟡", "#ffc107"), unsafe_allow_html=True)
     with col4:
         st.markdown(create_metric_card("Total Evaluations", str(len(df)), "📋", "#6c757d"), unsafe_allow_html=True)
 
@@ -160,27 +165,26 @@ def view_evaluations():
     st.markdown("#### 📈 Analytics Dashboard")
     col1, col2 = st.columns(2)
     with col1:
-        verdict_counts = df['verdict'].value_counts()
-        fig = px.pie(
-            names=verdict_counts.index, values=verdict_counts.values,
-            title="Verdict Distribution",
-            color_discrete_map={'High': '#28a745', 'Medium': '#ffc107', 'Low': '#dc3545'}
-        )
-        fig.update_traces(textposition='inside', textinfo='percent+label')
-        st.plotly_chart(fig, use_container_width=True)
+        if 'verdict' in df.columns:
+            verdict_counts = df['verdict'].value_counts()
+            fig = px.pie(names=verdict_counts.index, values=verdict_counts.values,
+                         title="Verdict Distribution",
+                         color_discrete_map={'High':'#28a745','Medium':'#ffc107','Low':'#dc3545'})
+            fig.update_traces(textposition='inside', textinfo='percent+label')
+            st.plotly_chart(fig, use_container_width=True)
     with col2:
-        fig = px.histogram(df, x='relevance_score', nbins=20, title="Score Distribution", color_discrete_sequence=['#1f77b4'])
-        fig.update_layout(xaxis_title="Relevance Score", yaxis_title="Count")
-        st.plotly_chart(fig, use_container_width=True)
+        if 'relevance_score' in df.columns:
+            fig = px.histogram(df, x='relevance_score', nbins=20, title="Score Distribution", color_discrete_sequence=['#1f77b4'])
+            fig.update_layout(xaxis_title="Relevance Score", yaxis_title="Count")
+            st.plotly_chart(fig, use_container_width=True)
 
-# ------------------ Main App ------------------ #
+# ---------------- Main App ---------------- #
 def main():
-    if 'page' not in st.session_state:
-        st.session_state.page = "Dashboard"
+    if 'page' not in st.session_state: st.session_state.page = "Dashboard"
 
-    st.markdown('<h1 style="color:#667eea;">📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
+    st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
 
-    # Sidebar Navigation
+    # Sidebar
     with st.sidebar:
         nav_options = {
             "🏠 Dashboard": "Dashboard",
@@ -198,38 +202,32 @@ def main():
 
         # Quick Stats
         st.markdown("### 📊 Quick Stats")
-        resumes_resp = make_api_request("/resumes/") or {}
-        jobs_resp = make_api_request("/job-descriptions/") or {}
-        evaluations_resp = make_api_request("/evaluations/") or {}
+        resumes = make_api_request("/resumes/") or {"resumes":[]}
+        jobs = make_api_request("/job-descriptions/") or {"job_descriptions":[]}
+        evaluations = make_api_request("/evaluations/") or []
 
-        resumes = resumes_resp.get("resumes", [])
-        job_descriptions = jobs_resp.get("job_descriptions", [])
-        evaluations = evaluations_resp.get("evaluations", [])
-
-        st.metric("Resumes", len(resumes))
-        st.metric("Job Descriptions", len(job_descriptions))
+        st.metric("Resumes", len(resumes.get("resumes", [])))
+        st.metric("Job Descriptions", len(jobs.get("job_descriptions", [])))
         st.metric("Evaluations", len(evaluations))
-        if evaluations:
-            avg_score = sum(e.get('relevance_score', 0) for e in evaluations) / len(evaluations)
+        if evaluations and 'relevance_score' in evaluations[0]:
+            avg_score = sum(e['relevance_score'] for e in evaluations) / len(evaluations)
             st.metric("Avg Score", f"{avg_score:.1f}")
 
-    # Main Page Content
-    page = st.session_state.page
-    if page == "Dashboard":
+    # Main content
+    if st.session_state.page == "Dashboard":
         st.markdown("### 📊 Dashboard Overview")
-        st.info("Welcome to the Resume Evaluation System! Navigate using the sidebar.")
-    elif page == "Evaluate Resume":
+        st.info("Welcome! Use the sidebar to navigate.")
+    elif st.session_state.page == "Evaluate Resume":
         st.markdown("### 🔍 Evaluate Resume")
-    elif page == "View Evaluations":
+        st.info("Evaluation page under construction.")
+    elif st.session_state.page == "View Evaluations":
         view_evaluations()
-    elif page == "Batch Processing":
+    elif st.session_state.page == "Batch Processing":
         st.markdown("### 📦 Batch Processing")
-    elif page == "Manage Data":
+        st.info("Batch processing page under construction.")
+    elif st.session_state.page == "Manage Data":
         st.markdown("### 🗂️ Manage Data")
-    elif page == "Upload Resume":
-        st.markdown("### 📄 Upload Resume")
-    elif page == "Upload Job Description":
-        st.markdown("### 💼 Upload Job Description")
+        st.info("Data management page under construction.")
 
 if __name__ == "__main__":
     main()
