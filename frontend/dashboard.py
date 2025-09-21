@@ -137,7 +137,7 @@ def view_evaluations():
     st.markdown("### 📋 All Evaluations")
 
     # Fetch evaluations
-    evaluations = make_api_request("/evaluations")
+    evaluations = make_api_request("/evaluations/")
     if not evaluations:
         st.info("ℹ️ No evaluations found. Please evaluate some resumes first.")
         return
@@ -265,6 +265,21 @@ def main():
             if st.button(display, key=f"nav_{page}"):
                 st.session_state.page = page
                 st.rerun()
+     # Sidebar Quick Stats
+     st.markdown("### 📊 Quick Stats")
+        
+     resumes = make_api_request("/resumes/")  # note the slash
+     job_descriptions = make_api_request("/job-descriptions/")
+     evaluations = make_api_request("/evaluations/")
+        
+     st.metric("Resumes", len(resumes) if resumes else 0)
+     st.metric("Job Descriptions", len(job_descriptions) if job_descriptions else 0)
+     st.metric("Evaluations", len(evaluations) if evaluations else 0)
+        
+     if evaluations:
+        avg_score = sum(e['relevance_score'] for e in evaluations) / len(evaluations)
+        st.metric("Avg Score", f"{avg_score:.1f}")
+
 
     # Main content
     if st.session_state.page == "Dashboard":
@@ -280,5 +295,8 @@ def main():
     elif st.session_state.page == "Manage Data":
         st.markdown("### 🗂️ Manage Data")
 
+
+
 if __name__ == "__main__":
     main()
+
