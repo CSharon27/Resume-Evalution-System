@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Optional
-from app.config import settings
+from backend.app.config import settings
 
 Base = declarative_base()
 
@@ -99,3 +99,4 @@ if __name__ == "__main__":
     engine = create_engine(settings.database_url)
     Base.metadata.create_all(bind=engine)
     print("✅ Database created with all tables!")
+
