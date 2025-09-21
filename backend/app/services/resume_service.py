@@ -4,10 +4,10 @@ import os
 import json
 from typing import Dict, List, Any, Optional
 from sqlalchemy.orm import Session
-from app.models.database import Resume, JobDescription, ResumeEvaluation
-from app.parsers.resume_parser import ResumeParser
-from app.parsers.job_description_parser import JobDescriptionParser
-from app.evaluators.resume_evaluator import ResumeEvaluator
+from backend.app.models.database import Resume, JobDescription, ResumeEvaluation
+from backend.app.parsers.resume_parser import ResumeParser
+from backend.app.parsers.job_description_parser import JobDescriptionParser
+from backend.app.evaluators.resume_evaluator import ResumeEvaluator
 
 
 class ResumeService:
@@ -209,3 +209,4 @@ class ResumeService:
         except Exception as e:
             db.rollback()
             return False
+
