@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import requests
 from datetime import datetime
 
-API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your API
+API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"
 
 # ------------------ Utility Functions ------------------ #
 def make_api_request(endpoint, method="GET", data=None, files=None):
@@ -15,8 +15,11 @@ def make_api_request(endpoint, method="GET", data=None, files=None):
             response = requests.get(url)
         elif method == "DELETE":
             response = requests.delete(url)
-        else:
-            response = requests.post(url, json=data, files=files)
+        else:  # POST
+            if files:
+                response = requests.post(url, files=files)
+            else:
+                response = requests.post(url, json=data)
         if response.status_code in [200, 201]:
             return response.json()
         return None
@@ -79,12 +82,10 @@ def main():
     # ------------------ Page Logic ------------------ #
     page = st.session_state.page
 
-    # ------------------ Dashboard ------------------ #
     if page == "Dashboard":
         st.markdown("### 📊 Dashboard Overview")
         st.info("Welcome to the Resume Evaluation System! Navigate from the sidebar to start.")
 
-    # ------------------ Upload Resume ------------------ #
     elif page == "Upload Resume":
         st.title("📄 Upload Resume")
         uploaded = st.file_uploader("Upload a Resume", type=["pdf", "docx"])
@@ -101,7 +102,6 @@ def main():
         for r in resumes:
             st.write(f"- {r}")
 
-    # ------------------ Job Descriptions ------------------ #
     elif page == "Job Descriptions":
         st.title("💼 Manage Job Descriptions")
 
@@ -132,12 +132,10 @@ def main():
         for j in jobs:
             st.write(f"- {j}")
 
-    # ------------------ Evaluate Resume ------------------ #
     elif page == "Evaluate Resume":
         st.title("🔍 Evaluate Resume")
-        # Keep your existing evaluation interface logic here
+        st.info("Evaluation logic goes here.")
 
-    # ------------------ View Evaluations ------------------ #
     elif page == "View Evaluations":
         st.title("📋 View Evaluations")
         evaluations = make_api_request("/evaluations/") or []
@@ -147,12 +145,10 @@ def main():
         else:
             st.info("No evaluations yet.")
 
-    # ------------------ Batch Processing ------------------ #
     elif page == "Batch Processing":
         st.title("📦 Batch Processing")
         st.info("Batch processing logic goes here.")
 
-    # ------------------ Manage Data ------------------ #
     elif page == "Manage Data":
         st.title("🗂️ Manage Data")
         st.info("Data management logic goes here.")
