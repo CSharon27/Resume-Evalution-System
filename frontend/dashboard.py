@@ -4,6 +4,9 @@ import requests
 
 BASE_URL = "https://resume-evalution-system-backend.onrender.com"
 
+# --------------------------
+# Page Config
+# --------------------------
 st.set_page_config(
     page_title="Resume Evaluation System",
     page_icon="📑",
@@ -11,131 +14,83 @@ st.set_page_config(
 )
 
 # --------------------------
-# Styling Based on Screenshot
+# Custom Styling
 # --------------------------
 st.markdown("""
     <style>
-    /* Main Background */
-    .main {
-        background: linear-gradient(135deg, #f8fbff 0%, #e0f2fe 100%);
+    /* Main background */
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #f8fbff 0%, #eef2f7 100%);
         font-family: "Segoe UI", sans-serif;
     }
 
     /* Sidebar */
-    section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-        color: white;
-        padding-top: 20px;
-    }
-
-    /* Sidebar Labels */
-    .stSidebar .stRadio label {
-        color: #cbd5e1 !important;
-        font-weight: 500;
-        padding: 10px 14px;
-        border-radius: 12px;
-        margin: 4px 0;
-        transition: all 0.3s ease;
-    }
-    .stSidebar .stRadio label:hover {
-        background: rgba(59, 130, 246, 0.2);
-        color: #fff !important;
-    }
-    /* Sidebar container */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%) !important;
+        background: #f9fafb !important;
         padding-top: 30px;
+        border-right: 1px solid #e5e7eb;
     }
-    
-    /* Sidebar title */
     [data-testid="stSidebar"] h1, 
     [data-testid="stSidebar"] h2, 
     [data-testid="stSidebar"] h3 {
-        color: #f8fafc !important;
+        color: #1e293b !important;
         font-weight: 700;
         text-align: center;
         margin-bottom: 20px;
     }
-    
-    /* Navigation buttons */
+
+    /* Sidebar Navigation */
     [role="radiogroup"] > label {
         display: flex;
         align-items: center;
         gap: 12px;
         padding: 12px 18px;
         margin: 6px 0;
-        border-radius: 14px;
+        border-radius: 12px;
         font-weight: 500;
         font-size: 1rem;
-        color: #cbd5e1 !important;
-        background: rgba(255, 255, 255, 0.05);
+        color: #374151 !important;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
         transition: all 0.3s ease;
         cursor: pointer;
     }
-    
-    /* Hover effect */
     [role="radiogroup"] > label:hover {
-        background: rgba(59, 130, 246, 0.25);
+        background: #f0f9ff;
+        border-color: #93c5fd;
+        color: #1e40af !important;
         transform: translateX(5px);
-        color: #ffffff !important;
     }
-    
-    /* Active/selected nav item */
     [role="radiogroup"] > label[data-checked="true"] {
-        background: linear-gradient(90deg, #2563eb, #3b82f6);
+        background: linear-gradient(90deg, #3b82f6, #60a5fa);
         color: white !important;
         font-weight: 600 !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+        border: none;
+        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
         transform: translateX(8px);
     }
-    
-    /* Add a glow animation */
-    [role="radiogroup"] > label[data-checked="true"]::after {
-        content: '';
-        position: absolute;
-        left: -8px;
-        width: 6px;
-        height: 100%;
-        border-radius: 3px;
-        background: #3b82f6;
-        box-shadow: 0 0 10px #3b82f6;
-    }
-    
-    /* Active Highlight */
-    div[role='radiogroup'] label[data-checked="true"] {
-        background: linear-gradient(90deg, #2563eb, #3b82f6);
-        color: white !important;
-        font-weight: 600 !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-    }
 
-    /* Headings */
-    h1, h2, h3 {
-        font-weight: 700;
-        color: #1e3a8a;
-    }
-
-    /* Cards (Glassmorphic) */
+    /* Stat Cards */
     .card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        border-radius: 18px;
-        padding: 22px;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.08);
         text-align: center;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease;
     }
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 20px rgba(0,0,0,0.12);
     }
     .card h3 {
-        font-size: 1.1rem;
         color: #475569;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
     }
     .card h2 {
-        font-size: 2rem;
         color: #2563eb;
+        font-size: 2rem;
         margin: 0;
     }
 
@@ -151,30 +106,15 @@ st.markdown("""
         transition: all 0.2s ease;
     }
     div.stButton > button:hover {
-        transform: scale(1.05);
         background: linear-gradient(90deg, #1d4ed8, #2563eb);
-        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.5);
+        transform: scale(1.05);
+        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
     }
 
-    /* Info & Alerts */
+    /* Info Alerts */
     .stAlert {
-        border-radius: 12px;
+        border-radius: 10px;
         font-size: 0.95rem;
-    }
-
-    /* Data Display Cards (Jobs/Evaluations) */
-    .data-card {
-        background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(6px);
-        border-radius: 14px;
-        padding: 16px;
-        margin-bottom: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transition: transform 0.2s ease;
-    }
-    .data-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -213,11 +153,7 @@ if page == "🏠 Dashboard":
     st.markdown("### Recent Evaluations")
     if evaluations:
         for e in evaluations:
-            st.markdown(
-                f"<div class='data-card'>📄 Resume ID: <b>{e.get('resume_id', '-')}</b><br>"
-                f"⭐ Score: <span style='color:#2563eb;font-weight:600;'>{e.get('relevance_score', 'N/A')}%</span></div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"- Resume ID: `{e.get('resume_id', '-')}`, Score: **{e.get('relevance_score', 'N/A')}%**")
     else:
         st.info("No evaluations yet.")
 
@@ -249,10 +185,7 @@ elif page == "📋 Job Descriptions":
         jobs = []
     if jobs:
         for job in jobs:
-            st.markdown(
-                f"<div class='data-card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div class='card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>", unsafe_allow_html=True)
     else:
         st.info("No job descriptions available.")
 
@@ -280,23 +213,10 @@ elif page == "📊 Manage Data":
         resumes, jobs, evaluations = [], [], []
 
     st.subheader("📄 Resumes")
-    if resumes:
-        for r in resumes:
-            st.markdown(f"<div class='data-card'>📄 {r}</div>", unsafe_allow_html=True)
-    else:
-        st.info("No resumes uploaded.")
+    st.write(resumes if resumes else "No resumes uploaded.")
 
     st.subheader("💼 Job Descriptions")
-    if jobs:
-        for j in jobs:
-            st.markdown(f"<div class='data-card'>💼 {j}</div>", unsafe_allow_html=True)
-    else:
-        st.info("No job descriptions available.")
+    st.write(jobs if jobs else "No job descriptions available.")
 
     st.subheader("✅ Evaluations")
-    if evaluations:
-        for ev in evaluations:
-            st.markdown(f"<div class='data-card'>✅ {ev}</div>", unsafe_allow_html=True)
-    else:
-        st.info("No evaluations available.")
-
+    st.write(evaluations if evaluations else "No evaluations available.")
