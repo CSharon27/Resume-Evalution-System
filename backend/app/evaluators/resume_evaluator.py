@@ -2,9 +2,9 @@
 
 import time
 from typing import Dict, List, Any, Tuple
-from app.evaluators.hard_matcher import HardMatcher
-from app.evaluators.semantic_matcher import SemanticMatcher
-from app.config import settings
+from backend.app.evaluators.hard_matcher import HardMatcher
+from backend.app.evaluators.semantic_matcher import SemanticMatcher
+from backend.app.config import settings
 import openai
 
 # Set OpenAI API key from config (only if LLM is enabled)
@@ -183,5 +183,6 @@ class ResumeEvaluator:
         }
         
         return summary
+
 
 
