@@ -8,19 +8,23 @@ from datetime import datetime
 API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your API
 
 # ------------------ Utility Functions ------------------ #
-def make_api_request(endpoint, method="GET", data=None):
+def make_api_request(endpoint, method="GET", data=None, files=None):
     url = f"{API_BASE_URL}{endpoint}"
     try:
         if method == "GET":
             response = requests.get(url)
         elif method == "DELETE":
             response = requests.delete(url)
+        elif files:
+            response = requests.post(url, files=files)
         else:
             response = requests.post(url, json=data)
+
         if response.status_code in [200, 201]:
             return response.json()
         return None
-    except Exception:
+    except Exception as e:
+        st.error(f"API request failed: {e}")
         return None
 
 def create_metric_card(title, value, icon, color):
@@ -32,146 +36,124 @@ def create_metric_card(title, value, icon, color):
     </div>
     """
 
-def get_verdict_icon(verdict):
-    return {"High": "🟢", "Medium": "🟡", "Low": "🔴"}.get(verdict, "⚪")
+# ------------------ Pages ------------------ #
+def page_dashboard():
+    st.markdown("### 📊 Dashboard Overview")
 
-# ------------------ Visualization Functions ------------------ #
-def create_resume_quality_score(evaluation):
-    st.markdown("#### 📋 Resume Quality Analysis")
-    resume_data = evaluation.get('resume_data', {})
-    has_skills = len(resume_data.get('skills', [])) > 0
-    has_education = len(resume_data.get('education', [])) > 0
-    has_experience = len(resume_data.get('experience', [])) > 0
-    has_projects = len(resume_data.get('projects', [])) > 0
-    has_certifications = len(resume_data.get('certifications', [])) > 0
+    resumes = make_api_request("/resumes/") or []
+    job_descriptions = make_api_request("/job-descriptions/") or []
+    evaluations = make_api_request("/evaluations/") or []
 
-    completeness_score = sum([has_skills, has_education, has_experience, has_projects, has_certifications]) * 20
-    matched_skills = evaluation.get('matched_skills', [])
-    total_skills = len(resume_data.get('skills', []))
-    relevance_score = (len(matched_skills) / max(total_skills, 1)) * 100
-    experience_score = min(len(resume_data.get('experience', [])) * 2 * 10, 100)
-    quality_score = (completeness_score + relevance_score + experience_score) / 3
-
-    df = pd.DataFrame({
-        'Metric': ['Content Completeness', 'Skill Relevance', 'Experience Level', 'Overall Quality'],
-        'Score': [completeness_score, relevance_score, experience_score, quality_score]
-    })
-
-    fig = go.Figure(go.Scatterpolar(
-        r=df['Score'], theta=df['Metric'], fill='toself',
-        line_color='#667eea', fillcolor='rgba(102,126,234,0.3)', name='Resume Quality'
-    ))
-    fig.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 100])), showlegend=True, height=400)
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.markdown("##### 💡 Quality Improvement Tips")
-    for rec in (["Add more detailed sections (projects, certifications)"] if completeness_score < 80 else []) + \
-               (["Focus on skills relevant to target positions"] if relevance_score < 70 else []) + \
-               (["Include more detailed work experience"] if experience_score < 60 else []):
-        st.markdown(f"• {rec}")
-    if completeness_score >= 80 and relevance_score >= 70 and experience_score >= 60:
-        st.success("✅ Resume quality is excellent!")
-
-def create_skill_gap_analysis(evaluation):
-    st.markdown("#### 🎯 Skill Gap Analysis")
-    missing_skills = evaluation.get('missing_skills', [])
-    matched_skills = evaluation.get('matched_skills', [])
-    all_skills = missing_skills + matched_skills
-
-    categories = {'Technical Skills': [], 'Soft Skills': [], 'Tools & Technologies': []}
-    for skill in all_skills:
-        sl = skill.lower()
-        if any(tech in sl for tech in ['python','java','javascript','react','angular','vue','node','sql','mongodb','postgresql','docker','aws','azure']):
-            categories['Technical Skills'].append(skill)
-        elif any(soft in sl for soft in ['communication','leadership','teamwork','problem solving','analytical','creative','management']):
-            categories['Soft Skills'].append(skill)
-        else:
-            categories['Tools & Technologies'].append(skill)
-
-    matched_counts = [len([s for s in v if s in matched_skills]) for v in categories.values()]
-    missing_counts = [len([s for s in v if s in missing_skills]) for v in categories.values()]
-
-    fig = go.Figure()
-    fig.add_trace(go.Bar(x=list(categories.keys()), y=matched_counts, name='Matched Skills', marker_color='#4ecdc4', text=matched_counts, textposition='auto'))
-    fig.add_trace(go.Bar(x=list(categories.keys()), y=missing_counts, name='Missing Skills', marker_color='#ff6b6b', text=missing_counts, textposition='auto'))
-    fig.update_layout(barmode='stack', title="Skill Gap Analysis by Category", height=400, plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
-    st.plotly_chart(fig, use_container_width=True)
-
-def create_ai_optimization_suggestions(evaluation):
-    st.markdown("#### 🤖 AI-Powered Optimization Suggestions")
-    missing_skills, weaknesses = evaluation.get('missing_skills', []), evaluation.get('weaknesses', [])
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("##### 🎯 Immediate Improvements")
-        immediate_tips = []
-        if missing_skills: immediate_tips.append(f"**Learn these skills:** {', '.join(missing_skills[:3])}")
-        if 'Limited project portfolio' in weaknesses: immediate_tips.append("**Add 2-3 detailed projects**")
-        if 'No relevant certifications' in weaknesses: immediate_tips.append("**Get certified** in key technologies")
-        if not immediate_tips: immediate_tips.append("**Resume looks good!** Focus on interview preparation")
-        for tip in immediate_tips: st.markdown(f"• {tip}")
-
-    with col2:
-        st.markdown("##### 🚀 Advanced Optimizations")
-        for tip in ["**Quantify achievements**", "**Use action verbs**", "**Tailor keywords** to job descriptions", "**Add a professional summary**"]: 
-            st.markdown(f"• {tip}")
-
-    optimization_score = max(100 - len(missing_skills) * 10, 0)
-    st.markdown(f"##### 📊 Optimization Score: {optimization_score}/100")
-    progress_color = "#4ecdc4" if optimization_score >= 70 else "#ff6b6b" if optimization_score >= 40 else "#ffa726"
-    st.markdown(f"<div class='progress-container'><div class='progress-bar' style='width: {optimization_score}%; background: {progress_color};'>{optimization_score}%</div></div>", unsafe_allow_html=True)
-
-def display_evaluation_results(evaluation):
-    st.markdown("---")
-    create_skill_gap_analysis(evaluation)
-    st.markdown("---")
-    create_resume_quality_score(evaluation)
-    st.markdown("---")
-    create_ai_optimization_suggestions(evaluation)
-    st.markdown("---")
-
-# ------------------ Main Pages ------------------ #
-def view_evaluations():
-    st.markdown("### 📋 All Evaluations")
-    evaluations = make_api_request("/evaluations/")
-    if not evaluations:
-        st.info("ℹ️ No evaluations found. Please evaluate some resumes first.")
-        return
-
-    # ensure evaluations is a list of dicts
-    if isinstance(evaluations, dict):
-        evaluations = [evaluations]
-
-    df = pd.DataFrame(evaluations)
-
-    # Summary Cards
-    st.markdown("#### 📊 Summary Statistics")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.markdown(create_metric_card("Average Score", f"{df['relevance_score'].mean():.1f}", "📊", "#1f77b4"), unsafe_allow_html=True)
+        st.markdown(create_metric_card("Resumes", len(resumes), "📄", "#1f77b4"), unsafe_allow_html=True)
     with col2:
-        st.markdown(create_metric_card("High Suitability", str(len(df[df['verdict'] == 'High'])), "🟢", "#28a745"), unsafe_allow_html=True)
+        st.markdown(create_metric_card("Job Descriptions", len(job_descriptions), "💼", "#28a745"), unsafe_allow_html=True)
     with col3:
-        st.markdown(create_metric_card("Medium Suitability", str(len(df[df['verdict'] == 'Medium'])), "🟡", "#ffc107"), unsafe_allow_html=True)
+        st.markdown(create_metric_card("Evaluations", len(evaluations), "📊", "#ffc107"), unsafe_allow_html=True)
     with col4:
-        st.markdown(create_metric_card("Total Evaluations", str(len(df)), "📋", "#6c757d"), unsafe_allow_html=True)
+        valid_scores = [e.get('relevance_score') for e in evaluations if isinstance(e, dict) and 'relevance_score' in e]
+        avg = f"{sum(valid_scores)/len(valid_scores):.1f}" if valid_scores else "0.0"
+        st.markdown(create_metric_card("Avg Score", avg, "⭐", "#6c757d"), unsafe_allow_html=True)
 
     # Charts
-    st.markdown("#### 📈 Analytics Dashboard")
-    col1, col2 = st.columns(2)
+    if evaluations:
+        st.markdown("#### 📈 Evaluation Insights")
+        df = pd.DataFrame(evaluations)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            verdict_counts = df['verdict'].value_counts()
+            fig = px.pie(
+                names=verdict_counts.index, values=verdict_counts.values,
+                title="Verdict Distribution",
+                color_discrete_map={'High': '#28a745', 'Medium': '#ffc107', 'Low': '#dc3545'}
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+        with col2:
+            fig = px.histogram(df, x='relevance_score', nbins=20, title="Score Distribution", color_discrete_sequence=['#1f77b4'])
+            st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("No evaluations yet.")
+
+def page_upload_resume():
+    st.markdown("### 📄 Upload Resume")
+    uploaded_file = st.file_uploader("Upload Resume (PDF/DOCX)", type=["pdf", "docx"])
+    if uploaded_file and st.button("Upload"):
+        files = {"file": uploaded_file.getvalue()}
+        result = make_api_request("/resumes/", method="POST", files={"file": uploaded_file})
+        if result:
+            st.success("✅ Resume uploaded successfully!")
+        else:
+            st.error("❌ Upload failed.")
+
+def page_upload_job_description():
+    st.markdown("### 💼 Upload Job Description")
+    jd_text = st.text_area("Paste Job Description here:")
+    if st.button("Submit JD"):
+        if jd_text.strip():
+            result = make_api_request("/job-descriptions/", method="POST", data={"description": jd_text})
+            if result:
+                st.success("✅ Job description uploaded!")
+            else:
+                st.error("❌ Failed to upload job description.")
+        else:
+            st.warning("Please enter some text.")
+
+def page_evaluate_resume():
+    st.markdown("### 🔍 Evaluate Resume")
+    resumes = make_api_request("/resumes/") or []
+    job_descriptions = make_api_request("/job-descriptions/") or []
+
+    if not resumes or not job_descriptions:
+        st.warning("Upload at least one resume and one job description first.")
+        return
+
+    resume = st.selectbox("Choose Resume", [r.get("id") for r in resumes])
+    jd = st.selectbox("Choose Job Description", [j.get("id") for j in job_descriptions])
+
+    if st.button("Run Evaluation"):
+        result = make_api_request("/evaluate/", method="POST", data={"resume_id": resume, "jd_id": jd})
+        if result:
+            st.success("✅ Evaluation completed!")
+            st.json(result)
+        else:
+            st.error("❌ Evaluation failed.")
+
+def page_view_evaluations():
+    st.markdown("### 📋 All Evaluations")
+    evaluations = make_api_request("/evaluations/") or []
+    if not evaluations:
+        st.info("No evaluations yet.")
+        return
+
+    df = pd.DataFrame(evaluations)
+    st.dataframe(df)
+
+def page_batch_processing():
+    st.markdown("### 📦 Batch Processing")
+    uploaded_files = st.file_uploader("Upload multiple resumes", type=["pdf", "docx"], accept_multiple_files=True)
+    if uploaded_files and st.button("Upload Batch"):
+        for f in uploaded_files:
+            make_api_request("/resumes/", method="POST", files={"file": f})
+        st.success(f"✅ Uploaded {len(uploaded_files)} resumes.")
+
+def page_manage_data():
+    st.markdown("### 🗂️ Manage Data")
+    col1, col2, col3 = st.columns(3)
     with col1:
-        verdict_counts = df['verdict'].value_counts()
-        fig = px.pie(
-            names=verdict_counts.index, values=verdict_counts.values,
-            title="Verdict Distribution",
-            color_discrete_map={'High': '#28a745', 'Medium': '#ffc107', 'Low': '#dc3545'}
-        )
-        fig.update_traces(textposition='inside', textinfo='percent+label')
-        st.plotly_chart(fig, use_container_width=True)
+        if st.button("Clear Resumes"):
+            make_api_request("/resumes/", method="DELETE")
+            st.success("Resumes cleared.")
     with col2:
-        fig = px.histogram(df, x='relevance_score', nbins=20, title="Score Distribution", color_discrete_sequence=['#1f77b4'])
-        fig.update_layout(xaxis_title="Relevance Score", yaxis_title="Count")
-        st.plotly_chart(fig, use_container_width=True)
+        if st.button("Clear Job Descriptions"):
+            make_api_request("/job-descriptions/", method="DELETE")
+            st.success("Job descriptions cleared.")
+    with col3:
+        if st.button("Clear Evaluations"):
+            make_api_request("/evaluations/", method="DELETE")
+            st.success("Evaluations cleared.")
 
 # ------------------ Main App ------------------ #
 def main():
@@ -180,7 +162,6 @@ def main():
 
     st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
 
-    # Sidebar
     with st.sidebar:
         nav_options = {
             "🏠 Dashboard": "Dashboard",
@@ -196,34 +177,20 @@ def main():
                 st.session_state.page = page
                 st.rerun()
 
-        # Sidebar Quick Stats
-        st.markdown("### 📊 Quick Stats")
-        resumes = make_api_request("/resumes/") or []
-        job_descriptions = make_api_request("/job-descriptions/") or []
-        evaluations = make_api_request("/evaluations/") or []
-
-        st.metric("Resumes", len(resumes))
-        st.metric("Job Descriptions", len(job_descriptions))
-        st.metric("Evaluations", len(evaluations))
-
-        # compute avg score safely
-        valid_scores = [e.get('relevance_score') for e in evaluations if isinstance(e, dict) and 'relevance_score' in e]
-        if valid_scores:
-            avg_score = sum(valid_scores) / len(valid_scores)
-            st.metric("Avg Score", f"{avg_score:.1f}")
-
-    # Main content
     if st.session_state.page == "Dashboard":
-        st.markdown("### 📊 Dashboard Overview")
-        st.info("Welcome to the Resume Evaluation System! Navigate from the sidebar to start.")
+        page_dashboard()
+    elif st.session_state.page == "Upload Resume":
+        page_upload_resume()
+    elif st.session_state.page == "Upload Job Description":
+        page_upload_job_description()
     elif st.session_state.page == "Evaluate Resume":
-        st.markdown("### 🔍 Evaluate Resume")
+        page_evaluate_resume()
     elif st.session_state.page == "View Evaluations":
-        view_evaluations()
+        page_view_evaluations()
     elif st.session_state.page == "Batch Processing":
-        st.markdown("### 📦 Batch Processing")
+        page_batch_processing()
     elif st.session_state.page == "Manage Data":
-        st.markdown("### 🗂️ Manage Data")
+        page_manage_data()
 
 if __name__ == "__main__":
     main()
