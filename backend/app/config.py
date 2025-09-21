@@ -3,6 +3,12 @@
 from typing import List
 from pydantic_settings import BaseSettings
 import os
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SQLALCHEMY_DATABASE_URL = f"sqlite:///{os.path.join(BASE_DIR, 'data.db')}"
+
 # Load environment variables automatically from .env
 class Settings(BaseSettings):
     """Application settings."""
@@ -40,6 +46,7 @@ class Settings(BaseSettings):
 # Create a settings instance
 settings = Settings()
     
+
 
 
 
