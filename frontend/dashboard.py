@@ -1,188 +1,51 @@
 import streamlit as st
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 import requests
+from datetime import datetime
 
-# Backend API base URL
-API_URL = "https://your-backend-url.onrender.com"
+API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your API
 
-# --------------------------
-# Utility Functions
-# --------------------------
-def check_api_status():
-    """Check if backend API is alive."""
+# ------------------ Utility Functions ------------------ #
+def make_api_request(endpoint, method="GET", data=None, files=None):
+    url = f"{API_BASE_URL}{endpoint}"
     try:
-        resp = requests.get(f"{API_URL}/")
+        if method == "GET":
+            response = requests.get(url)
+        elif method == "DELETE":
+            response = requests.delete(url)
+        else:
+            response = requests.post(url, json=data, files=files)
+        if response.status_code in [200, 201]:
+            return response.json()
+        return None
+    except Exception as e:
+        return None
+
+def check_api_status():
+    try:
+        resp = requests.get(f"{API_BASE_URL}/")
         if resp.status_code == 200:
             return True, resp.json().get("message", "OK")
         else:
             return False, f"Error {resp.status_code}"
-    except Exception as e:
-        return False, str(e)
-
-def fetch_resumes():
-    try:
-        return requests.get(f"{API_URL}/resumes/").json().get("resumes", [])
     except:
-        return []
+        return False, "Not reachable"
 
-def fetch_jobs():
-    try:
-        return requests.get(f"{API_URL}/job-descriptions/").json().get("job_descriptions", [])
-    except:
-        return []
-
-def fetch_evaluations():
-    try:
-        return requests.get(f"{API_URL}/evaluations/").json().get("evaluations", [])
-    except:
-        return []
-
-# --------------------------
-# Sidebar Navigation
-# --------------------------
-st.sidebar.title("📂 Navigation")
-page = st.sidebar.radio("Go to", ["Dashboard", "Resumes", "Job Descriptions", "Evaluations"])
-
-# Show API status in sidebar
-status, msg = check_api_status()
-if status:
-    st.sidebar.success(f"✅ API Online: {msg}")
-else:
-    st.sidebar.error(f"❌ API Offline: {msg}")
-
-# --------------------------
-# Dashboard
-# --------------------------
-if page == "Dashboard":
-    st.title("📊 Resume Evaluation Dashboard")
-
-    resumes = fetch_resumes()
-    jobs = fetch_jobs()
-    evaluations = fetch_evaluations()
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("📄 Total Resumes", len(resumes))
-    with col2:
-        st.metric("📝 Job Descriptions", len(jobs))
-    with col3:
-        st.metric("✅ Evaluations Done", len(evaluations))
-
-    # Show average score if evaluations exist
-    if evaluations:
-        try:
-            avg_score = sum(e.get("relevance_score", 0) for e in evaluations) / len(evaluations)
-            st.markdown(f"### ⭐ Average Relevance Score: `{avg_score:.2f}`")
-        except:
-            st.warning("⚠️ Evaluations data format issue.")
-    else:
-        st.info("No evaluations yet.")
-
-# --------------------------
-# Resumes Page
-# --------------------------
-elif page == "Resumes":
-    st.title("📄 Manage Resumes")
-
-    uploaded = st.file_uploader("Upload a Resume", type=["pdf", "docx"])
-    if uploaded:
-        files = {"file": uploaded.getvalue()}
-        resp = requests.post(f"{API_URL}/resumes/", files=files)
-        if resp.status_code == 200:
-            st.success(f"Uploaded {uploaded.name}")
-        else:
-            st.error("Upload failed!")
-
-    st.markdown("### Existing Resumes")
-    resumes = fetch_resumes()
-    if resumes:
-        for r in resumes:
-            st.write(f"- {r}")
-    else:
-        st.info("No resumes uploaded.")
-
-# --------------------------
-# Job Descriptions Page
-# --------------------------
-elif page == "Job Descriptions":
-    st.title("📝 Manage Job Descriptions")
-
-    jd_text = st.text_area("Enter Job Description")
-    if st.button("Save Job Description"):
-        resp = requests.post(f"{API_URL}/job-descriptions/", json={"jd": jd_text})
-        if resp.status_code == 200:
-            st.success("Job description saved!")
-        else:
-            st.error("Failed to save job description.")
-
-    st.markdown("### Existing Job Descriptions")
-    jobs = fetch_jobs()
-    if jobs:
-        for j in jobs:
-            st.write(f"- {j}")
-    else:
-        st.info("No job descriptions available.")
-
-# --------------------------
-# Evaluations Page
-# --------------------------
-elif page == "Evaluations":
-    st.title("✅ Resume Evaluations")
-
-    evaluations = fetch_evaluations()
-    if evaluations:
-        for e in evaluations:
-            st.json(e)
-    else:
-        st.info("No evaluations yet.")
-
-
-# --------------------------
-# Job Descriptions Page
-# --------------------------
-elif page == "Job Descriptions":
-    st.title("📝 Manage Job Descriptions")
-
-    st.markdown("#### 1️⃣ Upload Job Description Document")
-    jd_file = st.file_uploader("Upload JD (PDF/DOCX)", type=["pdf", "docx"])
-    if jd_file:
-        files = {"file": jd_file.getvalue()}
-        resp = requests.post(f"{API_URL}/job-descriptions/", files=files)
-        if resp.status_code in [200, 201]:
-            st.success(f"Uploaded {jd_file.name}")
-        else:
-            st.error("Upload failed!")
-
-    st.markdown("#### 2️⃣ Enter Job Description Manually")
-    jd_text = st.text_area("Enter Job Description")
-    if st.button("Save Job Description"):
-        if jd_text.strip():
-            resp = requests.post(f"{API_URL}/job-descriptions/", json={"jd": jd_text})
-            if resp.status_code in [200, 201]:
-                st.success("Job description saved!")
-            else:
-                st.error("Failed to save job description.")
-        else:
-            st.warning("Please enter some text before saving.")
-
-    st.markdown("### Existing Job Descriptions")
-    jobs = fetch_jobs()
-    if jobs:
-        for j in jobs:
-            st.write(f"- {j}")
-    else:
-        st.info("No job descriptions available.")
 # ------------------ Main App ------------------ #
 def main():
-    if 'page' not in st.session_state: st.session_state.page = "Dashboard"
+    if 'page' not in st.session_state:
+        st.session_state.page = "Dashboard"
 
     st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
 
-    # Sidebar
+    # ------------------ Sidebar ------------------ #
     with st.sidebar:
         nav_options = {
             "🏠 Dashboard": "Dashboard",
             "📄 Upload Resume": "Upload Resume",
-            "💼 Upload Job Description": "Job Descriptions",
+            "💼 Job Descriptions": "Job Descriptions",
             "🔍 Evaluate Resume": "Evaluate Resume",
             "📋 View Evaluations": "View Evaluations",
             "📦 Batch Processing": "Batch Processing",
@@ -193,85 +56,107 @@ def main():
                 st.session_state.page = page
                 st.rerun()
 
-        # Sidebar Quick Stats & API status
+        # Sidebar Quick Stats
         st.markdown("### 📊 Quick Stats")
-        resumes = make_api_request("/resumes/")
-        job_descriptions = make_api_request("/job-descriptions/")
-        evaluations = make_api_request("/evaluations/")
-        st.metric("Resumes", len(resumes) if resumes else 0)
-        st.metric("Job Descriptions", len(job_descriptions) if job_descriptions else 0)
-        st.metric("Evaluations", len(evaluations) if evaluations else 0)
+        resumes = make_api_request("/resumes/") or []
+        job_descriptions = make_api_request("/job-descriptions/") or []
+        evaluations = make_api_request("/evaluations/") or []
+
+        st.metric("Resumes", len(resumes))
+        st.metric("Job Descriptions", len(job_descriptions))
+        st.metric("Evaluations", len(evaluations))
         if evaluations:
             avg_score = sum(e.get('relevance_score', 0) for e in evaluations) / len(evaluations)
             st.metric("Avg Score", f"{avg_score:.1f}")
 
         # API Status
-        try:
-            status = requests.get(f"{API_BASE_URL}/").json().get("message", "Unknown")
-            st.success(f"API Status: ✅ {status}")
-        except:
-            st.error("API Status: ❌ Not reachable")
+        status, msg = check_api_status()
+        if status:
+            st.success(f"API Status: ✅ {msg}")
+        else:
+            st.error(f"API Status: ❌ {msg}")
 
-    # ------------------ Page Contents ------------------ #
+    # ------------------ Page Logic ------------------ #
     page = st.session_state.page
 
+    # ------------------ Dashboard ------------------ #
     if page == "Dashboard":
         st.markdown("### 📊 Dashboard Overview")
         st.info("Welcome to the Resume Evaluation System! Navigate from the sidebar to start.")
 
+    # ------------------ Upload Resume ------------------ #
     elif page == "Upload Resume":
-        st.markdown("### 📄 Upload Resume")
-        # Keep your existing upload logic here
+        st.title("📄 Upload Resume")
+        uploaded = st.file_uploader("Upload a Resume", type=["pdf", "docx"])
+        if uploaded:
+            files = {"file": uploaded.getvalue()}
+            resp = make_api_request("/resumes/", method="POST", files=files)
+            if resp:
+                st.success(f"Uploaded {uploaded.name}")
+            else:
+                st.error("Upload failed!")
 
+        st.markdown("### Existing Resumes")
+        resumes = make_api_request("/resumes/") or []
+        for r in resumes:
+            st.write(f"- {r}")
+
+    # ------------------ Job Descriptions ------------------ #
     elif page == "Job Descriptions":
         st.title("💼 Manage Job Descriptions")
 
-        # 1️⃣ Upload JD Document
+        st.markdown("#### 1️⃣ Upload JD Document")
         jd_file = st.file_uploader("Upload JD (PDF/DOCX)", type=["pdf", "docx"])
         if jd_file:
             files = {"file": jd_file.getvalue()}
-            resp = requests.post(f"{API_BASE_URL}/job-descriptions/", files=files)
-            if resp.status_code in [200, 201]:
+            resp = make_api_request("/job-descriptions/", method="POST", files=files)
+            if resp:
                 st.success(f"Uploaded {jd_file.name}")
             else:
                 st.error("Upload failed!")
 
-        # 2️⃣ Manual JD entry
-        jd_text = st.text_area("Or Enter Job Description Manually")
+        st.markdown("#### 2️⃣ Enter Job Description Manually")
+        jd_text = st.text_area("Enter Job Description")
         if st.button("Save Job Description"):
             if jd_text.strip():
-                resp = requests.post(f"{API_BASE_URL}/job-descriptions/", json={"jd": jd_text})
-                if resp.status_code in [200, 201]:
+                resp = make_api_request("/job-descriptions/", method="POST", data={"jd": jd_text})
+                if resp:
                     st.success("Job description saved!")
                 else:
                     st.error("Failed to save job description.")
             else:
                 st.warning("Please enter some text before saving.")
 
-        # Display existing JDs
         st.markdown("### Existing Job Descriptions")
-        jobs = make_api_request("/job-descriptions/")
-        if jobs:
-            for j in jobs:
-                st.write(f"- {j}")
-        else:
-            st.info("No job descriptions available.")
+        jobs = make_api_request("/job-descriptions/") or []
+        for j in jobs:
+            st.write(f"- {j}")
 
+    # ------------------ Evaluate Resume ------------------ #
     elif page == "Evaluate Resume":
-        st.markdown("### 🔍 Evaluate Resume")
-        # Keep your evaluation logic here
+        st.title("🔍 Evaluate Resume")
+        # Keep your existing evaluation interface logic here
 
+    # ------------------ View Evaluations ------------------ #
     elif page == "View Evaluations":
-        view_evaluations()
+        st.title("📋 View Evaluations")
+        evaluations = make_api_request("/evaluations/") or []
+        if evaluations:
+            for e in evaluations:
+                st.json(e)
+        else:
+            st.info("No evaluations yet.")
 
+    # ------------------ Batch Processing ------------------ #
     elif page == "Batch Processing":
-        st.markdown("### 📦 Batch Processing")
-        # Keep your batch logic here
+        st.title("📦 Batch Processing")
+        st.info("Batch processing logic goes here.")
 
+    # ------------------ Manage Data ------------------ #
     elif page == "Manage Data":
-        st.markdown("### 🗂️ Manage Data")
-        # Keep your data management logic here
+        st.title("🗂️ Manage Data")
+        st.info("Data management logic goes here.")
+
 
 if __name__ == "__main__":
     main()
-
