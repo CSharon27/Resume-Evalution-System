@@ -762,7 +762,7 @@ def upload_resume():
                         progress_bar.progress(25)
                         status_text.text("📤 Uploading file...")
                         
-                        response = requests.post(f"{API_BASE_URL}/upload/resume", files=files, data=data, timeout=30)
+                        response = requests.post(f"{API_BASE_URL}/resume", files=files, data=data, timeout=30)
                         
                         progress_bar.progress(75)
                         status_text.text("🔍 Processing resume...")
@@ -981,7 +981,7 @@ def upload_job_description():
                         progress_bar.progress(25)
                         status_text.text("📤 Uploading job description...")
                         
-                        result = make_api_request("/upload/job-description", "POST", data)
+                        result = make_api_request("/job-description", "POST", data)
                         
                         progress_bar.progress(75)
                         status_text.text("🔍 Processing requirements...")
@@ -2222,3 +2222,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
