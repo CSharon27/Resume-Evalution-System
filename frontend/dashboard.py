@@ -1,229 +1,559 @@
+# frontend/dashboard.py
 import streamlit as st
+import requests
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import requests
 from datetime import datetime
+import hashlib
+import json
 
-API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your backend URL
+# ====== Configure your backend URL here ======
+API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # change if needed
 
-# ------------------ Utility Functions ------------------ #
-def make_api_request(endpoint, method="GET", data=None, files=None):
-    url = f"{API_BASE_URL}{endpoint}"
-    try:
-        if method == "GET":
-            response = requests.get(url, timeout=10)
-        elif method == "POST":
-            response = requests.post(url, json=data, files=files, timeout=30)
-        elif method == "DELETE":
-            response = requests.delete(url, timeout=10)
-        if response.status_code in [200, 201]:
-            return response.json()
-        return None
-    except Exception as e:
-        return None
+# ================= Helper / API utilities =================
+def _try_endpoints(endpoint_variants):
+    """Try endpoints in order; return (response_obj, used_url) or (None, None)."""
+    for ep in endpoint_variants:
+        url = API_BASE_URL.rstrip("/") + ep  # ep already contains leading slash
+        try:
+            resp = requests.get(url, timeout=6)
+        except Exception:
+            resp = None
+        if resp is None:
+            continue
+        if resp.status_code in (200, 201):
+            try:
+                return resp.json(), url
+            except Exception:
+                return resp.text, url
+        # allow 204 for delete etc.
+    return None, None
 
-def create_metric_card(title, value, icon, color):
-    return f"""
-    <div style="background: {color}; padding: 1rem; border-radius: 0.5rem; color: white; text-align: center; margin-bottom: 0.5rem;">
-        <div style="font-size: 1.5rem;">{icon}</div>
-        <div style="font-size: 1.2rem; font-weight: bold;">{value}</div>
-        <div>{title}</div>
-    </div>
+def call_api(method, endpoint, data=None, files=None, timeout=20):
     """
+    Attempt API call. Tries endpoint and endpoint with/without trailing slash.
+    Returns (success_flag, parsed_json_or_status).
+    """
+    variants = [endpoint]
+    if endpoint.endswith("/"):
+        variants.append(endpoint.rstrip("/"))
+    else:
+        variants.append(endpoint + "/")
 
-def display_evaluation_results(evaluation):
-    """Display detailed evaluation charts and suggestions"""
-    # Skill Gap
-    st.markdown("#### 🎯 Skill Gap Analysis")
-    matched_skills = evaluation.get('matched_skills', [])
-    missing_skills = evaluation.get('missing_skills', [])
-    all_skills = matched_skills + missing_skills
+    for ep in variants:
+        url = API_BASE_URL.rstrip("/") + ep
+        try:
+            if method.upper() == "GET":
+                r = requests.get(url, timeout=timeout)
+            elif method.upper() == "POST":
+                if files is not None:
+                    # when sending files, `data` can be used for form fields
+                    r = requests.post(url, files=files, data=data, timeout=timeout)
+                else:
+                    r = requests.post(url, json=data, timeout=timeout)
+            elif method.upper() == "DELETE":
+                r = requests.delete(url, timeout=timeout)
+            else:
+                return False, f"Unsupported method {method}"
+        except Exception as e:
+            # network error -> try next variant
+            continue
 
-    categories = {'Technical Skills': [], 'Soft Skills': [], 'Tools & Technologies': []}
-    for skill in all_skills:
-        sl = skill.lower()
-        if any(tech in sl for tech in ['python','java','javascript','react','angular','vue','node','sql','mongodb','postgresql','docker','aws','azure']):
-            categories['Technical Skills'].append(skill)
-        elif any(soft in sl for soft in ['communication','leadership','teamwork','problem solving','analytical','creative','management']):
-            categories['Soft Skills'].append(skill)
+        if r.status_code in (200, 201):
+            # try parse json
+            try:
+                return True, r.json()
+            except Exception:
+                return True, r.text
+        elif r.status_code == 204:
+            return True, None
         else:
-            categories['Tools & Technologies'].append(skill)
+            # try next variant
+            continue
 
-    matched_counts = [len([s for s in v if s in matched_skills]) for v in categories.values()]
-    missing_counts = [len([s for s in v if s in missing_skills]) for v in categories.values()]
+    return False, None
 
-    fig = go.Figure()
-    fig.add_trace(go.Bar(x=list(categories.keys()), y=matched_counts, name='Matched Skills', marker_color='#4ecdc4', text=matched_counts, textposition='auto'))
-    fig.add_trace(go.Bar(x=list(categories.keys()), y=missing_counts, name='Missing Skills', marker_color='#ff6b6b', text=missing_counts, textposition='auto'))
-    fig.update_layout(barmode='stack', title="Skill Gap Analysis by Category", height=400, plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
-    st.plotly_chart(fig, use_container_width=True)
+def normalize_list_response(resp, key_names):
+    """
+    Given a response `resp`, try to normalize to a Python list.
+    key_names: a list of candidate keys to search for (e.g. ["resumes","data"])
+    """
+    if resp is None:
+        return None
+    if isinstance(resp, list):
+        return resp
+    if isinstance(resp, dict):
+        # try provided keys
+        for k in key_names:
+            if k in resp and isinstance(resp[k], list):
+                return resp[k]
+        # try to find first list value
+        for v in resp.values():
+            if isinstance(v, list):
+                return v
+        # it's a single object -> return as single-item list
+        return [resp]
+    # if it's a string or other -> no list
+    return None
 
-    # Resume Quality
-    st.markdown("#### 📋 Resume Quality Analysis")
-    resume_data = evaluation.get('resume_data', {})
-    has_skills = len(resume_data.get('skills', [])) > 0
-    has_education = len(resume_data.get('education', [])) > 0
-    has_experience = len(resume_data.get('experience', [])) > 0
-    has_projects = len(resume_data.get('projects', [])) > 0
-    has_certifications = len(resume_data.get('certifications', [])) > 0
+# ================= Session-state initialization (local fallback) ==============
+if "local_resumes" not in st.session_state:
+    st.session_state.local_resumes = []  # list of dicts: id, filename, student_name, student_email, created_at
+if "local_jobs" not in st.session_state:
+    st.session_state.local_jobs = []     # list of dicts: id, title, company, location, content, created_at
+if "local_evals" not in st.session_state:
+    st.session_state.local_evals = []    # list of evaluation dicts
 
-    completeness_score = sum([has_skills, has_education, has_experience, has_projects, has_certifications]) * 20
-    total_skills = len(resume_data.get('skills', []))
-    relevance_score = (len(matched_skills) / max(total_skills, 1)) * 100
-    experience_score = min(len(resume_data.get('experience', [])) * 2 * 10, 100)
-    quality_score = (completeness_score + relevance_score + experience_score) / 3
+def next_local_id(collection):
+    return (max([item.get("id", 0) for item in collection]) + 1) if collection else 1
 
-    df = pd.DataFrame({
-        'Metric': ['Content Completeness', 'Skill Relevance', 'Experience Level', 'Overall Quality'],
-        'Score': [completeness_score, relevance_score, experience_score, quality_score]
-    })
+# =================== Data getters that prefer backend but fall back ===============
+def get_resumes():
+    ok, resp = call_api("GET", "/resumes")
+    if ok:
+        lst = normalize_list_response(resp, ["resumes"])
+        if lst is not None:
+            return lst, True
+    # fallback: try GET /resumes/ specifically
+    ok2, resp2 = call_api("GET", "/resumes/")
+    if ok2:
+        lst = normalize_list_response(resp2, ["resumes"])
+        if lst is not None:
+            return lst, True
+    # fallback to local
+    return st.session_state.local_resumes, False
 
-    fig2 = go.Figure(go.Scatterpolar(
-        r=df['Score'], theta=df['Metric'], fill='toself',
-        line_color='#667eea', fillcolor='rgba(102,126,234,0.3)', name='Resume Quality'
-    ))
-    fig2.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 100])), showlegend=True, height=400)
-    st.plotly_chart(fig2, use_container_width=True)
+def get_job_descriptions():
+    ok, resp = call_api("GET", "/job-descriptions")
+    if ok:
+        lst = normalize_list_response(resp, ["job_descriptions", "job_descriptions_list", "jobs"])
+        if lst is not None:
+            return lst, True
+    ok2, resp2 = call_api("GET", "/job-descriptions/")
+    if ok2:
+        lst = normalize_list_response(resp2, ["job_descriptions", "job_descriptions_list", "jobs"])
+        if lst is not None:
+            return lst, True
+    return st.session_state.local_jobs, False
 
-    # AI Optimization
-    st.markdown("#### 🤖 AI-Powered Optimization Suggestions")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("##### 🎯 Immediate Improvements")
-        immediate_tips = []
-        if missing_skills: immediate_tips.append(f"**Learn these skills:** {', '.join(missing_skills[:3])}")
-        if 'Limited project portfolio' in evaluation.get('weaknesses', []): immediate_tips.append("**Add 2-3 detailed projects**")
-        if 'No relevant certifications' in evaluation.get('weaknesses', []): immediate_tips.append("**Get certified** in key technologies")
-        if not immediate_tips: immediate_tips.append("**Resume looks good!** Focus on interview preparation")
-        for tip in immediate_tips: st.markdown(f"• {tip}")
+def get_evaluations():
+    ok, resp = call_api("GET", "/evaluations")
+    if ok:
+        lst = normalize_list_response(resp, ["evaluations"])
+        if lst is not None:
+            return lst, True
+    ok2, resp2 = call_api("GET", "/evaluations/")
+    if ok2:
+        lst = normalize_list_response(resp2, ["evaluations"])
+        if lst is not None:
+            return lst, True
+    return st.session_state.local_evals, False
 
-    with col2:
-        st.markdown("##### 🚀 Advanced Optimizations")
-        for tip in ["**Quantify achievements**", "**Use action verbs**", "**Tailor keywords** to job descriptions", "**Add a professional summary**"]:
-            st.markdown(f"• {tip}")
+# =================== Upload helpers ===================
+def upload_resume_to_backend(file_bytes, filename, student_name="", student_email=""):
+    files = {"file": (filename, file_bytes)}
+    data = {"student_name": student_name, "student_email": student_email}
+    ok, resp = call_api("POST", "/resumes/", data=data, files=files)
+    return ok, resp
 
-# ------------------ Pages ------------------ #
-def dashboard_page():
-    st.markdown("### 📊 Dashboard Overview")
-    resumes_resp = make_api_request("/resumes/") or {"resumes": []}
-    jobs_resp = make_api_request("/job-descriptions/") or {"job_descriptions": []}
-    eval_resp = make_api_request("/evaluations/") or {"evaluations": []}
+def upload_job_to_backend(file_bytes, filename, title="", company="", location=""):
+    files = {"file": (filename, file_bytes)}
+    data = {"title": title, "company": company, "location": location}
+    ok, resp = call_api("POST", "/job-descriptions/", data=data, files=files)
+    return ok, resp
 
-    num_resumes = len(resumes_resp.get("resumes", []))
-    num_jobs = len(jobs_resp.get("job_descriptions", []))
-    num_eval = len(eval_resp.get("evaluations", []))
+def post_evaluation_to_backend(payload):
+    ok, resp = call_api("POST", "/evaluations/", data=payload)
+    return ok, resp
 
-    st.markdown("#### 📊 Quick Stats")
+# =================== Mock evaluation generator (fallback) ===================
+def deterministic_score(seed_str):
+    # deterministic pseudo-random using hash
+    h = int(hashlib.sha256(seed_str.encode("utf-8")).hexdigest()[:8], 16)
+    return 50 + (h % 51)  # 50..100
+
+def generate_mock_evaluation(resume, job):
+    # resume and job are dicts; use filename/title to seed
+    seed = f"{resume.get('filename','')}-{job.get('title', job.get('filename',''))}"
+    overall = deterministic_score(seed)
+    hard = max(30, overall - 10)
+    semantic = min(100, overall + 5)
+    matched = ["communication", "teamwork"] if overall > 60 else []
+    missing = ["aws", "docker"] if overall < 80 else []
+    eval_entry = {
+        "id": next_local_id(st.session_state.local_evals),
+        "resume_filename": resume.get("filename"),
+        "job_title": job.get("title", job.get("filename")),
+        "relevance_score": float(overall),
+        "hard_match_score": float(hard),
+        "semantic_match_score": float(semantic),
+        "verdict": "High" if overall >= 80 else ("Medium" if overall >= 60 else "Low"),
+        "matched_skills": matched,
+        "missing_skills": missing,
+        "strengths": ["Clear formatting", "Relevant internships"] if overall > 60 else [],
+        "weaknesses": ["Missing cloud experience"] if overall < 80 else [],
+        "improvement_suggestions": "Quantify achievements, add projects." if overall < 85 else "Great resume!",
+        "overall_feedback": "Good match." if overall >= 60 else "Needs improvement.",
+        "created_at": datetime.now().isoformat()
+    }
+    return eval_entry
+
+# =================== UI: Pages implementations ===================
+def page_dashboard():
+    st.header("📊 Dashboard")
+    resumes, r_ok = get_resumes()
+    jobs, j_ok = get_job_descriptions()
+    evals, e_ok = get_evaluations()
+
+    num_resumes = len(resumes) if resumes else 0
+    num_jobs = len(jobs) if jobs else 0
+    num_evals = len(evals) if evals else 0
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Resumes", num_resumes)
     col2.metric("Job Descriptions", num_jobs)
-    col3.metric("Evaluations", num_eval)
-    if num_eval > 0:
-        avg_score = sum(e.get('relevance_score',0) for e in eval_resp.get("evaluations",[])) / num_eval
+    col3.metric("Evaluations", num_evals)
+    if num_evals > 0:
+        avg_score = sum(e.get("relevance_score", 0) for e in evals) / num_evals
         col4.metric("Avg Score", f"{avg_score:.1f}")
+    else:
+        col4.metric("Avg Score", "N/A")
 
-def upload_resume_page():
-    st.markdown("### 📄 Upload Resume")
-    uploaded_files = st.file_uploader("Choose resume files", type=['pdf','docx'], accept_multiple_files=True)
-    if uploaded_files:
-        for file in uploaded_files:
-            st.markdown(f"**Uploaded:** {file.name}")
-            try:
-                response = requests.post(f"{API_BASE_URL}/resumes/", files={"file": (file.name, file)}, timeout=20)
-                if response.status_code in [200,201]:
-                    st.success(f"{file.name} uploaded successfully!")
-                else:
-                    st.error(f"Failed to upload {file.name}")
-            except Exception as e:
-                st.error(f"Error uploading {file.name}: {e}")
+    st.markdown("---")
+    st.subheader("Quick Actions")
+    c1, c2, c3 = st.columns(3)
+    if c1.button("Upload Resume"):
+        st.session_state.page = "Upload Resume"
+    if c2.button("Upload Job Description"):
+        st.session_state.page = "Upload Job Description"
+    if c3.button("Evaluate Resume"):
+        st.session_state.page = "Evaluate Resume"
 
-def upload_job_description_page():
-    st.markdown("### 💼 Upload Job Description")
-    uploaded_files = st.file_uploader("Choose job description files", type=['pdf','docx'], accept_multiple_files=True)
-    if uploaded_files:
-        for file in uploaded_files:
-            st.markdown(f"**Uploaded:** {file.name}")
-            try:
-                response = requests.post(f"{API_BASE_URL}/job-descriptions/", files={"file": (file.name, file)}, timeout=20)
-                if response.status_code in [200,201]:
-                    st.success(f"{file.name} uploaded successfully!")
-                else:
-                    st.error(f"Failed to upload {file.name}")
-            except Exception as e:
-                st.error(f"Error uploading {file.name}: {e}")
+    st.markdown("---")
+    st.subheader("Recent Evaluations")
+    if evals:
+        recent = sorted(evals, key=lambda x: x.get("created_at", ""), reverse=True)[:5]
+        for ev in recent:
+            st.write(f"• ID {ev.get('id')} — {ev.get('resume_filename')} vs {ev.get('job_title')} — {ev.get('relevance_score'):.1f} — {ev.get('verdict')}")
+    else:
+        st.info("No evaluations yet (backend may be down or no data uploaded).")
 
-def evaluate_resume_page():
-    st.markdown("### 🔍 Evaluate Resume")
-    resumes_resp = make_api_request("/resumes/") or {"resumes":[]}
-    jobs_resp = make_api_request("/job-descriptions/") or {"job_descriptions":[]}
-
-    resume_options = [r["filename"] for r in resumes_resp.get("resumes",[])]
-    job_options = [j["title"] for j in jobs_resp.get("job_descriptions",[])]
-
-    selected_resume = st.selectbox("Select Resume", options=resume_options)
-    selected_job = st.selectbox("Select Job Description", options=job_options)
-
-    if st.button("Evaluate"):
-        st.info("Evaluation in progress...")
-        data = {"resume_name": selected_resume, "job_name": selected_job}
-        result = make_api_request("/evaluations/", method="POST", data=data)
-        if result:
-            st.success("Evaluation completed!")
-            display_evaluation_results(result)
+def page_upload_resume():
+    st.header("📄 Upload Resume")
+    with st.form("upload_resume_form"):
+        student_name = st.text_input("Student name", "")
+        student_email = st.text_input("Student email", "")
+        uploaded = st.file_uploader("Select resume file (pdf/docx/txt)", type=["pdf", "docx", "txt"])
+        submit = st.form_submit_button("Upload")
+    if submit:
+        if not uploaded:
+            st.error("Please choose a file.")
+            return
+        file_bytes = uploaded.getvalue()
+        filename = uploaded.name
+        ok, resp = upload_resume_to_backend(file_bytes, filename, student_name, student_email)
+        if ok:
+            st.success("Uploaded to backend successfully.")
+            # update local caches if backend returned created resource
+            created = None
+            if isinstance(resp, dict):
+                # try to extract resource (some backends return {"id":..., ...})
+                # add to local view if it seems like a resume object
+                if "filename" in resp or "student_name" in resp:
+                    created = resp
+            # if no resource returned, still append a local representation for UI
+            if created is None:
+                created = {
+                    "id": next_local_id(st.session_state.local_resumes),
+                    "filename": filename,
+                    "student_name": student_name or "Unknown",
+                    "student_email": student_email or "Unknown",
+                    "created_at": datetime.now().isoformat()
+                }
+            st.session_state.local_resumes.append(created)
         else:
-            st.error("Evaluation failed or API unavailable.")
+            st.warning("Backend upload failed — saving locally for UI use.")
+            created = {
+                "id": next_local_id(st.session_state.local_resumes),
+                "filename": filename,
+                "student_name": student_name or "Unknown",
+                "student_email": student_email or "Unknown",
+                "created_at": datetime.now().isoformat()
+            }
+            st.session_state.local_resumes.append(created)
+            st.success("Saved locally (temporary).")
 
-def view_evaluations_page():
-    st.markdown("### 📋 View Evaluations")
-    eval_resp = make_api_request("/evaluations/") or {"evaluations":[]}
-    evaluations = eval_resp.get("evaluations",[])
-    if not evaluations:
-        st.info("No evaluations found.")
+def page_upload_job():
+    st.header("💼 Upload Job Description")
+    with st.form("upload_job_form"):
+        title = st.text_input("Job title", "")
+        company = st.text_input("Company", "")
+        location = st.text_input("Location", "")
+        uploaded = st.file_uploader("Select job description file (pdf/docx/txt)", type=["pdf", "docx", "txt"])
+        submit = st.form_submit_button("Upload")
+    if submit:
+        if not uploaded and not title:
+            st.error("Please provide a file or a title.")
+            return
+        filename = uploaded.name if uploaded else f"{title}.txt"
+        file_bytes = uploaded.getvalue() if uploaded else b""
+        ok, resp = upload_job_to_backend(file_bytes, filename, title, company, location)
+        if ok:
+            st.success("Uploaded to backend successfully.")
+            created = None
+            if isinstance(resp, dict):
+                if "title" in resp or "filename" in resp:
+                    created = resp
+            if created is None:
+                created = {
+                    "id": next_local_id(st.session_state.local_jobs),
+                    "title": title or filename,
+                    "company": company or "Unknown",
+                    "location": location or "Unknown",
+                    "content": "",
+                    "created_at": datetime.now().isoformat()
+                }
+            st.session_state.local_jobs.append(created)
+        else:
+            st.warning("Backend upload failed — saving locally for UI use.")
+            created = {
+                "id": next_local_id(st.session_state.local_jobs),
+                "title": title or filename,
+                "company": company or "Unknown",
+                "location": location or "Unknown",
+                "content": "",
+                "created_at": datetime.now().isoformat()
+            }
+            st.session_state.local_jobs.append(created)
+            st.success("Saved locally (temporary).")
+
+def page_evaluate():
+    st.header("🔍 Evaluate Resume")
+    resumes, r_ok = get_resumes()
+    jobs, j_ok = get_job_descriptions()
+
+    if not resumes:
+        st.info("No resumes available. Upload one first.")
+        return
+    if not jobs:
+        st.info("No job descriptions available. Upload one first.")
         return
 
-    df = pd.DataFrame(evaluations)
-    st.dataframe(df)
+    # Build selection lists
+    resume_options = [(r.get("id") if "id" in r else r.get("filename"), r.get("filename")) for r in resumes]
+    job_options = [(j.get("id") if "id" in j else j.get("title", j.get("filename")), j.get("title", j.get("filename"))) for j in jobs]
 
-def batch_processing_page():
-    st.markdown("### 📦 Batch Processing")
-    st.info("Upload multiple resumes/job descriptions and evaluate in batch.")
-    uploaded_resumes = st.file_uploader("Upload Resumes", type=['pdf','docx'], accept_multiple_files=True, key="batch_resumes")
-    uploaded_jobs = st.file_uploader("Upload Job Descriptions", type=['pdf','docx'], accept_multiple_files=True, key="batch_jobs")
-    if st.button("Run Batch Evaluation"):
-        st.info("Batch evaluation started...")
-        st.success("Batch processing feature will be implemented here.")
+    resume_map = {str(k): r for k, r in zip([x[0] for x in resume_options], resumes)}
+    job_map = {str(k): j for k, j in zip([x[0] for x in job_options], jobs)}
 
-def manage_data_page():
-    st.markdown("### 🗂️ Manage Data")
-    st.info("View and delete resumes, job descriptions, and evaluations.")
-    st.success("Manage Data feature will be implemented here.")
+    resume_choice = st.selectbox("Choose resume", options=[str(x[0]) for x in resume_options],
+                                format_func=lambda k: resume_map.get(k, {}).get("filename", k))
+    job_choice = st.selectbox("Choose job description", options=[str(x[0]) for x in job_options],
+                              format_func=lambda k: job_map.get(k, {}).get("title", k))
 
-# ------------------ Main App ------------------ #
+    if st.button("Run Evaluation"):
+        resume_obj = resume_map[resume_choice]
+        job_obj = job_map[job_choice]
+
+        # Try backend evaluation: we post a payload to evaluations endpoint
+        payload = {
+            "resume": resume_obj,
+            "job_description": job_obj
+        }
+        ok, resp = post_evaluation_to_backend(payload)
+        if ok and isinstance(resp, dict):
+            st.success("Evaluation received from backend.")
+            # if backend returned an evaluation dict, show and store it
+            eval_obj = resp
+            # ensure created_at and id exist
+            if "id" not in eval_obj:
+                eval_obj["id"] = next_local_id(st.session_state.local_evals)
+            if "created_at" not in eval_obj:
+                eval_obj["created_at"] = datetime.now().isoformat()
+            st.session_state.local_evals.append(eval_obj)
+            display_single_evaluation(eval_obj)
+        else:
+            st.warning("Backend evaluation not available — generating local mock evaluation.")
+            mock = generate_mock_evaluation(resume_obj, job_obj)
+            st.session_state.local_evals.append(mock)
+            display_single_evaluation(mock)
+
+def display_single_evaluation(ev):
+    st.markdown(f"### Evaluation: {ev.get('resume_filename','resume')} → {ev.get('job_title','job')}")
+    st.metric("Relevance score", f"{ev.get('relevance_score',0):.1f}")
+    st.write("**Verdict:**", ev.get("verdict", "N/A"))
+    # show matched/missing
+    st.write("**Matched skills:**", ", ".join(ev.get("matched_skills", [])) or "None")
+    st.write("**Missing skills:**", ", ".join(ev.get("missing_skills", [])) or "None")
+    # show charts if scores exist
+    if "hard_match_score" in ev and "semantic_match_score" in ev:
+        df = pd.DataFrame({
+            "type": ["Hard", "Semantic", "Overall"],
+            "score": [ev.get("hard_match_score",0), ev.get("semantic_match_score",0), ev.get("relevance_score",0)]
+        })
+        fig = px.bar(df, x="type", y="score", title="Score breakdown")
+        st.plotly_chart(fig, use_container_width=True)
+    st.write("**Feedback:**")
+    st.write(ev.get("overall_feedback", ev.get("improvement_suggestions", "")))
+
+def page_view_evaluations():
+    st.header("📋 View Evaluations")
+    evals, ok = get_evaluations()
+    if not evals:
+        st.info("No evaluations available.")
+        return
+    df = pd.DataFrame(evals)
+    st.dataframe(df, use_container_width=True)
+
+    # allow selecting an evaluation to see details
+    eval_ids = [str(e.get("id")) for e in evals]
+    choice = st.selectbox("Select evaluation to inspect", options=eval_ids, format_func=lambda x: f"ID {x}")
+    sel = next((e for e in evals if str(e.get("id")) == choice), None)
+    if sel:
+        display_single_evaluation(sel)
+
+def page_batch_processing():
+    st.header("📦 Batch Processing")
+    st.info("Upload multiple resumes and/or job descriptions, then run batch evaluations.")
+    uploaded_resumes = st.file_uploader("Upload multiple resumes", type=["pdf","docx","txt"], accept_multiple_files=True)
+    uploaded_jobs = st.file_uploader("Upload multiple job descriptions", type=["pdf","docx","txt"], accept_multiple_files=True)
+    if st.button("Upload all and run mock evaluations"):
+        # upload resumes
+        uploaded_res_names = []
+        for f in uploaded_resumes:
+            filename = f.name
+            ok, resp = upload_resume_to_backend(f.getvalue(), filename)
+            if ok:
+                uploaded_res_names.append(filename)
+            else:
+                # local fallback create
+                created = {
+                    "id": next_local_id(st.session_state.local_resumes),
+                    "filename": filename,
+                    "student_name": "Unknown",
+                    "student_email": "unknown",
+                    "created_at": datetime.now().isoformat()
+                }
+                st.session_state.local_resumes.append(created)
+                uploaded_res_names.append(filename)
+        # upload jobs
+        uploaded_job_titles = []
+        for f in uploaded_jobs:
+            filename = f.name
+            ok, resp = upload_job_to_backend(f.getvalue(), filename)
+            if ok:
+                uploaded_job_titles.append(filename)
+            else:
+                created = {
+                    "id": next_local_id(st.session_state.local_jobs),
+                    "title": filename,
+                    "company": "Unknown",
+                    "location": "Unknown",
+                    "created_at": datetime.now().isoformat()
+                }
+                st.session_state.local_jobs.append(created)
+                uploaded_job_titles.append(filename)
+        st.success("Files uploaded (backend or local fallback). Now generating mock evaluations...")
+        # create mock evaluations pairing each resume with each job (simple)
+        resumes = st.session_state.local_resumes if st.session_state.local_resumes else []
+        jobs = st.session_state.local_jobs if st.session_state.local_jobs else []
+        for r in resumes:
+            for j in jobs:
+                mock = generate_mock_evaluation(r, j)
+                st.session_state.local_evals.append(mock)
+        st.success("Batch mock evaluations created in local session state.")
+
+def page_manage_data():
+    st.header("🗂 Manage Data")
+    st.subheader("Resumes")
+    resumes, r_ok = get_resumes()
+    for r in resumes:
+        cols = st.columns([4,1])
+        cols[0].write(f"{r.get('id','-')} — {r.get('filename')} — {r.get('student_name','')}")
+        if cols[1].button(f"Delete resume {r.get('id')}", key=f"del_resume_{r.get('id')}"):
+            # attempt backend delete
+            # try /resumes/{id} then /resumes/ with payload
+            deleted = False
+            if "id" in r:
+                ok, _ = call_api("DELETE", f"/resumes/{r['id']}")
+                if ok:
+                    st.success("Deleted on backend (if endpoint exists). Refreshing view.")
+                    deleted = True
+            # remove from local store if present
+            st.session_state.local_resumes = [x for x in st.session_state.local_resumes if x.get("id") != r.get("id")]
+            if not deleted:
+                st.info("Removed locally (backend may not have delete endpoint).")
+
+    st.markdown("---")
+    st.subheader("Job Descriptions")
+    jobs, j_ok = get_job_descriptions()
+    for j in jobs:
+        cols = st.columns([4,1])
+        cols[0].write(f"{j.get('id','-')} — {j.get('title')} — {j.get('company','')}")
+        if cols[1].button(f"Delete job {j.get('id')}", key=f"del_job_{j.get('id')}"):
+            if "id" in j:
+                ok, _ = call_api("DELETE", f"/job-descriptions/{j['id']}")
+                if ok:
+                    st.success("Deleted on backend (if endpoint exists).")
+            st.session_state.local_jobs = [x for x in st.session_state.local_jobs if x.get("id") != j.get("id")]
+            st.info("Removed locally (if backend delete not supported).")
+
+    st.markdown("---")
+    st.subheader("Evaluations")
+    evals, e_ok = get_evaluations()
+    for ev in evals:
+        cols = st.columns([4,1])
+        cols[0].write(f"ID {ev.get('id')} — {ev.get('resume_filename')} vs {ev.get('job_title')} — {ev.get('relevance_score')}")
+        if cols[1].button(f"Delete eval {ev.get('id')}", key=f"del_eval_{ev.get('id')}"):
+            if "id" in ev:
+                ok, _ = call_api("DELETE", f"/evaluations/{ev['id']}")
+                if ok:
+                    st.success("Deleted on backend (if endpoint exists).")
+            st.session_state.local_evals = [x for x in st.session_state.local_evals if x.get("id") != ev.get("id")]
+            st.info("Removed locally (if backend delete not supported).")
+
+# ================= Main app wiring =================
 def main():
-    if 'page' not in st.session_state:
+    st.set_page_config(page_title="Resume Evaluation System", layout="wide")
+    if "page" not in st.session_state:
         st.session_state.page = "Dashboard"
 
-    st.sidebar.markdown("## 🗂 Navigation")
-    pages = {
-        "Dashboard": dashboard_page,
-        "Upload Resume": upload_resume_page,
-        "Upload Job Description": upload_job_description_page,
-        "Evaluate Resume": evaluate_resume_page,
-        "View Evaluations": view_evaluations_page,
-        "Batch Processing": batch_processing_page,
-        "Manage Data": manage_data_page
-    }
+    with st.sidebar:
+        st.title("Resume Eval")
+        pages = ["Dashboard", "Upload Resume", "Upload Job Description", "Evaluate Resume", "View Evaluations", "Batch Processing", "Manage Data"]
+        for p in pages:
+            if st.button(p):
+                st.session_state.page = p
+                st.experimental_rerun()
 
-    for name in pages:
-        if st.sidebar.button(name):
-            st.session_state.page = name
-            st.experimental_rerun()
+        st.markdown("---")
+        st.write("API status:")
+        ok, _ = call_api("GET", "/")
+        if ok:
+            st.success("Backend reachable")
+        else:
+            st.error("Backend not reachable — using local fallback UI")
 
-    st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
+    st.markdown("<h1>📄 Resume Evaluation System</h1>", unsafe_allow_html=True)
 
-    # Display selected page
-    pages[st.session_state.page]()
+    # route to page
+    page = st.session_state.page
+    if page == "Dashboard":
+        page_dashboard()
+    elif page == "Upload Resume":
+        page_upload_resume()
+    elif page == "Upload Job Description":
+        page_upload_job()
+    elif page == "Evaluate Resume":
+        page_evaluate()
+    elif page == "View Evaluations":
+        page_view_evaluations()
+    elif page == "Batch Processing":
+        page_batch_processing()
+    elif page == "Manage Data":
+        page_manage_data()
+    else:
+        st.info("Select a page from the sidebar.")
 
 if __name__ == "__main__":
     main()
