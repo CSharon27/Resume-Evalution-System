@@ -30,14 +30,6 @@ st.markdown("""
         padding-top: 30px;
         border-right: 1px solid #e5e7eb;
     }
-    [data-testid="stSidebar"] h1, 
-    [data-testid="stSidebar"] h2, 
-    [data-testid="stSidebar"] h3 {
-        color: #111827 !important;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 20px;
-    }
 
     /* Sidebar Navigation */
     [role="radiogroup"] > label {
@@ -69,6 +61,27 @@ st.markdown("""
         transform: translateX(8px);
     }
 
+    /* Sidebar quick stats */
+    .quick-card {
+        background: #f9fafb;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid #e5e7eb;
+    }
+    .quick-card h4 {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #475569;
+    }
+    .quick-card p {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0c4a6e;
+    }
+
     /* Stat Cards */
     .card {
         background: #ffffff;
@@ -81,16 +94,6 @@ st.markdown("""
     .card:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 20px rgba(0,0,0,0.12);
-    }
-    .card h3 {
-        color: #475569;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-    }
-    .card h2 {
-        color: #0c4a6e;
-        font-size: 2rem;
-        margin: 0;
     }
 
     /* Buttons */
@@ -109,43 +112,52 @@ st.markdown("""
         transform: scale(1.05);
         box-shadow: 0 6px 14px rgba(14, 165, 233, 0.4);
     }
-
-    /* Info Alerts */
-    .stAlert {
-        border-radius: 10px;
-        font-size: 0.95rem;
-    }
     </style>
 """, unsafe_allow_html=True)
 
 # --------------------------
-# Sidebar Navigation
+# Sidebar: Branding + Navigation + Quick Stats
 # --------------------------
-st.sidebar.title("📑 Resume Evaluation")
+st.sidebar.title("📑 Resume Evaluation System")
+
+# Fetch backend + stats
+backend_status = "🟢 Online"
+resumes = jobs = evaluations = []
+try:
+    resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
+    jobs = requests.get(f"{BASE_URL}/job-descriptions").json().get("job_descriptions", [])
+    evaluations = requests.get(f"{BASE_URL}/evaluations").json().get("evaluations", [])
+except:
+    backend_status = "🔴 Offline"
+
+# Navigation
 page = st.sidebar.radio(
     "Navigate",
-    ["🏠 Dashboard", "📂 Upload Resume", "📋 Job Descriptions",
-     "⚡ Batch Processing", "📊 Manage Data"]
+    ["🏠 Dashboard", "📂 Upload Resume", "📝 Evaluate Resume",
+     "📋 Job Descriptions", "⚡ Batch Processing",
+     "📑 View Evaluations", "📊 Manage Data"]
 )
 
+# Backend status
+st.sidebar.markdown(f"**Backend Status:** {backend_status}")
+
+# Quick stats in sidebar
+st.sidebar.markdown("### ⚡ Quick Stats")
+st.sidebar.markdown(f"<div class='quick-card'><h4>Resumes</h4><p>{len(resumes)}</p></div>", unsafe_allow_html=True)
+st.sidebar.markdown(f"<div class='quick-card'><h4>Jobs</h4><p>{len(jobs)}</p></div>", unsafe_allow_html=True)
+st.sidebar.markdown(f"<div class='quick-card'><h4>Evaluations</h4><p>{len(evaluations)}</p></div>", unsafe_allow_html=True)
+
 # --------------------------
-# Branding Header
+# Helper: Page Header
 # --------------------------
 def header(title):
     st.markdown(f"## Resume Evaluation System — {title}")
 
 # --------------------------
-# Dashboard Page
+# Pages
 # --------------------------
 if page == "🏠 Dashboard":
     header("📊 Dashboard Overview")
-
-    try:
-        resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
-        jobs = requests.get(f"{BASE_URL}/job-descriptions").json().get("job_descriptions", [])
-        evaluations = requests.get(f"{BASE_URL}/evaluations").json().get("evaluations", [])
-    except:
-        resumes, jobs, evaluations = [], [], []
 
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -157,14 +169,11 @@ if page == "🏠 Dashboard":
 
     st.markdown("### Recent Evaluations")
     if evaluations:
-        for e in evaluations:
+        for e in evaluations[:5]:
             st.markdown(f"- Resume ID: `{e.get('resume_id', '-')}`, Score: **{e.get('relevance_score', 'N/A')}%**")
     else:
         st.info("No evaluations yet.")
 
-# --------------------------
-# Upload Resume Page
-# --------------------------
 elif page == "📂 Upload Resume":
     header("📂 Upload Resume")
     uploaded_file = st.file_uploader("Upload a resume file (PDF/DOCX)", type=["pdf", "docx"])
@@ -179,24 +188,30 @@ elif page == "📂 Upload Resume":
         except:
             st.error("⚠️ Backend not reachable.")
 
-# --------------------------
-# Job Descriptions Page
-# --------------------------
+elif page == "📝 Evaluate Resume":
+    header("📝 Evaluate Resume")
+    uploaded_file = st.file_uploader("Select a resume for evaluation", type=["pdf", "docx"])
+    job_id = st.text_input("Enter Job ID for evaluation")
+    if st.button("Evaluate") and uploaded_file and job_id:
+        files = {"file": uploaded_file.getvalue()}
+        try:
+            resp = requests.post(f"{BASE_URL}/evaluate/{job_id}", files=files)
+            if resp.status_code == 200:
+                st.success("✅ Evaluation completed!")
+                st.json(resp.json())
+            else:
+                st.error("❌ Evaluation failed.")
+        except:
+            st.error("⚠️ Backend not reachable.")
+
 elif page == "📋 Job Descriptions":
     header("📋 Job Descriptions")
-    try:
-        jobs = requests.get(f"{BASE_URL}/job-descriptions").json().get("job_descriptions", [])
-    except:
-        jobs = []
     if jobs:
         for job in jobs:
             st.markdown(f"<div class='card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>", unsafe_allow_html=True)
     else:
         st.info("No job descriptions available.")
 
-# --------------------------
-# Batch Processing Page
-# --------------------------
 elif page == "⚡ Batch Processing":
     header("⚡ Batch Processing")
     st.info("Upload multiple resumes to process in bulk.")
@@ -204,19 +219,16 @@ elif page == "⚡ Batch Processing":
     if st.button("Process Batch") and batch_files:
         st.success(f"✅ {len(batch_files)} resumes queued for processing.")
 
-# --------------------------
-# Manage Data Page
-# --------------------------
+elif page == "📑 View Evaluations":
+    header("📑 View Evaluations")
+    if evaluations:
+        for e in evaluations:
+            st.markdown(f"<div class='card'>Resume: <b>{e.get('resume_id')}</b><br>Job: <b>{e.get('job_id')}</b><br>Score: <b>{e.get('relevance_score', 'N/A')}%</b></div>", unsafe_allow_html=True)
+    else:
+        st.info("No evaluations available.")
+
 elif page == "📊 Manage Data":
     header("📊 Manage Data")
-    st.info("View and manage resumes, job descriptions, and evaluations.")
-    try:
-        resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
-        jobs = requests.get(f"{BASE_URL}/job-descriptions").json().get("job_descriptions", [])
-        evaluations = requests.get(f"{BASE_URL}/evaluations").json().get("evaluations", [])
-    except:
-        resumes, jobs, evaluations = [], [], []
-
     st.subheader("📄 Resumes")
     st.write(resumes if resumes else "No resumes uploaded.")
 
