@@ -13,6 +13,92 @@ st.set_page_config(
 # --------------------------
 # Custom Styling
 # --------------------------
+# Add this just after st.set_page_config(...)
+st.markdown("""
+    <style>
+    /* General */
+    .main {
+        background-color: #f8fafc;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    h1, h2, h3, h4 {
+        font-weight: 600 !important;
+        color: #1e293b;
+    }
+
+    /* Gradient headers */
+    h1 {
+        background: linear-gradient(90deg, #1E3A8A, #2563EB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.2rem !important;
+    }
+
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #1E3A8A, #2563EB);
+        color: white;
+    }
+    section[data-testid="stSidebar"] .stMarkdown, 
+    section[data-testid="stSidebar"] label, 
+    section[data-testid="stSidebar"] div {
+        color: white !important;
+    }
+    section[data-testid="stSidebar"] button {
+        background: #2563EB !important;
+        color: white !important;
+        border-radius: 8px !important;
+        border: none !important;
+        margin: 4px 0;
+    }
+    section[data-testid="stSidebar"] button:hover {
+        background: #1E40AF !important;
+    }
+
+    /* Metric cards */
+    .metric-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .metric-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    /* Info box */
+    .info-box {
+        background: #EFF6FF;
+        border-left: 5px solid #2563EB;
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin: 10px 0;
+        color: #1e293b;
+    }
+
+    /* Progress bar */
+    .progress-container {
+        background: #e5e7eb;
+        border-radius: 999px;
+        overflow: hidden;
+        height: 20px;
+        margin: 10px 0;
+    }
+    .progress-bar {
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-radius: 999px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.markdown("""
     <style>
     /* Global */
@@ -175,3 +261,4 @@ elif page == "📊 Manage Data":
 
     st.subheader("✅ Evaluations")
     st.write(evaluations if evaluations else "No evaluations available.")
+
