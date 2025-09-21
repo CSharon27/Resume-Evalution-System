@@ -1,0 +1,59 @@
+name: Deploy Resume Evaluation System
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install backend dependencies
+      run: |
+        cd backend
+        pip install -r requirements.txt
+    
+    - name: Test backend imports
+      run: |
+        cd backend
+        python -c "import app.main; print('✅ Backend imports successful')"
+    
+    - name: Install frontend dependencies
+      run: |
+        cd frontend
+        pip install -r requirements.txt
+    
+    - name: Test frontend imports
+      run: |
+        cd frontend
+        python -c "import streamlit; print('✅ Frontend imports successful')"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to Railway
+      if: ${{ secrets.RAILWAY_TOKEN }}
+      run: |
+        echo "🚀 Deploying to Railway..."
+        # Add Railway deployment commands here
+    
+    - name: Deploy to Render
+      if: ${{ secrets.RENDER_API_KEY }}
+      run: |
+        echo "🚀 Deploying to Render..."
+        # Add Render deployment commands here
