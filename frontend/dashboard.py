@@ -138,6 +138,10 @@ def view_evaluations():
         st.info("ℹ️ No evaluations found. Please evaluate some resumes first.")
         return
 
+    # ensure evaluations is a list of dicts
+    if isinstance(evaluations, dict):
+        evaluations = [evaluations]
+
     df = pd.DataFrame(evaluations)
 
     # Summary Cards
@@ -171,7 +175,8 @@ def view_evaluations():
 
 # ------------------ Main App ------------------ #
 def main():
-    if 'page' not in st.session_state: st.session_state.page = "Dashboard"
+    if 'page' not in st.session_state: 
+        st.session_state.page = "Dashboard"
 
     st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
 
@@ -193,15 +198,18 @@ def main():
 
         # Sidebar Quick Stats
         st.markdown("### 📊 Quick Stats")
-        resumes = make_api_request("/resumes/")
-        job_descriptions = make_api_request("/job-descriptions/")
-        evaluations = make_api_request("/evaluations/")
+        resumes = make_api_request("/resumes/") or []
+        job_descriptions = make_api_request("/job-descriptions/") or []
+        evaluations = make_api_request("/evaluations/") or []
 
-        st.metric("Resumes", len(resumes) if resumes else 0)
-        st.metric("Job Descriptions", len(job_descriptions) if job_descriptions else 0)
-        st.metric("Evaluations", len(evaluations) if evaluations else 0)
-        if evaluations:
-            avg_score = sum(e['relevance_score'] for e in evaluations) / len(evaluations)
+        st.metric("Resumes", len(resumes))
+        st.metric("Job Descriptions", len(job_descriptions))
+        st.metric("Evaluations", len(evaluations))
+
+        # compute avg score safely
+        valid_scores = [e.get('relevance_score') for e in evaluations if isinstance(e, dict) and 'relevance_score' in e]
+        if valid_scores:
+            avg_score = sum(valid_scores) / len(valid_scores)
             st.metric("Avg Score", f"{avg_score:.1f}")
 
     # Main content
