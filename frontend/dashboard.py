@@ -11,24 +11,38 @@ st.set_page_config(
 )
 
 # --------------------------
-# Enhanced Styling
+# Enhanced Styling (Glassmorphism + Gradient)
 # --------------------------
 st.markdown("""
     <style>
     /* Main background */
     .main {
-        background: linear-gradient(135deg, #eef2f3 0%, #dfe9f3 100%);
-        padding: 20px;
+        background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
         font-family: "Segoe UI", sans-serif;
     }
 
     /* Sidebar */
     section[data-testid="stSidebar"] {
-        background: #0f172a;
+        background: rgba(15, 23, 42, 0.9);
+        backdrop-filter: blur(12px);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
     .stSidebar .stRadio label {
         color: #e2e8f0 !important;
         font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+    .stSidebar .stRadio label:hover {
+        background: rgba(59, 130, 246, 0.2);
+    }
+
+    /* Active Radio Button Highlight */
+    div[role='radiogroup'] label[data-checked="true"] {
+        background: linear-gradient(90deg, #2563eb, #3b82f6);
+        color: white !important;
+        font-weight: 600 !important;
     }
 
     /* Headings */
@@ -38,28 +52,29 @@ st.markdown("""
         color: #1e3a8a;
     }
 
-    /* Card */
+    /* Glassmorphic Card */
     .card {
-        background: white;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
         padding: 25px;
-        border-radius: 16px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         text-align: center;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
 
     .card h3 {
         color: #475569;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
+        font-size: 1.1rem;
+        margin-bottom: 6px;
     }
     .card h2 {
         color: #2563eb;
-        font-size: 2rem;
+        font-size: 2.2rem;
         margin: 0;
     }
 
@@ -67,21 +82,34 @@ st.markdown("""
     div.stButton > button {
         background: linear-gradient(90deg, #2563eb, #3b82f6);
         color: white;
-        border-radius: 8px;
-        padding: 0.6rem 1.2rem;
+        border-radius: 10px;
+        padding: 0.7rem 1.3rem;
         border: none;
         font-weight: 600;
-        transition: 0.2s;
+        transition: all 0.2s;
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
     }
     div.stButton > button:hover {
         background: linear-gradient(90deg, #1d4ed8, #2563eb);
-        transform: scale(1.02);
+        transform: scale(1.05);
+        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.5);
     }
 
     /* Info messages */
     .stAlert {
-        border-radius: 10px;
+        border-radius: 12px;
         font-size: 0.95rem;
+        backdrop-filter: blur(8px);
+    }
+
+    /* Job Description & Evaluations Table */
+    .data-card {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(8px);
+        border-radius: 14px;
+        padding: 16px;
+        margin-bottom: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -120,7 +148,11 @@ if page == "🏠 Dashboard":
     st.markdown("### Recent Evaluations")
     if evaluations:
         for e in evaluations:
-            st.markdown(f"- Resume ID: `{e.get('resume_id', '-')}`, Score: **{e.get('relevance_score', 'N/A')}%**")
+            st.markdown(
+                f"<div class='data-card'>Resume ID: <b>{e.get('resume_id', '-')}</b> <br> Score: "
+                f"<span style='color:#2563eb;font-weight:600;'>{e.get('relevance_score', 'N/A')}%</span></div>",
+                unsafe_allow_html=True
+            )
     else:
         st.info("No evaluations yet.")
 
@@ -152,7 +184,10 @@ elif page == "📋 Job Descriptions":
         jobs = []
     if jobs:
         for job in jobs:
-            st.markdown(f"<div class='card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>", unsafe_allow_html=True)
+            st.markdown(
+                f"<div class='data-card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>",
+                unsafe_allow_html=True
+            )
     else:
         st.info("No job descriptions available.")
 
