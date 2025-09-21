@@ -197,11 +197,16 @@ def main():
         job_descriptions = make_api_request("/job-descriptions/")
         evaluations = make_api_request("/evaluations/")
 
-        st.metric("Resumes", len(resumes) if resumes else 0)
-        st.metric("Job Descriptions", len(job_descriptions) if job_descriptions else 0)
-        st.metric("Evaluations", len(evaluations) if evaluations else 0)
+        resumes = resumes_resp.get("resumes", []) if resumes_resp else []
+        job_descriptions = jobs_resp.get("job_descriptions", []) if jobs_resp else []
+        evaluations = evaluations_resp.get("evaluations", []) if evaluations_resp else []
+        
+        st.metric("Resumes", len(resumes))
+        st.metric("Job Descriptions", len(job_descriptions))
+        st.metric("Evaluations", len(evaluations))
+
         if evaluations:
-            avg_score = sum(e['relevance_score'] for e in evaluations) / len(evaluations)
+            avg_score = sum(e.get('relevance_score', 0) for e in evaluations) / len(evaluations)
             st.metric("Avg Score", f"{avg_score:.1f}")
 
     # Main content
@@ -219,3 +224,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
