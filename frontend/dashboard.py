@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import requests
 from datetime import datetime
 
-API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your API
+API_BASE_URL = "https://resume-evalution-system-backend.onrender.com"  # Replace with your backend URL
 
 # ------------------ Utility Functions ------------------ #
 def make_api_request(endpoint, method="GET", data=None):
@@ -20,12 +20,13 @@ def make_api_request(endpoint, method="GET", data=None):
         if response.status_code in [200, 201]:
             return response.json()
         return None
-    except Exception:
+    except Exception as e:
+        print(f"API Request Failed: {e}")
         return None
 
 def create_metric_card(title, value, icon, color):
     return f"""
-    <div style="background: {color}; padding: 1rem; border-radius: 0.5rem; color: white; text-align: center;">
+    <div style="background: {color}; padding: 1rem; border-radius: 0.5rem; color: white; text-align: center; margin-bottom:10px;">
         <div style="font-size: 1.5rem;">{icon}</div>
         <div style="font-size: 1.2rem; font-weight: bold;">{value}</div>
         <div>{title}</div>
@@ -49,7 +50,7 @@ def create_resume_quality_score(evaluation):
     matched_skills = evaluation.get('matched_skills', [])
     total_skills = len(resume_data.get('skills', []))
     relevance_score = (len(matched_skills) / max(total_skills, 1)) * 100
-    experience_score = min(len(resume_data.get('experience', [])) * 2 * 10, 100)
+    experience_score = min(len(resume_data.get('experience', [])) * 20, 100)
     quality_score = (completeness_score + relevance_score + experience_score) / 3
 
     df = pd.DataFrame({
@@ -99,8 +100,9 @@ def create_skill_gap_analysis(evaluation):
 
 def create_ai_optimization_suggestions(evaluation):
     st.markdown("#### 🤖 AI-Powered Optimization Suggestions")
-    missing_skills, weaknesses = evaluation.get('missing_skills', []), evaluation.get('weaknesses', [])
-    
+    missing_skills = evaluation.get('missing_skills', [])
+    weaknesses = evaluation.get('weaknesses', [])
+
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("##### 🎯 Immediate Improvements")
@@ -119,7 +121,7 @@ def create_ai_optimization_suggestions(evaluation):
     optimization_score = max(100 - len(missing_skills) * 10, 0)
     st.markdown(f"##### 📊 Optimization Score: {optimization_score}/100")
     progress_color = "#4ecdc4" if optimization_score >= 70 else "#ff6b6b" if optimization_score >= 40 else "#ffa726"
-    st.markdown(f"<div class='progress-container'><div class='progress-bar' style='width: {optimization_score}%; background: {progress_color};'>{optimization_score}%</div></div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='background:#e0e0e0;border-radius:5px;'><div style='width:{optimization_score}%;background:{progress_color};padding:5px;border-radius:5px;text-align:center;color:white;'>{optimization_score}%</div></div>", unsafe_allow_html=True)
 
 def display_evaluation_results(evaluation):
     st.markdown("---")
@@ -130,10 +132,12 @@ def display_evaluation_results(evaluation):
     create_ai_optimization_suggestions(evaluation)
     st.markdown("---")
 
-# ------------------ Main Pages ------------------ #
+# ------------------ Pages ------------------ #
 def view_evaluations():
     st.markdown("### 📋 All Evaluations")
-    evaluations = make_api_request("/evaluations/")
+    evaluations_resp = make_api_request("/evaluations/") or {}
+    evaluations = evaluations_resp.get("evaluations", [])
+
     if not evaluations:
         st.info("ℹ️ No evaluations found. Please evaluate some resumes first.")
         return
@@ -174,9 +178,9 @@ def main():
     if 'page' not in st.session_state:
         st.session_state.page = "Dashboard"
 
-    st.markdown('<h1>📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="color:#667eea;">📄 Resume Evaluation System</h1>', unsafe_allow_html=True)
 
-    # ---------------- Sidebar ---------------- #
+    # Sidebar Navigation
     with st.sidebar:
         nav_options = {
             "🏠 Dashboard": "Dashboard",
@@ -190,51 +194,42 @@ def main():
         for display, page in nav_options.items():
             if st.button(display, key=f"nav_{page}"):
                 st.session_state.page = page
-                st.experimental_rerun()  # ensures page updates immediately
+                st.rerun()
 
-        # Sidebar Quick Stats
+        # Quick Stats
         st.markdown("### 📊 Quick Stats")
-        resumes_resp = make_api_request("/resumes/")
-        jobs_resp = make_api_request("/job-descriptions/")
-        evaluations_resp = make_api_request("/evaluations/")
+        resumes_resp = make_api_request("/resumes/") or {}
+        jobs_resp = make_api_request("/job-descriptions/") or {}
+        evaluations_resp = make_api_request("/evaluations/") or {}
 
-        resumes = resumes_resp.get("resumes", []) if resumes_resp else []
-        job_descriptions = jobs_resp.get("job_descriptions", []) if jobs_resp else []
-        evaluations = evaluations_resp.get("evaluations", []) if evaluations_resp else []
+        resumes = resumes_resp.get("resumes", [])
+        job_descriptions = jobs_resp.get("job_descriptions", [])
+        evaluations = evaluations_resp.get("evaluations", [])
 
         st.metric("Resumes", len(resumes))
         st.metric("Job Descriptions", len(job_descriptions))
         st.metric("Evaluations", len(evaluations))
-
         if evaluations:
             avg_score = sum(e.get('relevance_score', 0) for e in evaluations) / len(evaluations)
             st.metric("Avg Score", f"{avg_score:.1f}")
 
-    # ---------------- Main Content ---------------- #
-    if st.session_state.page == "Dashboard":
+    # Main Page Content
+    page = st.session_state.page
+    if page == "Dashboard":
         st.markdown("### 📊 Dashboard Overview")
-        st.info("Welcome to the Resume Evaluation System! Navigate from the sidebar to start.")
-
-    elif st.session_state.page == "Upload Resume":
-        st.markdown("### 📄 Upload Resume")
-        st.info("Upload a candidate resume to evaluate.")
-
-    elif st.session_state.page == "Upload Job Description":
-        st.markdown("### 💼 Upload Job Description")
-        st.info("Upload a job description to match resumes against.")
-
-    elif st.session_state.page == "Evaluate Resume":
+        st.info("Welcome to the Resume Evaluation System! Navigate using the sidebar.")
+    elif page == "Evaluate Resume":
         st.markdown("### 🔍 Evaluate Resume")
-        st.info("Select a resume and job description to perform evaluation.")
-
-    elif st.session_state.page == "View Evaluations":
-        st.markdown("### 📋 View Evaluations")
-        view_evaluations()  # call the function to render table and charts
-
-    elif st.session_state.page == "Batch Processing":
+    elif page == "View Evaluations":
+        view_evaluations()
+    elif page == "Batch Processing":
         st.markdown("### 📦 Batch Processing")
-        st.info("Process multiple resumes at once.")
-
-    elif st.session_state.page == "Manage Data":
+    elif page == "Manage Data":
         st.markdown("### 🗂️ Manage Data")
-        st.info("Manage uploaded resumes and job descriptions.")
+    elif page == "Upload Resume":
+        st.markdown("### 📄 Upload Resume")
+    elif page == "Upload Job Description":
+        st.markdown("### 💼 Upload Job Description")
+
+if __name__ == "__main__":
+    main()
