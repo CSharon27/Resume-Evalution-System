@@ -762,7 +762,7 @@ def upload_resume():
                         progress_bar.progress(25)
                         status_text.text("📤 Uploading file...")
                         
-                        response = requests.post(f"{API_BASE_URL}/resume", files=files, data=data, timeout=30)
+                        response = requests.post(f"{API_BASE_URL}/resume/", files=files, data=data, timeout=30)
                         
                         progress_bar.progress(75)
                         status_text.text("🔍 Processing resume...")
@@ -2222,6 +2222,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
