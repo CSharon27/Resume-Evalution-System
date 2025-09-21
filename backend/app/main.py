@@ -6,6 +6,7 @@ Exposes API endpoints for resume parsing, evaluation, and AI processing.
 
 import os
 from fastapi import FastAPI, APIRouter, UploadFile, File
+from fastapi import Form
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import FRONTEND_URL
 from datetime import datetime
@@ -55,7 +56,11 @@ async def list_resumes():
     return resumes_db
 
 @resumes_router.post("/")
-async def upload_resume(file: UploadFile = File(...)):
+async def upload_resume(
+    file: UploadFile = File(...),
+    student_name: str = Form(...),
+    student_email: str = Form(...)
+):
     upload_dir = "data/uploads"
     os.makedirs(upload_dir, exist_ok=True)
     file_path = os.path.join(upload_dir, file.filename)
@@ -65,8 +70,8 @@ async def upload_resume(file: UploadFile = File(...)):
     resume_entry = {
         "id": len(resumes_db) + 1,
         "filename": file.filename,
-        "student_name": "Unknown",
-        "student_email": "Unknown",
+        "student_name": student_name,
+        "student_email": student_email,
         "created_at": datetime.now().isoformat()
     }
     resumes_db.append(resume_entry)
@@ -121,3 +126,4 @@ async def create_evaluation(evaluation: dict):
 app.include_router(resumes_router, prefix="/resumes", tags=["Resumes"])
 app.include_router(jobs_router, prefix="/job-descriptions", tags=["Job Descriptions"])
 app.include_router(evaluations_router, prefix="/evaluations", tags=["Evaluations"])
+
