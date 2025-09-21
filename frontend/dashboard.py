@@ -20,20 +20,20 @@ st.markdown("""
     <style>
     /* Main background */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #f8fbff 0%, #eef2f7 100%);
+        background: linear-gradient(135deg, #fdfdfd 0%, #f7f9fb 100%);
         font-family: "Segoe UI", sans-serif;
     }
 
     /* Sidebar */
     [data-testid="stSidebar"] {
-        background: #f9fafb !important;
+        background: #ffffff !important;
         padding-top: 30px;
         border-right: 1px solid #e5e7eb;
     }
     [data-testid="stSidebar"] h1, 
     [data-testid="stSidebar"] h2, 
     [data-testid="stSidebar"] h3 {
-        color: #1e293b !important;
+        color: #111827 !important;
         font-weight: 700;
         text-align: center;
         margin-bottom: 20px;
@@ -50,23 +50,22 @@ st.markdown("""
         font-weight: 500;
         font-size: 1rem;
         color: #374151 !important;
-        background: #ffffff;
+        background: #f9fafb;
         border: 1px solid #e5e7eb;
         transition: all 0.3s ease;
         cursor: pointer;
     }
     [role="radiogroup"] > label:hover {
-        background: #f0f9ff;
-        border-color: #93c5fd;
-        color: #1e40af !important;
+        background: #f3f4f6;
+        border-color: #d1d5db;
+        color: #111827 !important;
         transform: translateX(5px);
     }
     [role="radiogroup"] > label[data-checked="true"] {
-        background: linear-gradient(90deg, #3b82f6, #60a5fa);
-        color: white !important;
+        background: #e0f2fe;
+        color: #0c4a6e !important;
         font-weight: 600 !important;
-        border: none;
-        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        border: 1px solid #38bdf8;
         transform: translateX(8px);
     }
 
@@ -89,26 +88,26 @@ st.markdown("""
         margin-bottom: 8px;
     }
     .card h2 {
-        color: #2563eb;
+        color: #0c4a6e;
         font-size: 2rem;
         margin: 0;
     }
 
     /* Buttons */
     div.stButton > button {
-        background: linear-gradient(90deg, #2563eb, #3b82f6);
+        background: #0ea5e9;
         color: white;
         border-radius: 10px;
         padding: 0.7rem 1.4rem;
         font-weight: 600;
         border: none;
-        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
         transition: all 0.2s ease;
     }
     div.stButton > button:hover {
-        background: linear-gradient(90deg, #1d4ed8, #2563eb);
+        background: #0284c7;
         transform: scale(1.05);
-        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+        box-shadow: 0 6px 14px rgba(14, 165, 233, 0.4);
     }
 
     /* Info Alerts */
@@ -130,10 +129,16 @@ page = st.sidebar.radio(
 )
 
 # --------------------------
+# Branding Header
+# --------------------------
+def header(title):
+    st.markdown(f"## Resume Evaluation System — {title}")
+
+# --------------------------
 # Dashboard Page
 # --------------------------
 if page == "🏠 Dashboard":
-    st.title("📊 Dashboard Overview")
+    header("📊 Dashboard Overview")
 
     try:
         resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
@@ -161,7 +166,7 @@ if page == "🏠 Dashboard":
 # Upload Resume Page
 # --------------------------
 elif page == "📂 Upload Resume":
-    st.title("📂 Upload Resume")
+    header("📂 Upload Resume")
     uploaded_file = st.file_uploader("Upload a resume file (PDF/DOCX)", type=["pdf", "docx"])
     if uploaded_file:
         files = {"file": uploaded_file.getvalue()}
@@ -178,7 +183,7 @@ elif page == "📂 Upload Resume":
 # Job Descriptions Page
 # --------------------------
 elif page == "📋 Job Descriptions":
-    st.title("📋 Job Descriptions")
+    header("📋 Job Descriptions")
     try:
         jobs = requests.get(f"{BASE_URL}/job-descriptions").json().get("job_descriptions", [])
     except:
@@ -193,7 +198,7 @@ elif page == "📋 Job Descriptions":
 # Batch Processing Page
 # --------------------------
 elif page == "⚡ Batch Processing":
-    st.title("⚡ Batch Processing")
+    header("⚡ Batch Processing")
     st.info("Upload multiple resumes to process in bulk.")
     batch_files = st.file_uploader("Upload multiple resumes", type=["pdf", "docx"], accept_multiple_files=True)
     if st.button("Process Batch") and batch_files:
@@ -203,7 +208,7 @@ elif page == "⚡ Batch Processing":
 # Manage Data Page
 # --------------------------
 elif page == "📊 Manage Data":
-    st.title("📊 Manage Data")
+    header("📊 Manage Data")
     st.info("View and manage resumes, job descriptions, and evaluations.")
     try:
         resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
