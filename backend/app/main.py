@@ -3,11 +3,12 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# Create FastAPI instance
 app = FastAPI(title="Resume Evaluation API")
 
-# Allow CORS for frontend (adjust origin if needed)
+# Enable CORS for frontend
 origins = [
-    os.getenv("FRONTEND_URL", "*")  # you can set FRONTEND_URL in Render
+    os.getenv("FRONTEND_URL", "*")  # Replace with your frontend URL if needed
 ]
 
 app.add_middleware(
@@ -18,12 +19,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Example route
+# Example root endpoint
 @app.get("/")
 async def root():
     return {"message": "Resume Evaluation API is running!"}
 
-# Spacy model loading (download if not present)
+# Spacy model setup
 try:
     import spacy
     nlp = spacy.load("en_core_web_sm")
@@ -32,6 +33,6 @@ except OSError:
     spacy.cli.download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 
-# Include your routers here
+# TODO: Add your routers here
 # from .routers import router
 # app.include_router(router)
