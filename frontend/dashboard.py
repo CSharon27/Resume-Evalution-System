@@ -99,59 +99,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-    <style>
-    /* Global */
-    .main {
-        background-color: #f8fafc;
-        font-family: 'Segoe UI', sans-serif;
-    }
-    h1, h2, h3 {
-        font-weight: 600;
-    }
-    /* Sidebar */
-    section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1E3A8A, #2563EB);
-        color: white;
-    }
-    section[data-testid="stSidebar"] .stMarkdown, 
-    section[data-testid="stSidebar"] label, 
-    section[data-testid="stSidebar"] div {
-        color: white !important;
-    }
-    /* Cards */
-    .card {
-        background: white;
-        padding: 20px;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        text-align: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-    .card h3 {
-        color: #475569;
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-    .card h2 {
-        color: #2563EB;
-        font-size: 2rem;
-        margin: 0;
-    }
-    /* Info box */
-    .info-box {
-        background: #EFF6FF;
-        border-left: 5px solid #2563EB;
-        padding: 12px 16px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 # --------------------------
 # Sidebar Navigation
@@ -261,4 +208,5 @@ elif page == "📊 Manage Data":
 
     st.subheader("✅ Evaluations")
     st.write(evaluations if evaluations else "No evaluations available.")
+
 
