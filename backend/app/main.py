@@ -14,10 +14,10 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 
 # Import your internal modules
-from app.database import get_db
-from app.services.resume_service import ResumeService
-from app.config import settings
-from app.models.database import ResumeEvaluation
+from backend.app.database import get_db
+from backend.app.services.resume_service import ResumeService
+from backend.app.config import settings
+from backend.app.models.database import ResumeEvaluation
 
 # Create FastAPI app
 app = FastAPI(
@@ -190,4 +190,5 @@ async def get_job_descriptions(db: Session = Depends(get_db)):
 #if __name__ == "__main__":
     #port = int(os.environ.get("PORT", 8000))
     #uvicorn.run("app.main:app", host="0.0.0.0", port=port)
+
 
