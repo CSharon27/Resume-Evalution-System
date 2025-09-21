@@ -11,70 +11,72 @@ st.set_page_config(
 )
 
 # --------------------------
-# Enhanced Styling (Glassmorphism + Gradient)
+# Styling Based on Screenshot
 # --------------------------
 st.markdown("""
     <style>
-    /* Main background */
+    /* Main Background */
     .main {
-        background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+        background: linear-gradient(135deg, #f8fbff 0%, #e0f2fe 100%);
         font-family: "Segoe UI", sans-serif;
     }
 
     /* Sidebar */
     section[data-testid="stSidebar"] {
-        background: rgba(15, 23, 42, 0.9);
-        backdrop-filter: blur(12px);
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        padding-top: 20px;
     }
+
+    /* Sidebar Labels */
     .stSidebar .stRadio label {
-        color: #e2e8f0 !important;
+        color: #cbd5e1 !important;
         font-weight: 500;
-        padding: 8px 12px;
-        border-radius: 8px;
-        transition: background 0.2s;
+        padding: 10px 14px;
+        border-radius: 12px;
+        margin: 4px 0;
+        transition: all 0.3s ease;
     }
     .stSidebar .stRadio label:hover {
         background: rgba(59, 130, 246, 0.2);
+        color: #fff !important;
     }
 
-    /* Active Radio Button Highlight */
+    /* Active Highlight */
     div[role='radiogroup'] label[data-checked="true"] {
         background: linear-gradient(90deg, #2563eb, #3b82f6);
         color: white !important;
         font-weight: 600 !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
     }
 
     /* Headings */
     h1, h2, h3 {
-        font-family: "Segoe UI", sans-serif;
-        font-weight: 600;
+        font-weight: 700;
         color: #1e3a8a;
     }
 
-    /* Glassmorphic Card */
+    /* Cards (Glassmorphic) */
     .card {
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(10px);
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        border-radius: 18px;
+        padding: 22px;
         text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
     }
-
     .card h3 {
-        color: #475569;
         font-size: 1.1rem;
-        margin-bottom: 6px;
+        color: #475569;
     }
     .card h2 {
+        font-size: 2rem;
         color: #2563eb;
-        font-size: 2.2rem;
         margin: 0;
     }
 
@@ -83,33 +85,37 @@ st.markdown("""
         background: linear-gradient(90deg, #2563eb, #3b82f6);
         color: white;
         border-radius: 10px;
-        padding: 0.7rem 1.3rem;
-        border: none;
+        padding: 0.7rem 1.4rem;
         font-weight: 600;
-        transition: all 0.2s;
+        border: none;
         box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        transition: all 0.2s ease;
     }
     div.stButton > button:hover {
-        background: linear-gradient(90deg, #1d4ed8, #2563eb);
         transform: scale(1.05);
+        background: linear-gradient(90deg, #1d4ed8, #2563eb);
         box-shadow: 0 6px 14px rgba(37, 99, 235, 0.5);
     }
 
-    /* Info messages */
+    /* Info & Alerts */
     .stAlert {
         border-radius: 12px;
         font-size: 0.95rem;
-        backdrop-filter: blur(8px);
     }
 
-    /* Job Description & Evaluations Table */
+    /* Data Display Cards (Jobs/Evaluations) */
     .data-card {
-        background: rgba(255, 255, 255, 0.65);
-        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(6px);
         border-radius: 14px;
         padding: 16px;
         margin-bottom: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease;
+    }
+    .data-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -149,8 +155,8 @@ if page == "🏠 Dashboard":
     if evaluations:
         for e in evaluations:
             st.markdown(
-                f"<div class='data-card'>Resume ID: <b>{e.get('resume_id', '-')}</b> <br> Score: "
-                f"<span style='color:#2563eb;font-weight:600;'>{e.get('relevance_score', 'N/A')}%</span></div>",
+                f"<div class='data-card'>📄 Resume ID: <b>{e.get('resume_id', '-')}</b><br>"
+                f"⭐ Score: <span style='color:#2563eb;font-weight:600;'>{e.get('relevance_score', 'N/A')}%</span></div>",
                 unsafe_allow_html=True
             )
     else:
@@ -215,10 +221,22 @@ elif page == "📊 Manage Data":
         resumes, jobs, evaluations = [], [], []
 
     st.subheader("📄 Resumes")
-    st.write(resumes if resumes else "No resumes uploaded.")
+    if resumes:
+        for r in resumes:
+            st.markdown(f"<div class='data-card'>📄 {r}</div>", unsafe_allow_html=True)
+    else:
+        st.info("No resumes uploaded.")
 
     st.subheader("💼 Job Descriptions")
-    st.write(jobs if jobs else "No job descriptions available.")
+    if jobs:
+        for j in jobs:
+            st.markdown(f"<div class='data-card'>💼 {j}</div>", unsafe_allow_html=True)
+    else:
+        st.info("No job descriptions available.")
 
     st.subheader("✅ Evaluations")
-    st.write(evaluations if evaluations else "No evaluations available.")
+    if evaluations:
+        for ev in evaluations:
+            st.markdown(f"<div class='data-card'>✅ {ev}</div>", unsafe_allow_html=True)
+    else:
+        st.info("No evaluations available.")
