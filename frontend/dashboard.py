@@ -11,94 +11,80 @@ st.set_page_config(
 )
 
 # --------------------------
-# Custom Styling
+# Enhanced Styling
 # --------------------------
-# Add this just after st.set_page_config(...)
 st.markdown("""
     <style>
-    /* General */
+    /* Main background */
     .main {
-        background-color: #f8fafc;
-        font-family: 'Segoe UI', sans-serif;
-    }
-    h1, h2, h3, h4 {
-        font-weight: 600 !important;
-        color: #1e293b;
-    }
-
-    /* Gradient headers */
-    h1 {
-        background: linear-gradient(90deg, #1E3A8A, #2563EB);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 2.2rem !important;
+        background: linear-gradient(135deg, #eef2f3 0%, #dfe9f3 100%);
+        padding: 20px;
+        font-family: "Segoe UI", sans-serif;
     }
 
     /* Sidebar */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1E3A8A, #2563EB);
-        color: white;
+        background: #0f172a;
     }
-    section[data-testid="stSidebar"] .stMarkdown, 
-    section[data-testid="stSidebar"] label, 
-    section[data-testid="stSidebar"] div {
-        color: white !important;
-    }
-    section[data-testid="stSidebar"] button {
-        background: #2563EB !important;
-        color: white !important;
-        border-radius: 8px !important;
-        border: none !important;
-        margin: 4px 0;
-    }
-    section[data-testid="stSidebar"] button:hover {
-        background: #1E40AF !important;
+    .stSidebar .stRadio label {
+        color: #e2e8f0 !important;
+        font-weight: 500;
     }
 
-    /* Metric cards */
-    .metric-card {
+    /* Headings */
+    h1, h2, h3 {
+        font-family: "Segoe UI", sans-serif;
+        font-weight: 600;
+        color: #1e3a8a;
+    }
+
+    /* Card */
+    .card {
         background: white;
-        padding: 1rem;
-        border-radius: 1rem;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.08);
         text-align: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease;
     }
-    .metric-card:hover {
+    .card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        box-shadow: 0 10px 18px rgba(0,0,0,0.12);
     }
 
-    /* Info box */
-    .info-box {
-        background: #EFF6FF;
-        border-left: 5px solid #2563EB;
-        padding: 12px 16px;
-        border-radius: 8px;
-        margin: 10px 0;
-        color: #1e293b;
+    .card h3 {
+        color: #475569;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    .card h2 {
+        color: #2563eb;
+        font-size: 2rem;
+        margin: 0;
     }
 
-    /* Progress bar */
-    .progress-container {
-        background: #e5e7eb;
-        border-radius: 999px;
-        overflow: hidden;
-        height: 20px;
-        margin: 10px 0;
-    }
-    .progress-bar {
-        height: 20px;
-        text-align: center;
-        line-height: 20px;
+    /* Buttons */
+    div.stButton > button {
+        background: linear-gradient(90deg, #2563eb, #3b82f6);
         color: white;
-        font-size: 0.8rem;
-        font-weight: bold;
-        border-radius: 999px;
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+    div.stButton > button:hover {
+        background: linear-gradient(90deg, #1d4ed8, #2563eb);
+        transform: scale(1.02);
+    }
+
+    /* Info messages */
+    .stAlert {
+        border-radius: 10px;
+        font-size: 0.95rem;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 # --------------------------
 # Sidebar Navigation
@@ -114,7 +100,7 @@ page = st.sidebar.radio(
 # Dashboard Page
 # --------------------------
 if page == "🏠 Dashboard":
-    st.markdown("<h1 style='color:#1E3A8A;'>📊 Dashboard Overview</h1>", unsafe_allow_html=True)
+    st.title("📊 Dashboard Overview")
 
     try:
         resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
@@ -131,14 +117,10 @@ if page == "🏠 Dashboard":
     with col3:
         st.markdown(f"<div class='card'><h3>✅ Evaluations</h3><h2>{len(evaluations)}</h2></div>", unsafe_allow_html=True)
 
-    st.markdown("### 📌 Recent Evaluations")
+    st.markdown("### Recent Evaluations")
     if evaluations:
         for e in evaluations:
-            st.markdown(
-                f"<div class='info-box'>Resume ID: <b>{e.get('resume_id', '-')}</b> — "
-                f"Score: <b style='color:#2563EB'>{e.get('relevance_score', 'N/A')}%</b></div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"- Resume ID: `{e.get('resume_id', '-')}`, Score: **{e.get('relevance_score', 'N/A')}%**")
     else:
         st.info("No evaluations yet.")
 
@@ -146,7 +128,7 @@ if page == "🏠 Dashboard":
 # Upload Resume Page
 # --------------------------
 elif page == "📂 Upload Resume":
-    st.markdown("<h1 style='color:#1E3A8A;'>📂 Upload Resume</h1>", unsafe_allow_html=True)
+    st.title("📂 Upload Resume")
     uploaded_file = st.file_uploader("Upload a resume file (PDF/DOCX)", type=["pdf", "docx"])
     if uploaded_file:
         files = {"file": uploaded_file.getvalue()}
@@ -163,17 +145,14 @@ elif page == "📂 Upload Resume":
 # Job Descriptions Page
 # --------------------------
 elif page == "📋 Job Descriptions":
-    st.markdown("<h1 style='color:#1E3A8A;'>📋 Job Descriptions</h1>", unsafe_allow_html=True)
+    st.title("📋 Job Descriptions")
     try:
         jobs = requests.get(f"{BASE_URL}/job-descriptions").json().get("job_descriptions", [])
     except:
         jobs = []
     if jobs:
         for job in jobs:
-            st.markdown(
-                f"<div class='card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div class='card'><b>{job.get('title', 'Unknown')}</b><br>{job.get('description', '')}</div>", unsafe_allow_html=True)
     else:
         st.info("No job descriptions available.")
 
@@ -181,17 +160,17 @@ elif page == "📋 Job Descriptions":
 # Batch Processing Page
 # --------------------------
 elif page == "⚡ Batch Processing":
-    st.markdown("<h1 style='color:#1E3A8A;'>⚡ Batch Processing</h1>", unsafe_allow_html=True)
+    st.title("⚡ Batch Processing")
     st.info("Upload multiple resumes to process in bulk.")
     batch_files = st.file_uploader("Upload multiple resumes", type=["pdf", "docx"], accept_multiple_files=True)
-    if st.button("🚀 Process Batch") and batch_files:
+    if st.button("Process Batch") and batch_files:
         st.success(f"✅ {len(batch_files)} resumes queued for processing.")
 
 # --------------------------
 # Manage Data Page
 # --------------------------
 elif page == "📊 Manage Data":
-    st.markdown("<h1 style='color:#1E3A8A;'>📊 Manage Data</h1>", unsafe_allow_html=True)
+    st.title("📊 Manage Data")
     st.info("View and manage resumes, job descriptions, and evaluations.")
     try:
         resumes = requests.get(f"{BASE_URL}/resumes").json().get("resumes", [])
@@ -208,5 +187,3 @@ elif page == "📊 Manage Data":
 
     st.subheader("✅ Evaluations")
     st.write(evaluations if evaluations else "No evaluations available.")
-
-
