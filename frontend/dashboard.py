@@ -1639,7 +1639,7 @@ def manage_data():
         else:
             st.info("No resumes found")
     
-    with tab2:/
+    with tab2:
         st.write("**Job Descriptions**")
         job_descriptions = make_api_request("/job-descriptions/")
         
@@ -2222,5 +2222,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
