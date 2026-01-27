@@ -1,0 +1,584 @@
+{
+    "Python": [
+        {
+            "title": "Python for Everybody",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/python",
+            "rating": 4.8,
+            "duration": "8 months",
+            "level": "Beginner"
+        },
+        {
+            "title": "Complete Python Bootcamp",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/complete-python-bootcamp/",
+            "rating": 4.6,
+            "duration": "22 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "Python Programming Masterclass",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/python-the-complete-python-developer-course/",
+            "rating": 4.5,
+            "duration": "64 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "Java": [
+        {
+            "title": "Java Programming and Software Engineering Fundamentals",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/java-programming",
+            "rating": 4.6,
+            "duration": "6 months",
+            "level": "Beginner"
+        },
+        {
+            "title": "Java Programming Masterclass",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/java-the-complete-java-developer-course/",
+            "rating": 4.6,
+            "duration": "80 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "Java Certification Training",
+            "provider": "edX",
+            "url": "https://www.edx.org/learn/java",
+            "rating": 4.5,
+            "duration": "12 weeks",
+            "level": "Intermediate"
+        }
+    ],
+    "JavaScript": [
+        {
+            "title": "The Complete JavaScript Course",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/the-complete-javascript-course/",
+            "rating": 4.7,
+            "duration": "69 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "JavaScript Algorithms and Data Structures",
+            "provider": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+            "rating": 4.8,
+            "duration": "300 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Modern JavaScript From The Beginning",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/modern-javascript-from-the-beginning/",
+            "rating": 4.7,
+            "duration": "37 hours",
+            "level": "Beginner"
+        }
+    ],
+    "React": [
+        {
+            "title": "React - The Complete Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
+            "rating": 4.7,
+            "duration": "49 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Complete React Developer",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/complete-react-developer-zero-to-mastery/",
+            "rating": 4.7,
+            "duration": "40 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "React Specialization",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/react",
+            "rating": 4.6,
+            "duration": "6 months",
+            "level": "Intermediate"
+        }
+    ],
+    "Angular": [
+        {
+            "title": "Angular - The Complete Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/the-complete-guide-to-angular-2/",
+            "rating": 4.6,
+            "duration": "34 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Angular Fundamentals",
+            "provider": "Pluralsight",
+            "url": "https://www.pluralsight.com/paths/angular",
+            "rating": 4.5,
+            "duration": "20 hours",
+            "level": "Beginner"
+        }
+    ],
+    "Vue.js": [
+        {
+            "title": "Vue - The Complete Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/vuejs-2-the-complete-guide/",
+            "rating": 4.7,
+            "duration": "32 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Vue.js Fundamentals",
+            "provider": "Vue Mastery",
+            "url": "https://www.vuemastery.com/courses/",
+            "rating": 4.8,
+            "duration": "15 hours",
+            "level": "Beginner"
+        }
+    ],
+    "Node.js": [
+        {
+            "title": "The Complete Node.js Developer Course",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/",
+            "rating": 4.7,
+            "duration": "35 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Node.js, Express, MongoDB & More",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/",
+            "rating": 4.8,
+            "duration": "42 hours",
+            "level": "Advanced"
+        }
+    ],
+    "Django": [
+        {
+            "title": "Python and Django Full Stack Web Developer Bootcamp",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/",
+            "rating": 4.5,
+            "duration": "32 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Django for Everybody",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/django",
+            "rating": 4.8,
+            "duration": "4 months",
+            "level": "Beginner"
+        }
+    ],
+    "Flask": [
+        {
+            "title": "REST APIs with Flask and Python",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/rest-api-flask-and-python/",
+            "rating": 4.6,
+            "duration": "17 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Python Flask for Beginners",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/python-flask-beginners/",
+            "rating": 4.5,
+            "duration": "8 hours",
+            "level": "Beginner"
+        }
+    ],
+    "FastAPI": [
+        {
+            "title": "FastAPI - The Complete Course",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/fastapi-the-complete-course/",
+            "rating": 4.7,
+            "duration": "19 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Building REST APIs with FastAPI",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/fastapi-rest/",
+            "rating": 4.7,
+            "duration": "12 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "SQL": [
+        {
+            "title": "The Complete SQL Bootcamp",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/the-complete-sql-bootcamp/",
+            "rating": 4.7,
+            "duration": "9 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "SQL for Data Science",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/learn/sql-for-data-science",
+            "rating": 4.6,
+            "duration": "4 weeks",
+            "level": "Beginner"
+        },
+        {
+            "title": "Advanced SQL",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/advanced-sql-mysql-for-analytics-business-intelligence/",
+            "rating": 4.6,
+            "duration": "10 hours",
+            "level": "Advanced"
+        }
+    ],
+    "PostgreSQL": [
+        {
+            "title": "SQL & PostgreSQL for Beginners",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/sql-and-postgresql-for-beginners/",
+            "rating": 4.7,
+            "duration": "13 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "PostgreSQL Administration",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/postgresql-administration/",
+            "rating": 4.5,
+            "duration": "7 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "MongoDB": [
+        {
+            "title": "MongoDB - The Complete Developer's Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/mongodb-the-complete-developers-guide/",
+            "rating": 4.6,
+            "duration": "16 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "M001: MongoDB Basics",
+            "provider": "MongoDB University",
+            "url": "https://university.mongodb.com/courses/M001/about",
+            "rating": 4.7,
+            "duration": "2 weeks",
+            "level": "Beginner"
+        }
+    ],
+    "Redis": [
+        {
+            "title": "Redis: The Complete Developer's Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/redis-the-complete-developers-guide/",
+            "rating": 4.7,
+            "duration": "14 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "AWS": [
+        {
+            "title": "AWS Certified Solutions Architect Associate",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/",
+            "rating": 4.7,
+            "duration": "27 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "AWS Cloud Practitioner Essentials",
+            "provider": "AWS Training",
+            "url": "https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/",
+            "rating": 4.6,
+            "duration": "6 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "AWS Fundamentals Specialization",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/aws-fundamentals",
+            "rating": 4.7,
+            "duration": "4 months",
+            "level": "Beginner"
+        }
+    ],
+    "Azure": [
+        {
+            "title": "Azure Fundamentals AZ-900",
+            "provider": "Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/training/courses/az-900t00",
+            "rating": 4.7,
+            "duration": "8 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "AZ-104: Microsoft Azure Administrator",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/70533-azure/",
+            "rating": 4.6,
+            "duration": "19 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "GCP": [
+        {
+            "title": "Google Cloud Platform Fundamentals",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/learn/gcp-fundamentals",
+            "rating": 4.7,
+            "duration": "4 weeks",
+            "level": "Beginner"
+        },
+        {
+            "title": "GCP Associate Cloud Engineer",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/google-cloud-certification-associate-cloud-engineer/",
+            "rating": 4.6,
+            "duration": "16 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "Docker": [
+        {
+            "title": "Docker Mastery",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/docker-mastery/",
+            "rating": 4.7,
+            "duration": "19 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Docker and Kubernetes: The Complete Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/",
+            "rating": 4.7,
+            "duration": "24 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Introduction to Containers",
+            "provider": "Linux Foundation",
+            "url": "https://www.edx.org/course/introduction-to-containers",
+            "rating": 4.5,
+            "duration": "4 weeks",
+            "level": "Beginner"
+        }
+    ],
+    "Kubernetes": [
+        {
+            "title": "Kubernetes for Beginners",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/learn-kubernetes/",
+            "rating": 4.6,
+            "duration": "6 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "Certified Kubernetes Administrator (CKA)",
+            "provider": "Linux Foundation",
+            "url": "https://training.linuxfoundation.org/training/kubernetes-fundamentals/",
+            "rating": 4.8,
+            "duration": "16 weeks",
+            "level": "Advanced"
+        },
+        {
+            "title": "Kubernetes the Hard Way",
+            "provider": "GitHub",
+            "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way",
+            "rating": 4.9,
+            "duration": "Self-paced",
+            "level": "Advanced"
+        }
+    ],
+    "Jenkins": [
+        {
+            "title": "Jenkins, From Zero To Hero",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/jenkins-from-zero-to-hero/",
+            "rating": 4.6,
+            "duration": "10 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "CI/CD with Jenkins",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/jenkins-cicd/",
+            "rating": 4.5,
+            "duration": "8 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "Terraform": [
+        {
+            "title": "HashiCorp Certified: Terraform Associate",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/terraform-beginner-to-advanced/",
+            "rating": 4.7,
+            "duration": "15 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Terraform for Beginners",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/terraform-for-the-absolute-beginners/",
+            "rating": 4.6,
+            "duration": "5 hours",
+            "level": "Beginner"
+        }
+    ],
+    "Machine Learning": [
+        {
+            "title": "Machine Learning Specialization",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+            "rating": 4.9,
+            "duration": "3 months",
+            "level": "Beginner"
+        },
+        {
+            "title": "Complete Machine Learning & Data Science Bootcamp",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery/",
+            "rating": 4.7,
+            "duration": "44 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "Deep Learning": [
+        {
+            "title": "Deep Learning Specialization",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/specializations/deep-learning",
+            "rating": 4.9,
+            "duration": "5 months",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Complete Deep Learning Bootcamp",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/complete-deep-learning-course-with-python/",
+            "rating": 4.6,
+            "duration": "25 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "TensorFlow": [
+        {
+            "title": "TensorFlow Developer Certificate",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/professional-certificates/tensorflow-in-practice",
+            "rating": 4.8,
+            "duration": "4 months",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Complete TensorFlow 2 and Keras Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/complete-tensorflow-2-and-keras-deep-learning-bootcamp/",
+            "rating": 4.5,
+            "duration": "18 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "PyTorch": [
+        {
+            "title": "PyTorch for Deep Learning",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/pytorch-for-deep-learning-with-python-bootcamp/",
+            "rating": 4.7,
+            "duration": "17 hours",
+            "level": "Intermediate"
+        },
+        {
+            "title": "Deep Learning with PyTorch",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/learn/deep-neural-networks-with-pytorch",
+            "rating": 4.6,
+            "duration": "5 weeks",
+            "level": "Intermediate"
+        }
+    ],
+    "Git": [
+        {
+            "title": "Git Complete: The Definitive Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/git-complete/",
+            "rating": 4.7,
+            "duration": "6 hours",
+            "level": "Beginner"
+        },
+        {
+            "title": "Version Control with Git",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/learn/version-control-with-git",
+            "rating": 4.8,
+            "duration": "4 weeks",
+            "level": "Beginner"
+        }
+    ],
+    "Agile": [
+        {
+            "title": "Agile Fundamentals",
+            "provider": "Coursera",
+            "url": "https://www.coursera.org/learn/agile-project-management",
+            "rating": 4.7,
+            "duration": "4 weeks",
+            "level": "Beginner"
+        },
+        {
+            "title": "Agile Scrum Master Certification",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/agile-scrum/",
+            "rating": 4.5,
+            "duration": "5 hours",
+            "level": "Beginner"
+        }
+    ],
+    "CI/CD": [
+        {
+            "title": "DevOps CI/CD Pipeline",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/devops-cicd/",
+            "rating": 4.6,
+            "duration": "12 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "TypeScript": [
+        {
+            "title": "Understanding TypeScript",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/understanding-typescript/",
+            "rating": 4.7,
+            "duration": "16 hours",
+            "level": "Intermediate"
+        }
+    ],
+    "Go": [
+        {
+            "title": "Go: The Complete Developer's Guide",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/go-the-complete-developers-guide/",
+            "rating": 4.6,
+            "duration": "9 hours",
+            "level": "Beginner"
+        }
+    ],
+    "Rust": [
+        {
+            "title": "The Rust Programming Language",
+            "provider": "Udemy",
+            "url": "https://www.udemy.com/course/rust-lang/",
+            "rating": 4.5,
+            "duration": "12 hours",
+            "level": "Intermediate"
+        }
+    ]
+}

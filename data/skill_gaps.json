@@ -1,0 +1,6320 @@
+{
+  "f91ed5ec-016e-48f0-b0a3-dc07dad0709b": {
+    "gap_id": "f91ed5ec-016e-48f0-b0a3-dc07dad0709b",
+    "evaluation_id": "eaad6473-a16d-482e-9e5c-68343a783cc7",
+    "missing_must_have": [],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {},
+    "created_at": "2026-01-24T01:53:58.184917"
+  },
+  "fbe7c515-b550-4564-b7b8-0af88472dd7f": {
+    "gap_id": "fbe7c515-b550-4564-b7b8-0af88472dd7f",
+    "evaluation_id": "322e0ed7-ba73-48a3-a949-082466993285",
+    "missing_must_have": [],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {},
+    "created_at": "2026-01-24T01:59:58.227398"
+  },
+  "91639d62-4e5c-4df2-b50b-d6e9f8a6a0b7": {
+    "gap_id": "91639d62-4e5c-4df2-b50b-d6e9f8a6a0b7",
+    "evaluation_id": "5ab280fc-7072-465b-a583-7880acfdddcf",
+    "missing_must_have": [],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {},
+    "created_at": "2026-01-24T13:40:50.637999"
+  },
+  "34874325-beaa-4a01-9546-ef1ec58fa9c5": {
+    "gap_id": "34874325-beaa-4a01-9546-ef1ec58fa9c5",
+    "evaluation_id": "8c3a7e70-260d-4eb0-a6f3-90dffa342d54",
+    "missing_must_have": [],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {},
+    "created_at": "2026-01-24T13:59:18.050110"
+  },
+  "fc17c733-f947-4426-b48f-9b8dd9487461": {
+    "gap_id": "fc17c733-f947-4426-b48f-9b8dd9487461",
+    "evaluation_id": "97123e1f-4772-46a1-92df-3f72956dd1ea",
+    "missing_must_have": [],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {},
+    "created_at": "2026-01-24T14:07:40.572742"
+  },
+  "9963efcd-5307-4d75-aa2a-c34363949916": {
+    "gap_id": "9963efcd-5307-4d75-aa2a-c34363949916",
+    "evaluation_id": "0f1d2237-ed33-471d-90a6-01c43dfed698",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Firebase",
+      "Json",
+      "Mongodb",
+      "Python",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Mongodb",
+        "Python"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T14:12:15.994638"
+  },
+  "e252d14c-eb7a-454b-a19c-b9eb1e5e07a9": {
+    "gap_id": "e252d14c-eb7a-454b-a19c-b9eb1e5e07a9",
+    "evaluation_id": "3ce7dd5d-c487-41b8-a150-2379a7a9ab48",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Firebase",
+      "Json",
+      "Mongodb",
+      "Python",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Mongodb",
+        "Python"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T14:17:12.656987"
+  },
+  "0f8f7671-992e-460c-9a13-3977b5e0bba3": {
+    "gap_id": "0f8f7671-992e-460c-9a13-3977b5e0bba3",
+    "evaluation_id": "f9ffa7c3-7e39-4430-94dd-666e41130527",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Firebase",
+      "Json",
+      "Mongodb",
+      "Python",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Mongodb",
+        "Python"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T14:21:22.736396"
+  },
+  "537bb1d6-73ae-4f56-8eb2-4eb64ff6f284": {
+    "gap_id": "537bb1d6-73ae-4f56-8eb2-4eb64ff6f284",
+    "evaluation_id": "02a5df05-8177-4d07-ab67-f497847483e3",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Firebase",
+      "Json",
+      "Mongodb",
+      "Python",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Mongodb",
+        "Python"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T14:21:51.635425"
+  },
+  "a9fe579e-c84e-45bb-a11d-731f62e48dc6": {
+    "gap_id": "a9fe579e-c84e-45bb-a11d-731f62e48dc6",
+    "evaluation_id": "e8be4dfc-ce2c-4932-b335-85de331a3909",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:51.404418"
+  },
+  "54822ee0-cdf8-44ff-badb-60a12921526b": {
+    "gap_id": "54822ee0-cdf8-44ff-badb-60a12921526b",
+    "evaluation_id": "8126542f-e7a9-4c96-9aae-2cf3f3fe3df5",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:51.766936"
+  },
+  "01f54a40-8322-4d1e-9b1a-35729cdc29d0": {
+    "gap_id": "01f54a40-8322-4d1e-9b1a-35729cdc29d0",
+    "evaluation_id": "ef4233fc-1b21-48d9-8185-467211428aa2",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:52.142851"
+  },
+  "9578e884-9c08-4ad1-9be5-0b5e076974f3": {
+    "gap_id": "9578e884-9c08-4ad1-9be5-0b5e076974f3",
+    "evaluation_id": "6099ae15-5f2c-481b-b318-a8832296a376",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:52.522015"
+  },
+  "10f08306-3be6-44cc-9420-8a45bf6a5b71": {
+    "gap_id": "10f08306-3be6-44cc-9420-8a45bf6a5b71",
+    "evaluation_id": "91706bcf-2901-4d07-b637-1c7d959333f4",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:52.900297"
+  },
+  "45a5e381-e50e-4474-a6e7-4a322c012afc": {
+    "gap_id": "45a5e381-e50e-4474-a6e7-4a322c012afc",
+    "evaluation_id": "00c8e605-c932-482a-b871-950a61950af1",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:53.283513"
+  },
+  "69af3995-dac6-4f5c-9562-47075d285c39": {
+    "gap_id": "69af3995-dac6-4f5c-9562-47075d285c39",
+    "evaluation_id": "d479d5f2-ab4c-4522-a46c-f16b40739e95",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:53.678610"
+  },
+  "df5a4c6f-62b0-4bd5-8ba4-ca6bb9cd1e40": {
+    "gap_id": "df5a4c6f-62b0-4bd5-8ba4-ca6bb9cd1e40",
+    "evaluation_id": "d4d6cc42-aad1-40f1-8306-1dd8ba22fbc2",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:54.058156"
+  },
+  "6b94a9b5-2d68-4665-8c15-c9e34bde230f": {
+    "gap_id": "6b94a9b5-2d68-4665-8c15-c9e34bde230f",
+    "evaluation_id": "7912ea09-7699-42fe-8771-fc470e13aab2",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:54.437248"
+  },
+  "59843e33-0ec0-4a99-90a0-a5fed40447cf": {
+    "gap_id": "59843e33-0ec0-4a99-90a0-a5fed40447cf",
+    "evaluation_id": "83d29ada-4aba-4742-97a2-efdcea7c9c29",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:04:54.814115"
+  },
+  "78e14999-9cff-4524-81d3-b3c87cdaebdd": {
+    "gap_id": "78e14999-9cff-4524-81d3-b3c87cdaebdd",
+    "evaluation_id": "121ab4d2-5aaa-4b70-bc8f-43e0a0bc8c1e",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Firebase",
+      "Json",
+      "Mongodb",
+      "Python",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Mongodb",
+        "Python"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:05:56.157618"
+  },
+  "42539e57-72a4-4e35-9c75-d1fb2ebfeef0": {
+    "gap_id": "42539e57-72a4-4e35-9c75-d1fb2ebfeef0",
+    "evaluation_id": "fe8478d6-0e5f-40e3-8174-735db4a9de86",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:24.529924"
+  },
+  "7cc9b67c-ac2a-4858-b736-d439e36b542c": {
+    "gap_id": "7cc9b67c-ac2a-4858-b736-d439e36b542c",
+    "evaluation_id": "903d7de4-c613-4d45-8b11-590913b6feb3",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:24.907132"
+  },
+  "824e56ec-5f16-4b49-a8c4-3dc5c77390d7": {
+    "gap_id": "824e56ec-5f16-4b49-a8c4-3dc5c77390d7",
+    "evaluation_id": "6c34dcbd-62b1-4fec-bcd9-5f2de5df893d",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:25.321141"
+  },
+  "945a1a02-4e02-4a21-bd2e-0498ca9e9818": {
+    "gap_id": "945a1a02-4e02-4a21-bd2e-0498ca9e9818",
+    "evaluation_id": "54f56ba7-7153-45eb-b9d3-dd0786df3fcc",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:25.697633"
+  },
+  "85b60a99-71f7-461f-9155-70bba95d8163": {
+    "gap_id": "85b60a99-71f7-461f-9155-70bba95d8163",
+    "evaluation_id": "8c20af0e-875d-4908-9450-311225c6cda9",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:26.074521"
+  },
+  "8560f3e2-f39e-4777-bd01-909e605d070f": {
+    "gap_id": "8560f3e2-f39e-4777-bd01-909e605d070f",
+    "evaluation_id": "d6bdc8d0-4a69-4396-99fd-df9bd9c2479f",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:26.474843"
+  },
+  "5c851150-326b-4458-96d9-e77b7e833f73": {
+    "gap_id": "5c851150-326b-4458-96d9-e77b7e833f73",
+    "evaluation_id": "e9adbdd1-4419-4ff4-a4ac-2e00922d4be1",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:26.860866"
+  },
+  "4f5bd9a0-0ab7-4c96-a23f-4694247eecc5": {
+    "gap_id": "4f5bd9a0-0ab7-4c96-a23f-4694247eecc5",
+    "evaluation_id": "2e13d1ff-eaff-4fb3-9a98-5684ae429088",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:27.259663"
+  },
+  "4e2f2039-d6ff-4b19-b0a0-6464c85a5661": {
+    "gap_id": "4e2f2039-d6ff-4b19-b0a0-6464c85a5661",
+    "evaluation_id": "65fc882a-57fa-465b-b1ef-b5c397cc8fd7",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:27.644806"
+  },
+  "f2a86430-a1e8-44f8-9950-44927a9fb362": {
+    "gap_id": "f2a86430-a1e8-44f8-9950-44927a9fb362",
+    "evaluation_id": "fb335127-58ce-4965-ab15-8deefb737caa",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "Git",
+      "Github",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "ML",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "cloud": [
+        "Git"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "devops": [
+        "Github"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "ML",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T15:10:28.095641"
+  },
+  "ca4c710f-6b7a-4725-8b20-7c0f10242dff": {
+    "gap_id": "ca4c710f-6b7a-4725-8b20-7c0f10242dff",
+    "evaluation_id": "959dd5d9-a47e-4036-a21f-0d100faeb8a8",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:31.374029"
+  },
+  "31e912fa-6bee-46b6-ba92-a1d2c4968a66": {
+    "gap_id": "31e912fa-6bee-46b6-ba92-a1d2c4968a66",
+    "evaluation_id": "d8221c05-bff3-4010-b3d5-4b7b33642fca",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:31.764627"
+  },
+  "f09f8d90-dd42-4f92-9275-b0281b4fda45": {
+    "gap_id": "f09f8d90-dd42-4f92-9275-b0281b4fda45",
+    "evaluation_id": "83fe55b7-73fc-46ad-bc3b-db8c264c65f0",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:32.152284"
+  },
+  "b719ecf3-337b-49d1-b0af-c82f4e09fca8": {
+    "gap_id": "b719ecf3-337b-49d1-b0af-c82f4e09fca8",
+    "evaluation_id": "64e68351-327b-4a88-b094-755890428b86",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:32.548882"
+  },
+  "dcb198ff-e48a-4051-af96-f9bbc73bf538": {
+    "gap_id": "dcb198ff-e48a-4051-af96-f9bbc73bf538",
+    "evaluation_id": "d68a0c52-71ed-4e08-9e5c-3f3c0493aba3",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:32.940682"
+  },
+  "50ce693f-e96d-4811-8237-ec0f900b71d4": {
+    "gap_id": "50ce693f-e96d-4811-8237-ec0f900b71d4",
+    "evaluation_id": "cc3db00d-2b7b-4ebf-9d89-be3c28e88a38",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:33.344520"
+  },
+  "9c218a99-902c-4007-92f1-38b53d998702": {
+    "gap_id": "9c218a99-902c-4007-92f1-38b53d998702",
+    "evaluation_id": "8e29b129-dc9d-4878-9dec-0a298eacd32e",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:33.736681"
+  },
+  "01550b87-b208-4242-b23d-f6898fceba6b": {
+    "gap_id": "01550b87-b208-4242-b23d-f6898fceba6b",
+    "evaluation_id": "cab3ea49-3ef7-4531-8f25-a97c885c7888",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:34.155861"
+  },
+  "5a63a008-8f05-4a65-9f39-672a8c85c17f": {
+    "gap_id": "5a63a008-8f05-4a65-9f39-672a8c85c17f",
+    "evaluation_id": "8c09888c-590f-4cfe-9f68-bf9d9ffd12fd",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:34.563696"
+  },
+  "03a94e79-1d2f-4166-8801-c7b103f7e7d7": {
+    "gap_id": "03a94e79-1d2f-4166-8801-c7b103f7e7d7",
+    "evaluation_id": "176629ba-a9f4-4ec7-ac6c-a2f6f2574e83",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:34.965229"
+  },
+  "e00874b6-9291-4b34-9b4b-81c924915ea5": {
+    "gap_id": "e00874b6-9291-4b34-9b4b-81c924915ea5",
+    "evaluation_id": "9098c576-84fa-461c-9569-9fe51c315042",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:59.444595"
+  },
+  "47ea89db-d14c-4384-8ff2-5f87ebc6f3af": {
+    "gap_id": "47ea89db-d14c-4384-8ff2-5f87ebc6f3af",
+    "evaluation_id": "40cec3c9-0ffe-4b1f-9bcc-7dd0c81898e5",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:52:59.832926"
+  },
+  "aac8bc23-0ba7-4753-a3cb-ba97d0e05764": {
+    "gap_id": "aac8bc23-0ba7-4753-a3cb-ba97d0e05764",
+    "evaluation_id": "aa3c77f5-f601-44e2-a0ea-a7bb2efd8f5f",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:00.217032"
+  },
+  "993fce76-90d7-4951-b36a-52af2761f66f": {
+    "gap_id": "993fce76-90d7-4951-b36a-52af2761f66f",
+    "evaluation_id": "25c881e3-0362-43f8-b6b9-033397f66d7c",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:00.604060"
+  },
+  "b6870e0a-8e2d-4440-a119-91139899da54": {
+    "gap_id": "b6870e0a-8e2d-4440-a119-91139899da54",
+    "evaluation_id": "e2b0ae5d-adae-42d5-ab81-52b517409fab",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:00.998438"
+  },
+  "f2e1ef1e-dfe8-4ae7-9a6b-bcc9d58fd2be": {
+    "gap_id": "f2e1ef1e-dfe8-4ae7-9a6b-bcc9d58fd2be",
+    "evaluation_id": "1774cb65-0b3d-45a4-ac72-595f6728b9f7",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:01.374172"
+  },
+  "ac295075-e26c-455b-b8d9-b70535d88509": {
+    "gap_id": "ac295075-e26c-455b-b8d9-b70535d88509",
+    "evaluation_id": "0ea3b91a-a9e5-4d34-b4e6-fcb299492313",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:01.769439"
+  },
+  "8c850436-cb79-4c33-a54c-a4659fe0675d": {
+    "gap_id": "8c850436-cb79-4c33-a54c-a4659fe0675d",
+    "evaluation_id": "5ab53c3d-925c-4d27-9691-47f09a828482",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:02.168581"
+  },
+  "596fd05d-ee29-4ed3-a4f5-b61a858b2f61": {
+    "gap_id": "596fd05d-ee29-4ed3-a4f5-b61a858b2f61",
+    "evaluation_id": "9f98918a-7a2d-4398-9da3-0f8fafcaf78a",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:02.556832"
+  },
+  "e930fc78-ee0b-4aaa-be13-9ac853d44e55": {
+    "gap_id": "e930fc78-ee0b-4aaa-be13-9ac853d44e55",
+    "evaluation_id": "cf06689c-95ad-439b-b6bb-02c32c505ee4",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:53:02.951728"
+  },
+  "34acfe80-b886-4569-a1d2-db0dd5bad9f6": {
+    "gap_id": "34acfe80-b886-4569-a1d2-db0dd5bad9f6",
+    "evaluation_id": "4594fb79-aed9-488d-871e-7ad2e7a9ea38",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:38.935444"
+  },
+  "a13bb721-3ce1-4af5-a8d5-5b28730c7f71": {
+    "gap_id": "a13bb721-3ce1-4af5-a8d5-5b28730c7f71",
+    "evaluation_id": "0121fa62-75ce-4d7e-9231-73fb94f58bdf",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:39.363414"
+  },
+  "49850ec5-eee1-4002-b505-61d1711b197e": {
+    "gap_id": "49850ec5-eee1-4002-b505-61d1711b197e",
+    "evaluation_id": "b9379fd2-5f28-44b4-9f4d-5fe57b1cfd06",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:39.762524"
+  },
+  "23bd79ca-eee1-4340-a135-be276e9cd620": {
+    "gap_id": "23bd79ca-eee1-4340-a135-be276e9cd620",
+    "evaluation_id": "38652f03-6ec6-4884-9fb6-866834400a1d",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:40.173919"
+  },
+  "ff56b67c-9b7f-41ed-9fb3-ecef129e8ca1": {
+    "gap_id": "ff56b67c-9b7f-41ed-9fb3-ecef129e8ca1",
+    "evaluation_id": "78612050-44cc-4976-8b18-b3aa6cbc5405",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:40.579408"
+  },
+  "6ea08f90-a217-482f-b9aa-2424a629490e": {
+    "gap_id": "6ea08f90-a217-482f-b9aa-2424a629490e",
+    "evaluation_id": "4cc38e36-e84d-4ca6-a564-52d4c71c5a4c",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:40.995078"
+  },
+  "6d4d9db4-72a5-4b8c-87e6-2fb0016507f0": {
+    "gap_id": "6d4d9db4-72a5-4b8c-87e6-2fb0016507f0",
+    "evaluation_id": "1f91380e-2a4e-4610-a0e6-ac04ed90f7c3",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:41.414982"
+  },
+  "df1cde31-7fc4-4e59-a664-536094c4ee61": {
+    "gap_id": "df1cde31-7fc4-4e59-a664-536094c4ee61",
+    "evaluation_id": "799e0389-0339-41a2-b76a-2e5e75ff0c34",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:41.851806"
+  },
+  "0640b739-c068-461b-9bb3-d5eda46f730f": {
+    "gap_id": "0640b739-c068-461b-9bb3-d5eda46f730f",
+    "evaluation_id": "5b8305a7-69b6-4388-a12e-f38d29f4e4f7",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:42.289131"
+  },
+  "430f0f65-3e5a-4faa-8df2-9a7fd42c141b": {
+    "gap_id": "430f0f65-3e5a-4faa-8df2-9a7fd42c141b",
+    "evaluation_id": "903368ab-bf74-44c3-99b4-cd795a91abcd",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T20:56:42.724294"
+  },
+  "255e6a7d-06d8-4f89-9071-944f5255cdba": {
+    "gap_id": "255e6a7d-06d8-4f89-9071-944f5255cdba",
+    "evaluation_id": "a9d40303-7e87-4c43-b079-77ca0e8e8741",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:49.866213"
+  },
+  "96a17ab5-cac4-4ab5-a68b-a702c840a2f1": {
+    "gap_id": "96a17ab5-cac4-4ab5-a68b-a702c840a2f1",
+    "evaluation_id": "911d3e25-5f98-4275-9800-5602e5e2fda2",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:50.364903"
+  },
+  "a0f9c2a8-dd44-4f78-a16e-a1ec5664c219": {
+    "gap_id": "a0f9c2a8-dd44-4f78-a16e-a1ec5664c219",
+    "evaluation_id": "b08d400f-e8c1-4831-adbe-7a818aa73720",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:50.801515"
+  },
+  "e76de3dc-7ec8-471a-bc3b-7741c9481869": {
+    "gap_id": "e76de3dc-7ec8-471a-bc3b-7741c9481869",
+    "evaluation_id": "7d998e7e-8a44-4e87-828b-135d28417203",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:51.339949"
+  },
+  "0216fc5d-af7f-43dd-a13a-8dc54d5f6bca": {
+    "gap_id": "0216fc5d-af7f-43dd-a13a-8dc54d5f6bca",
+    "evaluation_id": "748e8470-97b3-46bf-bfb9-90cc83eec4a8",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:51.765537"
+  },
+  "31e617b5-76ce-4877-a9ef-5d1e04a50ea3": {
+    "gap_id": "31e617b5-76ce-4877-a9ef-5d1e04a50ea3",
+    "evaluation_id": "761e31a8-f841-40f3-8e02-7dd1e2ba4a6d",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:52.263332"
+  },
+  "eeab2f83-ee19-441e-88d0-4613ec01f508": {
+    "gap_id": "eeab2f83-ee19-441e-88d0-4613ec01f508",
+    "evaluation_id": "0d850523-326a-4e24-8a01-057c4dddf084",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:52.684287"
+  },
+  "5811ca99-7074-4bf3-88a9-d93e42338f0b": {
+    "gap_id": "5811ca99-7074-4bf3-88a9-d93e42338f0b",
+    "evaluation_id": "f4b794f9-6c51-4bd9-a3c2-2ab261c1d04c",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:53.178891"
+  },
+  "cda29942-eb87-4cdc-bd3e-85151d6fe8ec": {
+    "gap_id": "cda29942-eb87-4cdc-bd3e-85151d6fe8ec",
+    "evaluation_id": "3a0ca90e-acec-4ac8-a39d-6df5c037985b",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:53.591490"
+  },
+  "c934944d-22d2-4a8c-b3e3-fe942bc113cc": {
+    "gap_id": "c934944d-22d2-4a8c-b3e3-fe942bc113cc",
+    "evaluation_id": "4f73436c-500a-48a9-92d6-a10f8f0118c6",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:54.105725"
+  },
+  "bfe87aa4-64d3-4954-a5f9-0e182bf4abeb": {
+    "gap_id": "bfe87aa4-64d3-4954-a5f9-0e182bf4abeb",
+    "evaluation_id": "4995cc0c-9d18-4033-90ab-d20bdd0731f7",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:54.592443"
+  },
+  "3a48ef58-0834-40d3-99bb-00c3ece82c03": {
+    "gap_id": "3a48ef58-0834-40d3-99bb-00c3ece82c03",
+    "evaluation_id": "ff214b20-94a8-436c-be44-bf880597a4c6",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:55.022742"
+  },
+  "f80d3fed-1ca4-4110-bf22-4e81f19ca497": {
+    "gap_id": "f80d3fed-1ca4-4110-bf22-4e81f19ca497",
+    "evaluation_id": "45e59d94-6bc6-4c5e-8a05-82a011294773",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:55.544601"
+  },
+  "be1e2df0-5be8-4e46-8fd9-e53db437f6d8": {
+    "gap_id": "be1e2df0-5be8-4e46-8fd9-e53db437f6d8",
+    "evaluation_id": "f755da47-188d-4491-b15e-39d0cc713a75",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:55.974622"
+  },
+  "b3f1ff00-b494-4fee-8c33-eec1c8d18ebf": {
+    "gap_id": "b3f1ff00-b494-4fee-8c33-eec1c8d18ebf",
+    "evaluation_id": "57d8faeb-61d3-4982-99a8-8ac9015893a2",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:56.401711"
+  },
+  "373b2ccd-ad21-489d-a476-f6d76d2083aa": {
+    "gap_id": "373b2ccd-ad21-489d-a476-f6d76d2083aa",
+    "evaluation_id": "c8c01d3e-c60c-4373-93a5-e575e049e378",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:56.904100"
+  },
+  "d0e45fd8-fa9f-46da-accb-16a141aeba65": {
+    "gap_id": "d0e45fd8-fa9f-46da-accb-16a141aeba65",
+    "evaluation_id": "ffd79231-2616-4784-b272-8bcc57631a38",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:57.396101"
+  },
+  "9314699f-2209-4a90-bffa-decf46c1c664": {
+    "gap_id": "9314699f-2209-4a90-bffa-decf46c1c664",
+    "evaluation_id": "9eb794b2-6eee-4822-95f5-c774b4a9cb9b",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:57.820329"
+  },
+  "70599239-599b-4a54-be7a-7f095016cea1": {
+    "gap_id": "70599239-599b-4a54-be7a-7f095016cea1",
+    "evaluation_id": "01999516-9a9d-4473-8893-2eda994c4d41",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:58.327430"
+  },
+  "583f34a5-ffb7-411d-b739-3be3ebf679bf": {
+    "gap_id": "583f34a5-ffb7-411d-b739-3be3ebf679bf",
+    "evaluation_id": "4df24e29-dfe3-4862-ac2c-3dc67cdaf458",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:02:58.758966"
+  },
+  "f58d4fad-820c-4cfd-b4c7-f21941a11a3a": {
+    "gap_id": "f58d4fad-820c-4cfd-b4c7-f21941a11a3a",
+    "evaluation_id": "e983cefc-4f28-44c3-9e01-0ab01e5c9e05",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:03:53.844669"
+  },
+  "2172c84e-309c-4cf9-b498-766826cd85b0": {
+    "gap_id": "2172c84e-309c-4cf9-b498-766826cd85b0",
+    "evaluation_id": "0beaa6de-1bbd-4fed-85a4-5fb24b13ca94",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T21:07:41.371061"
+  },
+  "61327d84-e571-4f1f-ba4e-ddcee007790c": {
+    "gap_id": "61327d84-e571-4f1f-ba4e-ddcee007790c",
+    "evaluation_id": "184a97bc-d796-44a4-9c28-481aa91510dc",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T21:29:02.218202"
+  },
+  "69abafa3-82b5-4f25-8a38-07e5ced7e7ca": {
+    "gap_id": "69abafa3-82b5-4f25-8a38-07e5ced7e7ca",
+    "evaluation_id": "f75ec44b-2470-4a01-9c4d-d7b076c4698e",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:00.440525"
+  },
+  "e248fa32-ac48-4ac5-b014-0803ba34655e": {
+    "gap_id": "e248fa32-ac48-4ac5-b014-0803ba34655e",
+    "evaluation_id": "a7b530dd-495b-49d6-9e90-605b1cf06236",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:44.838306"
+  },
+  "9831fe95-8a42-46a4-82f2-0a316df80a6c": {
+    "gap_id": "9831fe95-8a42-46a4-82f2-0a316df80a6c",
+    "evaluation_id": "d9c5dd27-4b65-42a7-8366-d43ae7f906e2",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:45.339858"
+  },
+  "16ee0ef0-a9da-4e94-9ca9-14deb339873e": {
+    "gap_id": "16ee0ef0-a9da-4e94-9ca9-14deb339873e",
+    "evaluation_id": "b3de7759-05e5-41b5-8b14-f66f351355c5",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:45.796966"
+  },
+  "24eaf689-6c98-4882-ac64-94a9748689e6": {
+    "gap_id": "24eaf689-6c98-4882-ac64-94a9748689e6",
+    "evaluation_id": "9f6160a4-c9e5-43e2-a316-299b037dedfb",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:46.334715"
+  },
+  "2f13bc5b-9a68-4d61-bd75-8272d6ad8b26": {
+    "gap_id": "2f13bc5b-9a68-4d61-bd75-8272d6ad8b26",
+    "evaluation_id": "263b3cdf-41b5-43b5-9faf-242b174e196d",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:46.806598"
+  },
+  "28e5a8f7-04bc-4222-ab49-a5f596c28e2a": {
+    "gap_id": "28e5a8f7-04bc-4222-ab49-a5f596c28e2a",
+    "evaluation_id": "acff3501-5df3-420f-a7c4-0472c00cb63d",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:47.356364"
+  },
+  "d35bf9e3-22df-46f6-ae19-d4456e16b0db": {
+    "gap_id": "d35bf9e3-22df-46f6-ae19-d4456e16b0db",
+    "evaluation_id": "4eba95e8-5ecc-4627-9556-c4e833febca1",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:47.824537"
+  },
+  "a8f2ac32-74d7-4ac8-82dd-a5afee160217": {
+    "gap_id": "a8f2ac32-74d7-4ac8-82dd-a5afee160217",
+    "evaluation_id": "90f74ea0-d866-43ec-94b1-8d69524335f4",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:48.395098"
+  },
+  "d2cf0b05-7cc1-4493-ae45-4a77f940f7e6": {
+    "gap_id": "d2cf0b05-7cc1-4493-ae45-4a77f940f7e6",
+    "evaluation_id": "8ecf8b84-22a8-4abc-9acb-dd592b9a9465",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:48.844490"
+  },
+  "3bfd70d6-7294-4097-99b1-b616166778bc": {
+    "gap_id": "3bfd70d6-7294-4097-99b1-b616166778bc",
+    "evaluation_id": "c2ca6739-3486-48e2-917e-0762cba273b1",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:49.401805"
+  },
+  "71cfa858-4df5-4abe-aa31-d0f7dab4ee80": {
+    "gap_id": "71cfa858-4df5-4abe-aa31-d0f7dab4ee80",
+    "evaluation_id": "12b1982a-ef4e-4248-9e79-600265a4c957",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:51.431644"
+  },
+  "ec5b5b69-5c5d-43f2-bf73-086f6f1e7323": {
+    "gap_id": "ec5b5b69-5c5d-43f2-bf73-086f6f1e7323",
+    "evaluation_id": "f30f9235-5c49-4bb5-ba4a-f4f73d35658f",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:51.889142"
+  },
+  "66e93158-51e9-401d-aa9a-2777b578f661": {
+    "gap_id": "66e93158-51e9-401d-aa9a-2777b578f661",
+    "evaluation_id": "b2d24e7d-c261-401c-91d5-a1d1000a6c87",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:52.392452"
+  },
+  "bdd92069-10bd-4740-8d26-9a14f1211005": {
+    "gap_id": "bdd92069-10bd-4740-8d26-9a14f1211005",
+    "evaluation_id": "c256fdb7-b1ca-4c9b-b13d-1a8c990b1125",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:52.833410"
+  },
+  "70159d64-00b9-4064-876c-40bea818cc06": {
+    "gap_id": "70159d64-00b9-4064-876c-40bea818cc06",
+    "evaluation_id": "7f8e2b0d-174b-4ca1-939a-b8928c02ec03",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:53.304429"
+  },
+  "ef5dd9b4-0ad1-4fad-9b49-baf1d1d6759e": {
+    "gap_id": "ef5dd9b4-0ad1-4fad-9b49-baf1d1d6759e",
+    "evaluation_id": "41b99746-7a39-4d53-ab4f-6018b1b06722",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:53.872158"
+  },
+  "b3836692-2e79-4456-863c-5a132ca17929": {
+    "gap_id": "b3836692-2e79-4456-863c-5a132ca17929",
+    "evaluation_id": "b56ccfc0-c8bf-4741-9620-13b9d99baed3",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:54.387969"
+  },
+  "451cbc2e-80e2-41e9-952c-4f06bb70f8ab": {
+    "gap_id": "451cbc2e-80e2-41e9-952c-4f06bb70f8ab",
+    "evaluation_id": "f438857a-8b38-42df-8e8c-bce5b30358fa",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:54.872105"
+  },
+  "635d581c-6ca1-4dbe-a568-886b67bd4f91": {
+    "gap_id": "635d581c-6ca1-4dbe-a568-886b67bd4f91",
+    "evaluation_id": "216019d3-c81c-451e-a7e5-c188a75c020e",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:55.438153"
+  },
+  "9202bd1a-357c-49b4-9d1c-dc4057213eb5": {
+    "gap_id": "9202bd1a-357c-49b4-9d1c-dc4057213eb5",
+    "evaluation_id": "caee1f01-0dc6-4ec6-b8b1-ba3b3e532f5f",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:06:55.896979"
+  },
+  "7aebae08-32d8-45a6-97ab-dd0904677a47": {
+    "gap_id": "7aebae08-32d8-45a6-97ab-dd0904677a47",
+    "evaluation_id": "15e8c4ea-01c6-458c-8c95-fd8f29e60ce8",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:50.299378"
+  },
+  "b445a57d-510a-4950-8d87-69e49d21d2bc": {
+    "gap_id": "b445a57d-510a-4950-8d87-69e49d21d2bc",
+    "evaluation_id": "9895b8f4-8b73-4f85-855a-c83f788e9796",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:50.829923"
+  },
+  "68e75963-1602-410d-80f2-eaaaa295696a": {
+    "gap_id": "68e75963-1602-410d-80f2-eaaaa295696a",
+    "evaluation_id": "5e5891a0-da3d-4a21-8d79-8db1a21545c5",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:51.279038"
+  },
+  "d66b28fe-a1b4-489a-a987-06d9ae2f9983": {
+    "gap_id": "d66b28fe-a1b4-489a-a987-06d9ae2f9983",
+    "evaluation_id": "a108cb17-d10d-42e3-bf16-de60f09a30f5",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:51.849562"
+  },
+  "a890ca9d-2dcc-4c2b-abd5-f7736ca94f94": {
+    "gap_id": "a890ca9d-2dcc-4c2b-abd5-f7736ca94f94",
+    "evaluation_id": "e2b375a7-1f37-4da0-903d-da1323173721",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:52.306004"
+  },
+  "c048b493-96c5-4c81-82ea-9a03a871e9d6": {
+    "gap_id": "c048b493-96c5-4c81-82ea-9a03a871e9d6",
+    "evaluation_id": "4acf79cc-d803-4a9f-b86c-5ce962133b63",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:52.840680"
+  },
+  "e7154a7f-797e-453c-a580-99e726069c17": {
+    "gap_id": "e7154a7f-797e-453c-a580-99e726069c17",
+    "evaluation_id": "80cf51b7-4b1e-4bdb-a57d-72748f4a355f",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:53.306151"
+  },
+  "f6d12c62-57ad-4f75-ab1d-0633aaac39b2": {
+    "gap_id": "f6d12c62-57ad-4f75-ab1d-0633aaac39b2",
+    "evaluation_id": "1b26ec30-078c-45df-9d23-532cf11e8254",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:53.884932"
+  },
+  "0cac7deb-f25f-4d2e-b39c-ee912de754bf": {
+    "gap_id": "0cac7deb-f25f-4d2e-b39c-ee912de754bf",
+    "evaluation_id": "25e0e343-b76c-4c05-8769-ae4b95b55827",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:54.339008"
+  },
+  "b16ba9dd-8571-438a-bad0-26bf1de8ba0c": {
+    "gap_id": "b16ba9dd-8571-438a-bad0-26bf1de8ba0c",
+    "evaluation_id": "69b4fe38-f2fb-42c7-bbf4-2cf1397b9d5b",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:55.200060"
+  },
+  "8d99d229-b88e-4bcb-aaa5-851d18f45110": {
+    "gap_id": "8d99d229-b88e-4bcb-aaa5-851d18f45110",
+    "evaluation_id": "24d15318-357c-4a9f-a559-2d8ad2ac73ff",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:55.751872"
+  },
+  "ba414bc3-54c8-4050-8ef6-82f961668f8d": {
+    "gap_id": "ba414bc3-54c8-4050-8ef6-82f961668f8d",
+    "evaluation_id": "5f461dbb-f8fb-4c9d-9b34-208eff96428f",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:56.242285"
+  },
+  "a5cc68af-50d0-40e2-a87e-2517f09c4b21": {
+    "gap_id": "a5cc68af-50d0-40e2-a87e-2517f09c4b21",
+    "evaluation_id": "2798c0a0-0edd-4f9e-bf99-d2a9f961b8da",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:56.756923"
+  },
+  "c673e7bb-f729-455d-98ea-d6437cce2259": {
+    "gap_id": "c673e7bb-f729-455d-98ea-d6437cce2259",
+    "evaluation_id": "dd576e51-94b0-4750-8bf3-a48bc6285714",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:57.239056"
+  },
+  "c7574ad0-e752-4168-a17b-90601718c764": {
+    "gap_id": "c7574ad0-e752-4168-a17b-90601718c764",
+    "evaluation_id": "02150ec2-be43-47c0-b097-dc91b175ef58",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:57.706060"
+  },
+  "ce49bbc6-cb78-48a5-a94b-562d8b2ef2ba": {
+    "gap_id": "ce49bbc6-cb78-48a5-a94b-562d8b2ef2ba",
+    "evaluation_id": "5cade8c3-fa77-4ec3-83b1-ed170c62da4c",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:58.251805"
+  },
+  "3c268d9b-f199-45dd-8abb-caf462a5156c": {
+    "gap_id": "3c268d9b-f199-45dd-8abb-caf462a5156c",
+    "evaluation_id": "38584489-ec1a-40b5-ab45-27d24ce69756",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:58.791948"
+  },
+  "d59c80a3-d73b-45dc-8a62-42bdaec89cbc": {
+    "gap_id": "d59c80a3-d73b-45dc-8a62-42bdaec89cbc",
+    "evaluation_id": "bddfdd95-9a42-4a0c-85e3-34c312cc5060",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:59.244827"
+  },
+  "d36c8ce8-1959-436f-ad5a-3d3542dacf5e": {
+    "gap_id": "d36c8ce8-1959-436f-ad5a-3d3542dacf5e",
+    "evaluation_id": "b5506041-6d05-4170-b93f-2f55723548d3",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:11:59.810245"
+  },
+  "90663566-7fb0-4347-81fc-291f594841eb": {
+    "gap_id": "90663566-7fb0-4347-81fc-291f594841eb",
+    "evaluation_id": "54a2bd80-21db-4748-b0c4-fe9215214700",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:12:00.440359"
+  },
+  "18112b6c-28fd-4188-9544-cc9de0417693": {
+    "gap_id": "18112b6c-28fd-4188-9544-cc9de0417693",
+    "evaluation_id": "4557c8a4-28b6-4301-a7e0-5f2016b2bf8e",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:43.201332"
+  },
+  "28a03530-d773-438e-8a0d-ee05e1b8793d": {
+    "gap_id": "28a03530-d773-438e-8a0d-ee05e1b8793d",
+    "evaluation_id": "d3c9752f-aa84-4e26-896e-abfc86955c93",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:43.756522"
+  },
+  "6eb85351-c613-44ee-b8d5-02c48ada9cc7": {
+    "gap_id": "6eb85351-c613-44ee-b8d5-02c48ada9cc7",
+    "evaluation_id": "d43879c0-c1c6-4d98-b8a1-ce11562757db",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:44.269502"
+  },
+  "d92c6437-89b6-49a0-858c-1a94c2e8dbe7": {
+    "gap_id": "d92c6437-89b6-49a0-858c-1a94c2e8dbe7",
+    "evaluation_id": "0feffe0a-5033-4779-818d-4acd51f9add5",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:44.843307"
+  },
+  "2d7c8bf8-e2e7-4753-bb76-5ed25f8b8b7f": {
+    "gap_id": "2d7c8bf8-e2e7-4753-bb76-5ed25f8b8b7f",
+    "evaluation_id": "635275de-82b4-49f9-ac64-6bd6e781bf4d",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:45.332373"
+  },
+  "6b7878ff-9107-43dd-b7a5-6f96281a1752": {
+    "gap_id": "6b7878ff-9107-43dd-b7a5-6f96281a1752",
+    "evaluation_id": "5f9bb2e9-f87f-4e1b-82ed-710d03dc4b35",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:45.910094"
+  },
+  "3a2b6489-6c23-4c1d-9eba-0fdf6f71398a": {
+    "gap_id": "3a2b6489-6c23-4c1d-9eba-0fdf6f71398a",
+    "evaluation_id": "d3746822-87b4-4125-be10-9cfb04ffbfd1",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:46.406978"
+  },
+  "b409daca-94ad-4437-b9ef-6afebbc37f9c": {
+    "gap_id": "b409daca-94ad-4437-b9ef-6afebbc37f9c",
+    "evaluation_id": "f40ce0fb-ca4b-4e67-9e52-255159b7bca8",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:46.973389"
+  },
+  "245b12ef-cf9f-492c-aa67-da21e3db2d94": {
+    "gap_id": "245b12ef-cf9f-492c-aa67-da21e3db2d94",
+    "evaluation_id": "454b1ab9-8775-4932-bbf7-8fe8e96a36f2",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:47.467934"
+  },
+  "d529cb38-c338-43cf-b3cb-c3868928ba1e": {
+    "gap_id": "d529cb38-c338-43cf-b3cb-c3868928ba1e",
+    "evaluation_id": "c3f0bcf3-0274-47f5-91b1-ba2d6f173b01",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:48.039085"
+  },
+  "771e602d-80d3-4105-9dd1-d2bda9a3257a": {
+    "gap_id": "771e602d-80d3-4105-9dd1-d2bda9a3257a",
+    "evaluation_id": "66cb3adf-e161-48b1-bf57-8df94a347375",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:48.629484"
+  },
+  "47afbd60-bb46-4c11-95cb-2d94303df131": {
+    "gap_id": "47afbd60-bb46-4c11-95cb-2d94303df131",
+    "evaluation_id": "09bda410-0541-43de-ab81-779478b10747",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:49.096225"
+  },
+  "2522fe79-dfd7-4fc4-9377-399762a81bdf": {
+    "gap_id": "2522fe79-dfd7-4fc4-9377-399762a81bdf",
+    "evaluation_id": "294ba005-ae4f-429d-89bc-93602c87a68f",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:49.671013"
+  },
+  "53e3d531-e4b7-4088-9a79-603cfe202e38": {
+    "gap_id": "53e3d531-e4b7-4088-9a79-603cfe202e38",
+    "evaluation_id": "b5cd99d5-6210-4426-ae9f-7ae862606805",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:50.152125"
+  },
+  "a3642b05-9ebc-433b-8fc9-7f2dc3b86be1": {
+    "gap_id": "a3642b05-9ebc-433b-8fc9-7f2dc3b86be1",
+    "evaluation_id": "159ffb6a-facc-4adb-b416-d8346a48dff3",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:50.628963"
+  },
+  "b42eb10d-4ab9-4a61-b2be-346671427313": {
+    "gap_id": "b42eb10d-4ab9-4a61-b2be-346671427313",
+    "evaluation_id": "20a4072b-773a-4ca0-b9b9-b4699d9c7f84",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:51.264295"
+  },
+  "50faa65c-a182-482a-a99c-07dc27c17520": {
+    "gap_id": "50faa65c-a182-482a-a99c-07dc27c17520",
+    "evaluation_id": "27c57f07-63f2-4aaa-8164-b31f98369766",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:51.835083"
+  },
+  "cca19cbc-a672-4c18-8f85-67ebbff0604f": {
+    "gap_id": "cca19cbc-a672-4c18-8f85-67ebbff0604f",
+    "evaluation_id": "39ebd6c2-b3b8-4f47-943d-0d5710839365",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:52.312100"
+  },
+  "9a647132-bc06-4a10-9beb-c23d0b95bfd6": {
+    "gap_id": "9a647132-bc06-4a10-9beb-c23d0b95bfd6",
+    "evaluation_id": "ab251e2b-93cf-400f-be83-714424091c24",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:52.956964"
+  },
+  "b07badd0-5a9c-431a-bdb3-d7b440c40f20": {
+    "gap_id": "b07badd0-5a9c-431a-bdb3-d7b440c40f20",
+    "evaluation_id": "b381c489-e151-474b-b615-90760486d63d",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-24T22:14:53.464527"
+  },
+  "eb01defc-8193-4806-8ce8-73d1e4dfb251": {
+    "gap_id": "eb01defc-8193-4806-8ce8-73d1e4dfb251",
+    "evaluation_id": "d0afbb58-f4be-45cf-9c51-989cd58eff42",
+    "missing_must_have": [
+      "AI",
+      "Angular",
+      "CSS",
+      "Documentation",
+      "Firebase",
+      "HTML",
+      "Java",
+      "Javascript",
+      "Js",
+      "Json",
+      "Mongodb",
+      "Mysql",
+      "Node",
+      "Node.Js",
+      "Python",
+      "React",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular",
+        "Firebase",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Python",
+        "React"
+      ],
+      "database": [
+        "Mysql"
+      ],
+      "web_development": [
+        "AI",
+        "CSS",
+        "HTML",
+        "Js",
+        "Node",
+        "Node.Js",
+        "Vue"
+      ],
+      "other": [
+        "Documentation",
+        "Json"
+      ]
+    },
+    "created_at": "2026-01-25T21:55:04.036528"
+  },
+  "b236782c-a0b6-4d44-9fe9-56805a402a05": {
+    "gap_id": "b236782c-a0b6-4d44-9fe9-56805a402a05",
+    "evaluation_id": "c1b14f57-838c-483d-9aa7-d6e3b7d84205",
+    "missing_must_have": [
+      "Angular",
+      "Documentation",
+      "Vue"
+    ],
+    "missing_good_to_have": [],
+    "weak_skills": [],
+    "categorized_gaps": {
+      "programming": [
+        "Angular"
+      ],
+      "web_development": [
+        "Vue"
+      ],
+      "other": [
+        "Documentation"
+      ]
+    },
+    "created_at": "2026-01-25T21:57:13.582363"
+  }
+}
