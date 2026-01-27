@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate - HireLens</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+                    <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="white" opacity="0.9" />
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#F56565" />
+                            <stop offset="100%" stop-color="#C53030" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">HireLens</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="evaluate.html" class="nav-link active">Evaluate</a></li>
+                <li><a href="batch.html" class="nav-link">Batch</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="uploads.html" class="nav-link">Files</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Resume Evaluation</h1>
+            <p class="page-subtitle">Upload your resume and get instant AI-powered feedback</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="evaluate-section">
+        <div class="container">
+            <div class="evaluate-grid">
+                <!-- Upload Column -->
+                <div class="evaluate-card">
+                    <div class="card-header">
+                        <span class="card-icon">📄</span>
+                        <h3>Upload Resume</h3>
+                    </div>
+                    <div class="upload-box" id="uploadBox">
+                        <input type="file" id="resumeFile" accept=".pdf,.docx,.doc" hidden>
+                        <div class="upload-content">
+                            <div class="upload-icon-large">📁</div>
+                            <h4>Drag & Drop your file here</h4>
+                            <p class="upload-hint">or click to browse</p>
+                            <span class="upload-formats">PDF, DOCX (Max 10MB)</span>
+                        </div>
+                    </div>
+                    <div id="fileInfo" class="file-info-box hidden">
+                        <div class="file-icon">📄</div>
+                        <div class="file-details">
+                            <span class="file-name"></span>
+                            <span class="file-size"></span>
+                        </div>
+                        <button class="file-remove" onclick="removeFile()">✕</button>
+                    </div>
+                </div>
+
+                <!-- Job Description Column -->
+                <div class="evaluate-card">
+                    <div class="card-header">
+                        <span class="card-icon">💼</span>
+                        <h3>Job Description</h3>
+                    </div>
+                    <textarea id="jobDescription" class="job-textarea" placeholder="Paste the job description here...
+
+Example:
+We are looking for a Senior Python Developer with 3-5 years of experience. 
+
+Required Skills:
+• Python, Django, FastAPI
+• PostgreSQL, MongoDB
+• Docker, Kubernetes
+• AWS or Azure
+
+Preferred Skills:
+• React, TypeScript
+• CI/CD experience
+• Machine Learning basics"></textarea>
+                </div>
+            </div>
+
+            <!-- Evaluate Button -->
+            <div class="evaluate-action">
+                <button id="evaluateBtn" class="btn btn-primary btn-xl" onclick="evaluateResume()">
+                    <span class="btn-text">✨ Analyze Resume</span>
+                    <span class="btn-loader hidden">
+                        <span class="spinner"></span> Analyzing...
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="results-wrapper hidden">
+        <div class="container">
+            <!-- Results Header -->
+            <div class="results-header">
+                <h2>📊 Evaluation Results</h2>
+                <button class="btn btn-secondary" onclick="downloadResults()">
+                    ⬇️ Download Report
+                </button>
+            </div>
+
+            <!-- Score Card -->
+            <div class="score-card-main">
+                <div class="score-visual">
+                    <svg class="score-ring" width="180" height="180" viewBox="0 0 180 180">
+                        <circle class="score-ring-bg" cx="90" cy="90" r="80" fill="none" stroke="#E2E8F0"
+                            stroke-width="12" />
+                        <circle class="score-ring-fill" id="scoreRing" cx="90" cy="90" r="80" fill="none"
+                            stroke="url(#scoreGradient)" stroke-width="12" stroke-linecap="round" stroke-dasharray="502"
+                            stroke-dashoffset="502" transform="rotate(-90 90 90)" />
+                        <defs>
+                            <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#F56565" />
+                                <stop offset="100%" stop-color="#FC8181" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="score-center">
+                        <span id="scoreNumber" class="score-number">0</span>
+                        <span class="score-max">/100</span>
+                    </div>
+                </div>
+                <div class="score-details">
+                    <span id="scoreClassification" class="classification-badge">Medium Match</span>
+                    <p id="scoreDescription" class="score-description">
+                        Your profile shows moderate alignment with this position
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skills Analysis -->
+            <div class="analysis-grid">
+                <div class="analysis-card matched">
+                    <h3>✅ Matched Skills</h3>
+                    <div id="matchedSkills" class="skills-list"></div>
+                </div>
+                <div class="analysis-card missing">
+                    <h3>❌ Missing Skills</h3>
+                    <div id="missingSkills" class="skills-list"></div>
+                </div>
+            </div>
+
+            <!-- Strengths & Weaknesses -->
+            <div class="feedback-grid">
+                <div class="feedback-card strengths">
+                    <h3>💪 Strengths</h3>
+                    <ul id="strengthsList"></ul>
+                </div>
+                <div class="feedback-card weaknesses">
+                    <h3>📈 Areas for Improvement</h3>
+                    <ul id="weaknessesList"></ul>
+                </div>
+            </div>
+
+            <!-- Course Recommendations -->
+            <div class="recommendations-card">
+                <h3>🎓 Recommended Courses</h3>
+                <div id="coursesList" class="courses-grid"></div>
+            </div>
+
+            <!-- Learning Roadmap -->
+            <div class="roadmap-card">
+                <h3>🗺️ Learning Roadmap</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-phase">
+                        <div class="roadmap-header">
+                            <span class="roadmap-badge">Immediate (1-2 weeks)</span>
+                        </div>
+                        <ul id="roadmapImmediate" class="roadmap-list"></ul>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="roadmap-header">
+                            <span class="roadmap-badge">Short-term (1-3 months)</span>
+                        </div>
+                        <ul id="roadmapShortTerm" class="roadmap-list"></ul>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="roadmap-header">
+                            <span class="roadmap-badge">Long-term (3-6 months)</span>
+                        </div>
+                        <ul id="roadmapLongTerm" class="roadmap-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#footer-gradient)" />
+                            <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="white" opacity="0.9" />
+                            <defs>
+                                <linearGradient id="footer-gradient" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#F56565" />
+                                    <stop offset="100%" stop-color="#C53030" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="logo-text">HireLens</span>
+                    </div>
+                    <p class="footer-tagline">AI-Powered Resume Evaluation</p>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2026 HireLens. Built with Python, FastAPI, and Modern NLP.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HireLens - AI-Powered Resume Evaluation System">
+    <title>HireLens - AI Resume Evaluation</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+                    <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="white" opacity="0.9" />
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#F56565" />
+                            <stop offset="100%" stop-color="#C53030" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">HireLens</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="evaluate.html" class="nav-link">Evaluate</a></li>
+                <li><a href="batch.html" class="nav-link">Batch</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="uploads.html" class="nav-link">Files</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 AI-Powered Resume Analysis</div>
+                <h1 class="hero-title">
+                    Find the <span class="highlight">Perfect Match</span><br>
+                    Between Resumes & Jobs
+                </h1>
+                <p class="hero-subtitle">
+                    Advanced NLP technology that analyzes resumes, identifies skill gaps,
+                    and provides personalized learning recommendations in seconds.
+                </p>
+                <div class="hero-cta">
+                    <a href="evaluate.html" class="btn btn-primary btn-lg">
+                        <span>✨</span> Start Evaluation
+                    </a>
+                    <a href="batch.html" class="btn btn-secondary btn-lg">
+                        <span>📊</span> Batch Process
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🤖</div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">NLP Models Combined</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Course Recommendations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-number">&lt;5s</div>
+                    <div class="stat-label">Analysis Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to optimize your hiring process</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Hybrid NLP Engine</h3>
+                    <p class="feature-description">
+                        Combines TF-IDF, Fuzzy Matching, and Sentence Embeddings
+                        for comprehensive skill detection.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Gap Analysis</h3>
+                    <p class="feature-description">
+                        Identifies missing required skills and nice-to-have improvements
+                        with detailed breakdowns.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3 class="feature-title">Learning Paths</h3>
+                    <p class="feature-description">
+                        Personalized course recommendations from top platforms
+                        mapped to your skill gaps.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Bulk Screening</h3>
+                    <p class="feature-description">
+                        Process hundreds of resumes at once with ranked results
+                        and visual analytics.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Instant Results</h3>
+                    <p class="feature-description">
+                        Get detailed evaluation reports in seconds with
+                        actionable feedback.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-description">
+                        All processing happens locally. Your data never leaves
+                        your control.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple 4-step process for accurate evaluations</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Upload Resume</h3>
+                    <p class="step-description">
+                        Submit PDF or DOCX files. Our parser extracts skills,
+                        education, and experience.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Add Job Details</h3>
+                    <p class="step-description">
+                        Paste the job description. We analyze requirements
+                        and extract key skills.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">AI Analysis</h3>
+                    <p class="step-description">
+                        Our 3-stage matching engine calculates weighted scores
+                        based on relevance.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Get Roadmap</h3>
+                    <p class="step-description">
+                        Receive match scores, gap analysis, and personalized
+                        learning recommendations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section use-cases-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Who Uses HireLens?</h2>
+                <p class="section-subtitle">Trusted by job seekers, recruiters, and students</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-avatar">👨‍💻</div>
+                    <h3 class="use-case-title">Job Seekers</h3>
+                    <p class="use-case-quote">
+                        "HireLens showed me I forgot to list Docker on my resume.
+                        Added it and got the interview!"
+                    </p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-avatar">👩‍💼</div>
+                    <h3 class="use-case-title">Recruiters</h3>
+                    <p class="use-case-quote">
+                        "Screening 50 resumes used to take hours. Now I get a
+                        ranked list in minutes."
+                    </p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-avatar">🎓</div>
+                    <h3 class="use-case-title">Students</h3>
+                    <p class="use-case-quote">
+                        "The course recommendations helped me find exactly which
+                        certifications I needed."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built with Modern Tech</h2>
+                <p class="section-subtitle">Robust stack for performance and intelligence</p>
+            </div>
+            <div class="tech-badges">
+                <span class="tech-badge">🐍 Python</span>
+                <span class="tech-badge">⚡ FastAPI</span>
+                <span class="tech-badge">🧠 spaCy NLP</span>
+                <span class="tech-badge">📊 Scikit-Learn</span>
+                <span class="tech-badge">🤗 Transformers</span>
+                <span class="tech-badge">💻 Vanilla JS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Optimize Your Hiring?</h2>
+                <p>Start evaluating resumes with AI-powered precision today.</p>
+                <div class="cta-buttons">
+                    <a href="evaluate.html" class="btn btn-primary btn-lg">Get Started Free</a>
+                    <a href="courses.html" class="btn btn-secondary btn-lg">Browse Courses</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#footer-gradient)" />
+                            <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="white" opacity="0.9" />
+                            <defs>
+                                <linearGradient id="footer-gradient" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#F56565" />
+                                    <stop offset="100%" stop-color="#C53030" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="logo-text">HireLens</span>
+                    </div>
+                    <p class="footer-tagline">AI-Powered Resume Evaluation</p>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2026 HireLens. Built with Python, FastAPI, and Modern NLP.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
